@@ -1,0 +1,217 @@
+/**
+ *
+ * guideline common
+ *
+ */
+
+/* ------------------------------------------------------------
+ base
+------------------------------------------------------------ */
+
+/* ---------- root em について ---------- */
+/*
+	ブラウザの幅に合わせてサイズを変更したい場合は、remで指定する。
+
+	remはhtmlのfont-sizeによって変化する単位で、1.0rem = 10px にするためにhtmlのfont-sizeを62.5%に指定します。
+	この62.5%をvwにすると、remで指定されている場所も合わせて可変します。
+
+	ただ、文字が極端に小さくなったりするところもあるため、その場合はcssのmax関数を使用。
+	最大値のrem、最小値のpxを指定し対応。
+
+	このhtmlのfont-sizeをvwにする方法は、可変中に小数点以下を扱うことがよくあり、
+	クロームなど小数点以下を扱うブラウザではtransformと併用すると一部欠けたりする場合ある。
+	その際は、transformに rotate(0.00001deg)などを適用すると解消する。
+ */
+
+
+/* ---------- 擬似要素について ---------- */
+/*
+	擬似要素に全角文字を入れると文字化けする場合があるので、Unicodeへ変換する
+*/
+
+
+
+
+/* ------------------------------------------------------------
+ コメントアウト
+------------------------------------------------------------ */
+
+///////////////////////////////////////////////////////////////
+// sass,php level 1
+///////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////
+// sass,php level 2
+///////////////////////////////////////////
+
+/**************************************************************
+ * JavaScript level 1
+**************************************************************/
+
+/******************************************
+ * JavaScript level 2
+******************************************/
+
+/* ------------------------------------------------------------
+ css level 1
+------------------------------------------------------------ */
+
+/* ----------------------------------------
+ css level 2
+---------------------------------------- */
+
+/* ---------- all level 3 ---------- */
+
+/* ----- all level 4 ----- */
+
+/* -- all level 5 -- */
+
+/* - all level 6 - */
+
+
+
+/* ------------------------------------------------------------
+ 略語
+ 一部で略語を使用
+------------------------------------------------------------ */
+/*
+	tb: top,bottom
+	t : top
+	b : bottom
+*/
+/*
+	xs   : xsmall
+	sm   : small
+	rg   : regular
+	md   : medium
+	lg   : large
+	xl   : xlarge
+	xxl  : xxlarge
+	xxxl : xxxlarge
+	xxxxl: xxxxlarge
+*/
+/*
+	v: vertical
+	h: horizontal
+*/
+
+
+
+
+
+
+//
+//
+// guideline sass
+//
+//
+
+///////////////////////////////////////////////////////////////
+// base
+///////////////////////////////////////////////////////////////
+// @charsetは、Gulpでコンパイルしたcss内に日本語があれば勝手に入る。
+
+
+
+
+///////////////////////////////////////////////////////////////
+// Mixin , Function
+///////////////////////////////////////////////////////////////
+//
+// overview : 説明
+// usage    : 使い方
+// caution  : 注意事項
+// reference: 参考URL
+//
+@mixin sample(){
+}
+
+
+
+
+///////////////////////////////////////////////////////////////
+// Style
+///////////////////////////////////////////////////////////////
+//
+// overview : 外側から内側に向かって記述し、最後は再度外側に向かう。
+//            positionは、基本は最初で、場合によっては、backgroundの前や後、一番最後でも良い
+//            margin,paddingはline-heightなどが決まらないと定まらないので、内側の指定が終わった後に記述する。
+//            layout → details → animation
+//
+
+// .hoge{
+// 	position: relative;
+// 	top: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	right: 0;
+// 	z-index: 1;
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	align-items: center;
+// 	justify-content: center;
+// 	vertical-align: middle;
+// 	max-width: 100px;
+// 	min-width: 100px;
+// 	width: 100%;
+// 	max-height: 100px;
+// 	min-height: 100px;
+// 	height: 100%;
+// 	box-shadow: 0;
+// 	border-radius: 100px;
+// 	border: solid 1px red;
+// 	background-color: red;
+// 	background-image: url('');
+// 	background-size: cover;
+// 	background-position: center;
+// 	background-repeat: no-repeat;
+// 	list-style-type: none;
+// 	list-style-position: inside;
+// 	text-align: center;
+// 	text-transform: uppercase;
+// 	color: red;
+// 	font-family: hoge;
+// 	font-weight: 1000;
+// 	font-style: italic;
+// 	font-size: 100px;
+// 	font-feature-settings: 'palt' 1;
+// 	line-height: 1px;
+// 	letter-spacing: 0;
+// 	margin: 0;
+// 	padding: 0;
+// 	overflow-x: hidden;
+// 	overflow-y: scroll;
+// 	mix-blend-mode: none;
+// 	pointer-events: none;
+// 	opacity: 0;
+// 	visibility: hidden;
+// 	transform: rotate(0.00001deg);
+// 	transition: 200ms ease;
+// 	transition-property: width , box-shadow , background-color;
+// 	animation: hoge;
+
+// 	@include mq-up(sm){}
+// 	@include mq-up{}
+// 	@include mq-up(xl){}
+// 	@include mq-down(xl){}
+// 	@include mq-down{}
+// 	@include mq-updown{}
+// 	@include mq-down(sm){}
+
+// 	&.is-hover:hover{}
+// 	@include hover();
+// 	@include hover-query();
+
+// 	&::before{
+// 		content: '';
+// 	}
+
+// 	&::after{
+// 		content: '';
+// 	}
+// }
+
+
+
+
+

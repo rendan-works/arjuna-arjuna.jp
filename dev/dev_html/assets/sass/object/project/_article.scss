@@ -1,0 +1,866 @@
+/**
+ *
+ * article.scss
+ *
+ */
+/* --------------------------------------------------------------------------------
+ p-article
+-------------------------------------------------------------------------------- */
+.p-article{
+	position: relative;
+
+	@include mq-up{
+		background-color: var( --color-bg4 );
+		@include rem( padding , 175px 0 200px );
+	}
+	@include mq-down{
+		background-color: var( --color-bg3 );
+		@include rem( padding , 45px 0 70px );
+	}
+
+	&::before{
+		@include mq-up{
+			content: '';
+			width: 100%;
+			@include rem( height , 758px - 14px );
+			background-color: var( --color-bg3 );
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+		}
+	}
+}
+
+.p-article__inner{
+	position: relative;
+	z-index: 1;
+}
+
+.p-article__flex{
+	@include mq-up{
+		display: flex;
+		justify-content: space-between;
+	}
+	@include mq-down{
+		@include rem( margin-top , 70px );
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ p-article__another
+------------------------------------------------------------ */
+.p-article__another{
+	@include mq-up{
+		width: calcPercent('370 / var(--inner-width)');
+	}
+}
+
+.p-article__another__flex{
+	@include mq-down{
+		display: flex;
+		align-items: flex-start;
+	}
+}
+
+
+/* ---------- p-article__another__figure ---------- */
+.p-article__another__figure{
+	@include mq-up{
+		@include rem( width , 100px );
+	}
+	@include mq-down{
+		@include rem( width , 85px );
+	}
+}
+
+
+/* ---------- p-article__another__profile ---------- */
+.p-article__another__profile{
+	@include mq-up{
+		@include rem( margin-top , 45px );
+	}
+	@include mq-down{
+		flex: 1;
+		@include rem( margin-left , 20px );
+	}
+}
+
+.p-article__another__name{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(21);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(16);
+	}
+}
+
+.p-article__another__kana{
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(14);
+		@include letter-spacing(100);
+		@include rem( margin-top , 18px );
+	}
+	@include mq-down{
+		@include font-var(11);
+		@include rem( margin-top , 11px );
+	}
+}
+
+.p-article__another__post{
+	@include mq-up{
+		display: none;
+	}
+	@include mq-down{
+		@include font-var(12);
+		@include rem( margin-top , 16px );
+	}
+}
+
+.p-article__another__degree{
+	@include mq-up{
+		display: none;
+	}
+	@include mq-down{
+		@include font-var(12);
+		@include rem( margin-top , 3px );
+	}
+}
+
+
+/* ---------- p-article__another__title ---------- */
+.p-article__another__title{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(20);
+		@include var-line-height(28,40);
+	}
+	@include mq-down{
+		@include font-var(17);
+		@include var-line-height(34,52);
+	}
+
+	.p-article__another__flex + &{
+		@include mq-up{
+			@include rem( margin-top , 63px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 20px );
+		}
+	}
+}
+
+
+/* ---------- p-article__another__txt ---------- */
+.p-article__another__txt{
+	@include mq-up{
+		@include rem( margin-top , 36px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 20px );
+	}
+}
+
+
+/* ---------- p-article__another__button ---------- */
+.p-article__another__button{
+	@include mq-up{
+		@include rem( margin-top , 55px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 32px );
+	}
+}
+
+
+
+
+/* ------------------------------------------------------------
+ p-article__main
+------------------------------------------------------------ */
+.p-article__main{
+	@include mq-up{
+		width: calcPercent('840 / var(--inner-width)');
+		@include rem( margin-top , 5px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 50px );
+	}
+}
+
+
+/* ----------------------------------------
+ p-article__header
+---------------------------------------- */
+.p-article__header{
+}
+
+.p-article__time{
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(21);
+	}
+}
+
+.p-article__title{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(28);
+		@include var-line-height(28,40);
+		@include rem( margin-top , 44px );
+	}
+	@include mq-down{
+		@include font-var(16);
+		@include var-line-height(32,52);
+	}
+}
+
+
+
+/* ----------------------------------------
+ p-article__figure
+---------------------------------------- */
+.p-article__figure{
+	position: relative;
+
+	@include mq-up{
+		@include rem( margin-top , 88px );
+	}
+	@include mq-down{
+		width: var( --ww );
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&::after{
+		@include aspect-base;
+		padding-top: calcPercent('940 / 1680');
+	}
+}
+
+
+
+/* ----------------------------------------
+ p-article__contents
+---------------------------------------- */
+.p-article__contents{
+	@include mq-up{
+		@include rem( margin-top , 145px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 70px );
+	}
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-article__footer
+------------------------------------------------------------ */
+.p-article__footer{
+	@include mq-up{
+		@include rem( margin-top , 122px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 70px );
+	}
+}
+
+.p-article__footer__button{
+	@include mq-up{
+		margin: 0 auto;
+	}
+}
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------------------------------
+ p-article2
+-------------------------------------------------------------------------------- */
+.p-article2{
+	@include mq-up{
+		@include rem( margin-top , 10px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 42px );
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ p-article2__header
+------------------------------------------------------------ */
+.p-article2__header{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	@include rem( gap , 50px );
+
+	@include mq-up{
+		align-items: flex-end;
+	}
+	@include mq-down{
+		align-items: center;
+	}
+
+	.p-button4{
+		white-space: nowrap;
+
+		@include mq-up{
+			@include rem( margin-bottom , 13px );
+		}
+	}
+}
+
+
+/* ---------- p-article2__title ---------- */
+.p-article2__title{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+
+/* ---------- p-article2__outline ---------- */
+.p-article2__outline{
+	dl{
+		display: flex;
+		align-items: center;
+
+		+ dl{
+			@include mq-up{
+				@include rem( margin-top , 25px );
+			}
+			@include mq-down{
+				@include rem( margin-top , 12px );
+			}
+		}
+	}
+
+	dt{
+		@include font-family(sans-serif);
+		@include font-weight(medium);
+
+		@include mq-up{
+			@include rem( min-width , 160px );
+			@include font-var(14);
+			@include letter-spacing(200);
+		}
+		@include mq-down{
+			@include rem( min-width , 50px );
+			@include font-var(9);
+		}
+	}
+
+	dd{
+		@include mq-up{
+			@include font-var(18);
+		}
+
+		&.-en{
+			@include font-family(sans-serif);
+			@include font-weight(medium);
+		}
+
+		.-large{
+			@include font-family(mix);
+			@include font-weight(medium);
+			margin: -1em 0;
+
+			@include mq-up{
+				@include font-var(28);
+			}
+			@include mq-down{
+				@include font-var(14);
+			}
+		}
+	}
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-article2__figure
+------------------------------------------------------------ */
+.p-article2__figure{
+	width: var( --ww );
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	overflow: hidden;
+
+	@include mq-up{
+		@include rem( margin-top , 50px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 32px );
+	}
+}
+
+.p-article2__figure__content{
+	position: relative;
+}
+
+
+/* ---------- p-article2__figure__slide ---------- */
+.p-article2__figure__slide{
+	position: relative;
+	opacity: 0;
+	visibility: hidden;
+	transition: var( --transition-slider );
+	transition-property: opacity,visibility;
+
+	@include mq-up{
+		@include rem( max-height , 800px * 1.5 );
+	}
+
+	&:not(:first-of-type){
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	&.is-active{
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&::after{
+		@include aspect-base;
+
+		@include mq-up{
+			padding-top: calcPercent('800 / 1500 ');
+		}
+		@include mq-down{
+			padding-top: calcPercent('300 / 400 ');
+		}
+	}
+
+}
+
+
+/* ---------- p-article2__figure__ui ---------- */
+.p-article2__figure__ui{
+	@include mq-down{
+		display: none;
+	}
+
+	&.is-hidden{
+		display: none;
+	}
+
+	li{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.p-article2__figure__ui__prev{
+	@include rem( left , 40px );
+}
+
+.p-article2__figure__ui__next{
+	@include rem( right , 40px );
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-article2__client
+------------------------------------------------------------ */
+.p-article2__client{
+	@include mq-up{
+		@include rem( margin-top , 200px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 80px );
+	}
+}
+
+
+
+/* ----------------------------------------
+ p-article2__client__intro
+---------------------------------------- */
+.p-article2__client__intro{
+	@include mq-up{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}
+
+/* ---------- p-article2__client__header ---------- */
+.p-article2__client__header{
+	flex: 1;
+}
+
+.p-article2__client__title{
+}
+
+.p-article2__client__title__en{
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(36);
+	}
+	@include mq-down{
+		@include font-var(18);
+	}
+}
+
+.p-article2__client__title__ja{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(22);
+		@include letter-spacing(100);
+		@include rem( margin-top , 30px );
+	}
+	@include mq-down{
+		@include font-var(11);
+		@include rem( margin-top , 20px );
+	}
+}
+
+
+/* ---------- p-article2__client__title__contents ---------- */
+.p-article2__client__title__contents{
+	@include mq-up{
+		width: calcPercent('640 / var(--inner-width)');
+	}
+	@include mq-down{
+		@include rem( margin-top , 20px );
+	}
+}
+
+.p-article2__client__title2{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(22);
+		@include letter-spacing(100);
+	}
+}
+
+.p-article2__client__txt{
+	@include mq-up{
+		@include rem( margin-top , 68px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 30px );
+	}
+}
+
+
+
+
+
+/* ----------------------------------------
+ p-article2__client__table
+---------------------------------------- */
+.p-article2__client__table{
+	@include mq-up{
+		@include rem( margin-top , 200px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 80px );
+	}
+}
+
+
+/* ---------- p-article2__client__table__list ---------- */
+.p-article2__client__table__list{
+	display: flex;
+	flex-wrap: wrap;
+
+	@include mq-up{
+		@include rem( row-gap , 20px );
+	}
+	@include mq-down{
+		@include rem( row-gap , 10px );
+	}
+
+	a{
+		display: block;
+		@include hover-opacity;
+	}
+}
+
+
+/* ---------- p-article2__client__table__list2 ---------- */
+.p-article2__client__table__list2{
+	display: flex;
+	flex-wrap: wrap;
+	@include rem( column-gap , 10px );
+
+	@include mq-up{
+		@include rem( row-gap , 20px );
+	}
+	@include mq-down{
+		@include rem( row-gap , 10px );
+	}
+
+	a{
+		display: block;
+		border-radius: var( --radius-max );
+		background-color: var( --color-bg5 );
+		transition-property: background-color,color;
+
+		@include mq-up{
+			@include font-var(18);
+			@include rem( padding , 8px 20px );
+		}
+		@include mq-down{
+			@include font-var(11);
+			@include rem( padding , 7px 6px );
+		}
+
+		@include hover{
+			background-color: var( --color-bg2 );
+			color: var( --color-txt2 );
+		}
+	}
+}
+
+
+/* ---------- p-article2__client__table__list3 ---------- */
+.p-article2__client__table__list3{
+	display: flex;
+	flex-wrap: wrap;
+
+	@include mq-up{
+		@include rem( column-gap , 5px );
+		@include rem( row-gap , 17px );
+	}
+	@include mq-down{
+		@include rem( column-gap , 5px );
+		@include rem( row-gap , 20px );
+	}
+
+	a{
+		display: block;
+		@include hover-opacity;
+
+		@include mq-up{
+			@include font-var(18);
+		}
+		@include mq-down{
+			@include font-var(15);
+		}
+
+		&::before{
+			content: '#';
+		}
+	}
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-article2__contents
+------------------------------------------------------------ */
+.p-article2__contents{
+	@include mq-up{
+		@include rem( margin-top , 305px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 75px );
+	}
+}
+
+
+/* ---------- p-article2__contents__txt ---------- */
+.p-article2__contents__txt{
+	@include mq-up{
+		@include rem( margin-top , 55px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 50px );
+	}
+}
+
+
+/* ---------- p-article2__contents__figure ---------- */
+.p-article2__contents__figure{
+	@include mq-up{
+		width: calc( 100% + var(--outside) );
+	}
+	@include mq-down{
+		width: var( --contents-lg );
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		@include rem( margin-top , 40px );
+	}
+
+	figcaption{
+		// text-align: right;
+		// @include font-family(sans-serif);
+		@include font-weight(bold);
+
+		@include mq-up{
+			@include font-var(17);
+			@include rem( margin-top , 25px );
+			// padding-right: var( --outside );
+		}
+		@include mq-down{
+			@include font-var(14);
+			@include rem( margin-top , 20px );
+		}
+	}
+
+	+ .p-article2__contents__figure{
+		@include mq-up{
+			@include rem( margin-top , 80px );
+		}
+	}
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-article2__team
+------------------------------------------------------------ */
+.p-article2__team{
+	@include mq-up{
+		@include rem( margin-top , 205px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 75px );
+	}
+}
+
+.p-article2__team__main{
+	@include mq-down{
+		@include rem( margin-top , 50px );
+	}
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-article2__other
+------------------------------------------------------------ */
+.p-article2__other{
+	@include mq-up{
+		@include rem( margin-top , 200px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 75px );
+	}
+}
+
+.p-article2__other__main{
+	@include mq-down{
+		width: var( --contents-lg );
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		@include rem( margin-top , 50px );
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

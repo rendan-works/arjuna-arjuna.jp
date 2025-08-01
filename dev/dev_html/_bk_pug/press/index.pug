@@ -1,0 +1,120 @@
+.
+	<?php $this_path = 'press/'; ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/variable.php' ); ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/functions.php' ); ?>
+	<?php
+		$directory = array(
+			array('HOME','Home',''),
+			array('PRESS','Press','press/'),
+		);
+		$robots = true;
+
+		$meta = array(
+			'title'       => getTitle($directory),
+			'description' => '',
+			'keywords'    => '',
+		);
+
+		$preload = array();
+		$style = array(
+			$root . 'assets/css/page-press.css',
+		);
+		$script = array();
+		$jquery = false;
+
+		$contact_class = '';
+	 ?>
+//- ------------------------------------------------------------
+//- _tpl_header
+//- ------------------------------------------------------------
+include ../include_pug/_tpl_header.pug
+	//- ------------------------------------------------------------
+	//- main
+	//- ------------------------------------------------------------
+	main.l-main.press-main
+		// p-hero
+		header.p-hero.-bg3
+			div.p-hero__inner.c-inner-max
+				h1.p-hero__en
+					span PRESS
+		// /p-hero
+		// press-list
+		div.press-list
+			div.c-inner-max
+				div.c-column.-col-3-lg-sm.-gap-c-86.-gap-r-100-2
+					// p-card4
+					article.p-card4
+						figure.c-aspect.-square.c-bg2
+							img(src!="https://placehold.jp/752x752.png" alt="" decoding="async").c-objectfit.-cover
+						p.p-card4__company MDN出版社
+						h2.p-card4__title.c-crop デザイナーズファイル2023
+						p.p-button.-regular.-black
+							a(href!="" target="_blank" rel="noopener noreferrer")
+								span.p-button__en Buy this
+								i.c-icon.c-arrow
+					// /p-card4
+					// p-card4
+					article.p-card4
+						figure.c-aspect.-square.c-bg2
+							img(src!="https://placehold.jp/752x752.png" alt="" decoding="async").c-objectfit.-cover
+						p.p-card4__company MDN出版社
+						h2.p-card4__title.c-crop 企業・ブランド・プロジェクトの個性を伝えるオリジナルフォントとデザイン事例54
+						p.p-button.-regular.-black
+							a(href!="" target="_blank" rel="noopener noreferrer")
+								span.p-button__en Buy this
+								i.c-icon.c-arrow
+					// /p-card4
+					// p-card4
+					article.p-card4
+						figure.c-aspect.-square.c-bg2
+							img(src!="https://placehold.jp/752x752.png" alt="" decoding="async").c-objectfit.-cover
+						p.p-card4__company MDN出版社
+						h2.p-card4__title.c-crop デザイナーズファイル2023
+						p.p-button.-regular.-black
+							a(href!="" target="_blank" rel="noopener noreferrer")
+								span.p-button__en Buy this
+								i.c-icon.c-arrow
+					// /p-card4
+					// p-card4
+					article.p-card4
+						figure.c-aspect.-square.c-bg2
+							img(src!="https://placehold.jp/752x752.png" alt="" decoding="async").c-objectfit.-cover
+						p.p-card4__company MDN出版社
+						h2.p-card4__title.c-crop デザイナーズファイル2023
+						p.p-button.-regular.-black
+							a(href!="" target="_blank" rel="noopener noreferrer")
+								span.p-button__en Buy this
+								i.c-icon.c-arrow
+					// /p-card4
+					// p-card4
+					article.p-card4
+						figure.c-aspect.-square.c-bg2
+							img(src!="https://placehold.jp/752x752.png" alt="" decoding="async").c-objectfit.-cover
+						p.p-card4__company MDN出版社
+						h2.p-card4__title.c-crop デザイナーズファイル2023
+						p.p-button.-regular.-black
+							a(href!="" target="_blank" rel="noopener noreferrer")
+								span.p-button__en Buy this
+								i.c-icon.c-arrow
+					// /p-card4
+					// p-card4
+					article.p-card4
+						figure.c-aspect.-square.c-bg2
+							img(src!="https://placehold.jp/752x752.png" alt="" decoding="async").c-objectfit.-cover
+						p.p-card4__company MDN出版社
+						h2.p-card4__title.c-crop デザイナーズファイル2023
+						p.p-button.-regular.-black
+							a(href!="" target="_blank" rel="noopener noreferrer")
+								span.p-button__en Buy this
+								i.c-icon.c-arrow
+					// /p-card4
+		// /press-list
+
+	//- ------------------------------------------------------------
+	//- /main
+	//- ------------------------------------------------------------
+
+	//- ------------------------------------------------------------
+	//- _tpl_footer
+	//- ------------------------------------------------------------
+	include ../include_pug/_tpl_footer.pug

@@ -1,0 +1,291 @@
+/*
+ *
+ * form.scss
+ *
+ */
+/* ------------------------------------------------------------
+ p-form
+------------------------------------------------------------ */
+.p-form{
+	@include mq-up{
+		@include rem( --input-height , 82px );
+	}
+	@include mq-down{
+		@include rem( --input-height , 50px );
+	}
+}
+
+
+
+
+/* ------------------------------------------------------------
+ form settings
+------------------------------------------------------------- */
+.p-form__control{
+	position: relative;
+	width: 100%;
+
+	/* 入力済み */
+	&.is-done{
+	}
+	/* エラー */
+	&.is-error{
+		.p-form__txtbox{
+			background-color: var( --color-input-bg-error ) !important;
+			border-color: var( --color-input-border-error ) !important;
+		}
+	}
+}
+
+
+
+/* ----------------------------------------
+ p-form__txtbox
+---------------------------------------- */
+.p-form__txtbox{
+	position: relative;
+	width: 100%;
+	min-height: var( --input-height );
+	border-radius: var( --radius-sm );
+	border: solid 1px var( --color-input-border );
+	background-color: var( --color-input-bg );
+	color: var( --color-txt );
+	@include font-family(gothic);
+	@include font-weight(medium);
+	@include letter-spacing(100);
+	word-break: break-all;
+	overflow: hidden;
+	caret-color: var( --color-txt );
+
+	@include mq-up{
+		@include font-var(18);
+		@include line-height(18,36);
+		@include rem( padding , 22px 30px );
+	}
+	@include mq-down{
+		@include font-var(12);
+		@include line-height(24,46);
+		@include rem( padding , 12px 18px );
+	}
+}
+
+input,
+textarea{
+	transition-property: background-color,color;
+
+	&.p-form__txtbox{
+		@include placeholder{
+			color: var( --color-input-placeholder );
+		}
+		@include hover{
+			background-color: var( --color-input-bg-hover );
+		}
+
+		&:focus{
+			background-color: var( --color-input-bg-focus ) !important;
+		}
+	}
+}
+
+textarea.p-form__txtbox,
+.p-form__txtbox.-textarea{
+	@include rem( max-height , 600px );
+
+	@include mq-up{
+		@include rem( height , 380px );
+	}
+	@include mq-down{
+		@include rem( height , 200px );
+	}
+}
+
+input:-webkit-autofill ,
+select:-webkit-autofill ,
+option:-webkit-autofill {
+	-webkit-text-fill-color: var( --color-txt ) !important;
+	-webkit-box-shadow: 0 0 0px 1000px var( --color-input-bg-done ) inset;
+}
+
+
+/* ---------- p-form__txtbox--dummy ---------- */
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-form__table
+------------------------------------------------------------- */
+.p-form__table{
+	display: grid;
+	row-gap: var( --row-gap );
+
+	@include mq-up{
+		@include rem( --row-gap , 100px );
+	}
+	@include mq-down{
+		@include rem( --row-gap , 50px );
+	}
+}
+
+.p-form__table__flex{
+	display: grid;
+
+	@include mq-up{
+		grid-template-columns: repeat(2, 1fr);
+		@include rem( gap , 72px );
+	}
+	@include mq-down{
+		row-gap: var( --row-gap );
+	}
+}
+
+/* ----- p-form__table__cell ----- */
+.p-form__table__cell{
+	> dt{
+		display: flex;
+		align-items: center;
+		@include font-weight(medium);
+		@include letter-spacing(100);
+
+		@include mq-up{
+			@include font-var(20);
+		}
+		@include mq-down{
+			@include font-var(16);
+		}
+	}
+
+	> dd{
+		@include mq-up{
+			@include rem( margin-top , 32px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 24px );
+		}
+	}
+}
+
+
+
+
+/* ---------- p-form__required ---------- */
+.p-form__required{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: var( --radius-max );
+	background-color: var( --color-required );
+	color: var( --color-txt2 );
+	@include font-weight(regular);
+	@include letter-spacing(100);
+	@include rem( margin-top , -20px );
+	@include rem( margin-bottom , -20px );
+
+	@include mq-up{
+		@include rem( width , 46px );
+		@include rem( height , 24px );
+		@include font-var(11);
+		@include rem( margin-left , 13px );
+	}
+	@include mq-down{
+		@include rem( width , 55px );
+		@include rem( height , 25px );
+		@include font-var(13);
+		@include rem( margin-left , 13px );
+	}
+}
+
+/* ---------- p-form__error ---------- */
+.p-form__error{
+	background-color: var( --color-error-bg );
+	color: var( --color-error );
+	border-radius: var( --radius-xs );
+	padding: 1em;
+	margin-top: 0.75em;
+
+	@include mq-up{
+		@include font-var(12);
+	}
+	@include mq-down{
+		@include font-var(9);
+	}
+}
+
+
+
+
+/* ------------------------------------------------------------
+ p-form__button
+------------------------------------------------------------- */
+.p-form__button{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include mq-up{
+		@include rem( gap , 50px );
+		// @include rem( margin-top , 125px );
+		@include rem( margin-top , 103px );
+	}
+	@include mq-down{
+		flex-direction: column;
+		@include rem( gap , 25px );
+		@include rem( margin-top , 60px );
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-form__attention
+------------------------------------------------------------- */
+.p-form__attention{
+}
+
+
+/* ---------- p-form__attention__title ---------- */
+.p-form__attention__title{
+	@include font-weight(medium);
+	--line-height: 1.6;
+
+	@include mq-up{
+		@include font-var(28);
+	}
+}
+
+
+/* ---------- p-form__attention__txt ---------- */
+.p-form__attention__txt{
+	@include mq-up{
+		@include rem( margin-top , 60px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 40px );
+	}
+}
+
+
+/* ---------- p-form__attention__txt2 ---------- */
+.p-form__attention__txt2{
+	@include mq-up{
+		@include rem( margin-top , 40px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 30px );
+	}
+}
+
+
+
+
+
+

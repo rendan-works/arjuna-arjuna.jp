@@ -1,0 +1,39 @@
+//
+//
+// font-weight.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// font-weight
+///////////////////////////////////////////////////////////////
+//
+// overview: font-weightをデザインデータから数値に変換する
+//
+@mixin font-weight( $weight: null ){
+	@if $weight == thin        { font-weight: 100; }
+	@if $weight == extra-light { font-weight: 200; }
+	@if $weight == light or $weight == normal { font-weight: 300; }
+	@if $weight == regular     { font-weight: 400; }
+	@if $weight == medium      { font-weight: 500; }
+	@if $weight == semi-bold   { font-weight: 600; }
+	@if $weight == bold        { font-weight: 700; }
+	@if $weight == extra-bold  { font-weight: 800; }
+	@if $weight == black       { font-weight: 900; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

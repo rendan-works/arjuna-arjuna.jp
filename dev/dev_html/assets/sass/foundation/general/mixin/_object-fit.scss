@@ -1,0 +1,38 @@
+//
+//
+// object-fit.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// object-fit
+///////////////////////////////////////////////////////////////
+//
+// overview : object-fitのスタイル。
+//            ie対応のfont-familyとabsoluteがつく
+//
+@mixin object-fit( $object-fit ){
+	width: 100%;
+	height: 100%;
+	object-fit: $object_fit;
+	// font-family: 'object-fit: #{$object_fit};';
+	@include position-absolute;
+}
+
+//
+// overview : object-positionのスタイル。
+//            ie対応でbackground-positionも
+//
+@mixin object-position( $value ){
+	object-position: $value;
+	// background-position: $value !important;
+}
+
+
+
+
+
+
+
+
+

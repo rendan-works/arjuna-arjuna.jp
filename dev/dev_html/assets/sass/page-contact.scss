@@ -1,0 +1,130 @@
+/**
+ *
+ * page-contact.scss
+ *
+ */
+///////////////////////////////////////////////////////////////
+// general
+///////////////////////////////////////////////////////////////
+@import './foundation/general/**/*.scss';
+
+:root{
+	@include var-z-index((
+		// null,
+	), $z-indexLevels-page );
+}
+
+
+/* ------------------------------------------------------------
+ contact-tel
+------------------------------------------------------------ */
+.contact-tel{
+	background-color: var( --color-bg3 );
+
+	@include mq-up{
+		// @include rem( padding , 140px 0 160px - 64px );
+		@include rem( padding , 140px 0 23px );
+	}
+	@include mq-down{
+		@include rem( padding , 105px 0 40px - 20px );
+	}
+}
+
+
+/* ---------- contact-tel__txt ---------- */
+.contact-tel__txt{
+	text-align: center;
+}
+
+
+/* ---------- contact-tel__num ---------- */
+.contact-tel__num{
+	display: flex;
+	align-items: baseline;
+	width: fit-content;
+	margin: 0 auto;
+	border-bottom: var( --solid );
+
+	@include mq-up{
+		@include rem( padding , 0 2px 15px 3px );
+		@include rem( margin-top , 126px );
+	}
+	@include mq-down{
+		@include rem( padding , 0 3px 10px 4px );
+		@include rem( margin-top , 80px );
+	}
+
+	span,
+	a{
+		display: block;
+		@include font-family(sans-serif);
+		@include font-weight(medium);
+	}
+}
+
+.contact-tel__num__txt{
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(36);
+	}
+	@include mq-down{
+		@include font-var(28);
+	}
+}
+
+.contact-tel__num__num{
+	@include mq-up{
+		@include font-var(50);
+		@include letter-spacing(100);
+		@include rem( margin-left , 12px );
+	}
+	@include mq-down{
+		@include font-var(43);
+		@include letter-spacing(50);
+		@include rem( margin-left , 6px );
+	}
+}
+
+
+/* ---------- contact-tel__small ---------- */
+.contact-tel__small{
+	text-align: center;
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(20);
+		@include letter-spacing(100);
+		@include rem( margin-top , 20px );
+	}
+	@include mq-down{
+		@include font-var(16);
+		@include letter-spacing(50);
+		@include rem( margin-top , 10px );
+	}
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ contact-form
+------------------------------------------------------------ */
+.contact-form{
+	background-color: var( --color-bg3 );
+
+	@include mq-up{
+		@include rem( padding , 103px + 64px 0 160px );
+	}
+	@include mq-down{
+		@include rem( padding , 88px + 20px 0 124px );
+	}
+}
+
+
+
+
+

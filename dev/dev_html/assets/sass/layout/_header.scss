@@ -1,0 +1,186 @@
+/**
+ *
+ * header.scss
+ *
+ */
+/* ------------------------------------------------------------
+ l-header
+------------------------------------------------------------ */
+.l-header{
+}
+
+
+/* ------------------------------------------------------------
+ l-header__inner
+------------------------------------------------------------ */
+.l-header__inner{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	@include z-index( l-header__inner );
+	display: flex;
+	align-items: center;
+
+	@include mq-up{
+		@include rem( padding-top , 84px );
+		padding-left: var( --outside );
+	}
+	@include mq-down{
+		@include rem( padding-top , 28px );
+		padding-left: var( --contents-lg-outside );
+	}
+}
+
+/* ----------------------------------------
+ l-header__logo
+---------------------------------------- */
+.l-header__logo{
+	a{
+		display: block;
+		@include hover-opacity;
+	}
+
+	svg{
+		@include mq-up{
+			@include rem( width , 324px * .8 );
+			@include rem( height , 52px * .8 );
+		}
+		@include mq-up(xxl){
+			@include rem( width , 324px );
+			@include rem( height , 52px );
+		}
+		@include mq-down{
+			@include rem( width , 216px );
+			@include rem( height , 35px );
+		}
+	}
+
+}
+
+
+/* ----------------------------------------
+ l-header__nav
+---------------------------------------- */
+.l-header__nav{
+	@include mq-up{
+		margin-left: var( --outside );
+	}
+	@include mq-up(xxl){
+		@include rem( margin-left , 100px );
+	}
+	@include mq-down{
+		display: none;
+	}
+
+	ul{
+		display: flex;
+		align-items: center;
+		@include rem( gap , 55px * .8 );
+
+		@include mq-up(xxl){
+			@include rem( gap , 55px );
+		}
+	}
+
+	a{
+		display: block;
+		text-transform: uppercase;
+		@include font-family(sans-serif);
+		@include font-weight(medium);
+		@include var-letter-spacing(200);
+		white-space: nowrap;
+		@include rem( padding , 11px 3px );
+		transition-property: background-size;
+
+		@include mq-up{
+			font-size: 1.6rem;
+		}
+		@include mq-up(xxl){
+			@include font-var(18);
+		}
+	}
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+ l-header__button
+------------------------------------------------------------ */
+.l-header__button{
+	position: fixed;
+	@include z-index( l-header__button );
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	--line-color: var( --color-txt );
+	transition: gap var( --transition-button );
+
+	@include mq-up{
+		@include rem( width , 64px );
+		@include rem( height , 64px );
+		@include rem( top , 78px * .94 );
+		@include rem( right , 50px );
+		@include rem( gap , 23px );
+	}
+	@include mq-up(xxl){
+		@include rem( top , 78px );
+	}
+	@include mq-down{
+		@include rem( width , 60px );
+		@include rem( height , 60px );
+		@include rem( top , 15px );
+		right: var( --contents-lg-outside );
+		@include rem( gap , 16px );
+	}
+
+	@include hover{
+		span::before{
+			animation: scaleX-InOut var( --transition-hover-animation ) forwards;
+		}
+	}
+
+	&.is-open{
+		gap: 0px;
+		--line-color: var( --color-txt2 );
+
+		span{
+			&:nth-of-type(1){
+				transform: rotate(45deg);
+			}
+			&:nth-of-type(2){
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	span{
+		display: block;
+		width: 100%;
+		height: 1px;
+		transition: var( --transition-button );
+		transition-property: transform;
+
+		&::before{
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: var( --line-color );
+			animation-delay: var( --delay ) !important;
+			transition: var( --transition-button );
+			transition-property: background-color;
+		}
+
+		&:nth-of-type(2){
+			--delay: 140ms;
+		}
+	}
+}
+
+
+
+
+

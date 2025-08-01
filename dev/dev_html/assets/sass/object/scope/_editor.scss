@@ -1,0 +1,178 @@
+/**
+ *
+ * editor.scss
+ *
+ */
+/* ------------------------------------------------------------
+ s-editor
+------------------------------------------------------------ */
+.s-editor{
+	word-break: break-all;
+	word-wrap: break-word;
+	@include line-height( var( --line-height ) );
+
+	@include mq-up{
+		@include font-var(16);
+		@include var-line-height(16,42);
+	}
+	@include mq-down{
+		@include font-var(15);
+		@include var-line-height(30,68);
+	}
+
+
+	/* ----- space ----- */
+	* {
+		+ p,
+		+ ul,
+		+ ol,
+		+ table,
+		+ figure,
+		+ .wp-caption,
+		+ pre,
+		+ blockquote{
+			@include mq-up{
+				@include rem( margin-top , 48px );
+			}
+			@include mq-down{
+				@include rem( margin-top , 40px );
+			}
+		}
+
+		+ h2{
+			@include mq-up{
+				@include rem( margin-top , 104px );
+			}
+			@include mq-down{
+				@include rem( margin-top , 70px );
+			}
+		}
+
+		+ h3{
+			@include mq-up{
+				@include rem( margin-top , 80px );
+			}
+			@include mq-down{
+				@include rem( margin-top , 55px );
+			}
+		}
+	}
+
+
+
+	/* ----- text ----- */
+	h2,h3{
+		@include font-weight(bold);
+		@include line-height( var( --line-height ) );
+		@include line-height-crop;
+		--line-height: 1.8;
+	}
+
+	h2{
+		@include mq-up{
+			@include font-var(21);
+		}
+		@include mq-down{
+			@include font-var(17);
+		}
+	}
+
+	h3{
+		@include mq-up{
+			@include font-var(18);
+		}
+		@include mq-down{
+			@include font-var(16);
+		}
+	}
+
+	p,ul,ol{
+		@include line-height( var( --line-height ) );
+		@include line-height-crop;
+	}
+
+	a{
+		text-decoration: underline;
+		color: #0000EE;
+
+		@include hover{
+			text-decoration: none;
+
+			img{
+				opacity: var( --hover-opacity );
+			}
+		}
+	}
+
+	b,strong{ font-weight: bold; }
+	em{ font-style: italic; }
+	i{ font-style: italic; }
+
+
+	/* ----- ul,ol ----- */
+	ul{ list-style-type: disc;}
+	ol{ list-style-type: decimal;}
+
+
+	/* ----- img,iframe ----- */
+	img,iframe{
+		max-width: 100%;
+	}
+
+	img{
+		+ img{
+			@include rem( margin-top , 20px );
+		}
+	}
+
+	figure,
+	.wp-caption{
+		@include mq-down{
+			text-align: center;
+		}
+	}
+	.wp-caption{
+		max-width: 100% !important;
+	}
+
+
+	/* ----- hr ----- */
+	hr{
+		border: none;
+		height: 1px;
+		background-color: var( --color-line );
+		opacity: .5;
+
+		@include mq-up{
+			@include rem( margin-top , 100px );
+			@include rem( margin-bottom , 100px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 60px );
+			@include rem( margin-bottom , 60px );
+		}
+	}
+
+
+	/* ----- blockquote ----- */
+	blockquote{
+		background-color: var( --color-bg );
+		font-style: italic;
+		font-size: 95%;
+
+		@include mq-up{
+			padding: 2.5em;
+		}
+		@include mq-down{
+			padding: 2em;
+		}
+
+		p{
+			@include line-height-crop;
+			--line-height: 2;
+			opacity: .8;
+		}
+	}
+
+}
+

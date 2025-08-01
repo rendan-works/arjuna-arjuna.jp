@@ -1,0 +1,36 @@
+/**
+ *
+ * splittext.scss
+ *
+ */
+/* ------------------------------------------------------------
+ js-splittext
+------------------------------------------------------------ */
+.js-splittext{
+	opacity: 0;
+
+	&.is-split{
+		opacity: 1;
+	}
+}
+
+
+.js-splittext__text{
+	display: inline-block;
+	opacity: 0;
+	transform: translate3d(0,50%,0);
+	transition: 900ms var( --transition-splittext );
+	transition-delay: calc( var(--delay) + var(--transition-delay,200ms) );
+	transition-property: opacity,transform;
+}
+
+
+.is-shown{
+	&.js-splittext,
+	.js-splittext{
+		.js-splittext__text{
+			opacity: 1;
+			transform: translate3d(0,0,0);
+		}
+	}
+}

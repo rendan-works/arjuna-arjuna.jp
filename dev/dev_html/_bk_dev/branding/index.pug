@@ -1,0 +1,364 @@
+.
+	<?php $this_path = 'branding/'; ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/variable.php' ); ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/functions.php' ); ?>
+	<?php
+		$directory = array(
+			array('HOME','Home',''),
+			array('BRANDING','Branding','branding/'),
+		);
+		$robots = true;
+
+		$meta = array(
+			'title'       => getTitle($directory),
+			'description' => '',
+			'keywords'    => '',
+		);
+
+		$preload = array();
+		$style = array(
+			$root . 'assets/css/page-branding.css',
+		);
+		$script = array(
+			$root . 'assets/js/page-branding.js',
+		);
+		$jquery = false;
+
+		$contact_class = '';
+	 ?>
+//- ------------------------------------------------------------
+//- _tpl_header
+//- ------------------------------------------------------------
+include ../include_pug/_tpl_header.pug
+	//- ------------------------------------------------------------
+	//- main
+	//- ------------------------------------------------------------
+	main.l-main.branding-main
+		// p-hero
+		header.p-hero.-bg3
+			div.p-hero__inner.c-inner-max
+				h1.p-hero__en
+					span.js-splittext BRANDING
+		// /p-hero
+		// branding-intro
+		section.branding-intro
+			div.branding-intro__inner.c-inner-max
+				div.js-trigger.js-fadeups
+					h2.branding-intro__catch.c-crop
+						span.i-ib 気持ちを「楽しい」に
+						span.u-ib 切り替える
+						br
+						span.u-ib ブランディングデザイン
+					p.branding-intro__txt.c-txt-xl2.c-crop.
+						アルジュナは、企業のマインドを楽しさに変えるブランディングの会社です。<br>
+						私達は下に挙げる3つの視点で最適解を考え、クライアントのモチベーションを上げる後押しをします。その先は経営者が自ずから考え、デザインしていける未来を一緒に目指します。
+				div.branding-intro__illust.js-trigger.js-fade
+					div.c-anime-floating
+						img(src!=this_img_path+"intro_illust.webp" alt="" decoding="async")
+		// /branding-intro
+		// branding-groups
+		section.branding-groups
+			// branding-group
+			section.branding-group.c-inner-max
+				header.branding-group__header.c-sticky.js-trigger.js-fadeups
+					p.branding-group__stroke
+						span.c-stroke A
+					h2.branding-group__title 構築フェーズ
+					p.branding-group__title2 ［課題に向き合う］
+				div.branding-group__main
+					// branding-ph
+					section.branding-ph
+						h3.branding-ph__title Phase1
+						div.branding-ph__main
+							h4.branding-ph__title2 聞く
+							p.branding-ph__title3.c-crop 基本調査
+							ul.branding-ph__list.c-list-disc-small.c-crop
+								li ヒアリング
+								li 現場視察
+								li 取材
+							div.branding-ph__illust.-unique1.js-trigger.js-fadeup
+								img(src!=this_img_path+"ph_illust_1.webp" alt="" decoding="async")
+							div.branding-ph__contents
+								p.branding-ph__txt.c-txt-lg3.c-crop 企業のめざす姿を深く理解するために、企業の代表者や担当者などにヒアリングを行います。ここでは企業が目指すあるべき姿や理念、大切にする価値観などを掘り起こすフェーズです。将来、その企業を社会の中でどんな存在にしていきたいのか。そのために事業拡張をどう考え、社員にどんな価値観や行動を求めるのか。こうした具体的な意見を引き出すことが目的です。
+								div.branding-ph__member
+									h5.branding-ph__member__title メンバー
+									ul.branding-ph__member__list.c-list-disc-small.c-crop
+										li クリエイティブ・ディレクター
+										li アートディレクター
+										li コピーライター
+					// /branding-ph
+					// branding-ph
+					section.branding-ph
+						h3.branding-ph__title Phase2
+						div.branding-ph__main
+							h4.branding-ph__title2 まとめる
+							p.branding-ph__title3.c-crop
+								| BI
+								span （ブランド・アイデンティティー）
+								| 開発
+							ul.branding-ph__list.c-list-disc-small.c-crop
+								li 情報整理（課題抽出）
+								li 方向性の策定（目標設定）
+								li ブランドコンセプト制作
+							div.branding-ph__illust.-unique2.js-trigger.js-fadeup
+								img(src!=this_img_path+"ph_illust_2.webp" alt="" decoding="async")
+							div.branding-ph__contents
+								p.branding-ph__txt.c-txt-lg3.c-crop ブランドが消費者とのタッチポイントで実際機能しているかを検証し、販促物の費用対効果の見直しや制作期間・コスト等の見直しを図ります。同時に、企業・商品の目指す方向を定め、ブランドアイデンティティ（BI）の制作に入ります。短期・長期的な目標や課題を立て、ブランドの屋台骨を組み立てる最も重要なフェーズになります。
+								div.branding-ph__member
+									h5.branding-ph__member__title メンバー
+									ul.branding-ph__member__list.c-list-disc-small.c-crop
+										li クリエイティブ・ディレクター
+										li アートディレクター
+										li コピーライター
+					// /branding-ph
+					// branding-ph
+					section.branding-ph
+						h3.branding-ph__title Phase3
+						div.branding-ph__main
+							h4.branding-ph__title2 言葉にする
+							p.branding-ph__title3.c-crop ネーミング開発・コピー制作
+							ul.branding-ph__list.c-list-disc-small.c-crop
+								li 商品ネーミング
+								li キャッチコピー
+								li ブランドストーリー
+							div.branding-ph__illust.-unique3.js-trigger.js-fadeup
+								img(src!=this_img_path+"ph_illust_3.webp" alt="" decoding="async")
+							div.branding-ph__contents
+								p.branding-ph__txt.c-txt-lg3.c-crop ネーミング開発/コピー制作には、ブランドコンセプトを活用していきます。ブランドの構成要素の、どの部分にフォーカスすれば魅力が効果的に伝わるのかを考えます。こうしたプロセスを経てネーミングのコンセプトを構築し、デザインの創案作業へとつなげていきます。ネーミング開発/コピー制作は、ブランディングという一連のプロジェクトにおいて背骨のような役割を果たすものであり、筋の通った戦略が特に必要とされるフェーズです。
+								div.branding-ph__member
+									h5.branding-ph__member__title メンバー
+									ul.branding-ph__member__list.c-list-disc-small.c-crop
+										li クリエイティブ・ディレクター
+										li アートディレクター
+										li コピーライター
+					// /branding-ph
+					// branding-ph
+					section.branding-ph
+						h3.branding-ph__title Phase4
+						div.branding-ph__main
+							h4.branding-ph__title2 視覚化する
+							p.branding-ph__title3.c-crop
+								| VI
+								span （ビジュアル・アイデンティティー）
+								| 開発
+							ul.branding-ph__list.c-list-disc-small.c-crop
+								li ロゴマーク<br>（シンボル／タイプフェース）制作
+								li トーン＆マナー制作
+							div.branding-ph__illust.-unique4.js-trigger.js-fadeup
+								img(src!=this_img_path+"ph_illust_4.webp" alt="" decoding="async")
+							div.branding-ph__contents
+								p.branding-ph__txt.c-txt-lg3.c-crop VIとはブランドの骨子となる視覚的な取り決めです。ブランドコンセプトをもとにして企業・商品独自の価値が効果的に伝わるようなデザインをビジュアル化します。プロジェクトの背景、課題、目的、ブランドコンセプト、ネーミング、そして目指すゴールを再確認し、プロジェクトの全体像を視覚的に設定することで、自分たちが何をめざしてデザインを開発すべきかが理解でき、もし開発途中などで迷っても、立ち返り確認できる指標となります。
+								div.branding-ph__member
+									h5.branding-ph__member__title メンバー
+									ul.branding-ph__member__list.c-list-disc-small.c-crop
+										li クリエイティブ・ディレクター
+										li アートディレクター
+										li デザイナー
+					// /branding-ph
+			// /branding-group
+			// branding-group
+			section.branding-group.c-inner-max
+				header.branding-group__header.c-sticky.js-trigger.js-fadeups
+					p.branding-group__stroke
+						span.c-stroke B
+					h2.branding-group__title 制作フェーズ
+					p.branding-group__title2 ［計画内容をビジュアル化する］
+				div.branding-group__main
+					// branding-ph
+					section.branding-ph
+						h3.branding-ph__title Phase5
+						div.branding-ph__main
+							h4.branding-ph__title2 表現する
+							p.branding-ph__title3.c-crop 販促物制作
+							p.branding-ph__list.c-crop.
+								デザイン制作/校正/パンフレット/<br>
+								ポスター/SNS広告/ウェブサイト/<br>
+								PR動画/LP/商品パッケージ…
+							div.branding-ph__illust.-unique5.js-trigger.js-fadeup
+								img(src!=this_img_path+"ph_illust_5.webp" alt="" decoding="async")
+							div.branding-ph__contents
+								p.branding-ph__txt.c-txt-lg3.c-crop ブランドコンセプト開発・ネーミング開発/コピー制作、VIを元に、目的に向かって課題をどう解決させるか、解決の先にどういった結果へ導くかを、チャレンジおよびゴールとして設定し決定した販促物を制作するフェーズです。クリエイティブチームが一丸となって制作し、企業の開発チームヘと共有します。
+								div.branding-ph__member
+									h5.branding-ph__member__title メンバー
+									ul.branding-ph__member__list.c-list-disc-small.c-crop
+										li クリエイティブ・ディレクター
+										li アートディレクター
+										li ウェブデザイナー
+										li 動画ディレクター
+										li フォトグラファー
+										li イラストレーター
+									p.branding-ph__member__etc etc..
+					// /branding-ph
+					// branding-ph
+					section.branding-ph
+						h3.branding-ph__title Phase6
+						div.branding-ph__main
+							h4.branding-ph__title2 発信する
+							p.branding-ph__title3.c-crop イメージの発信・管理
+							ul.branding-ph__list.c-list-disc-small.c-crop
+								li レギュレーション共有
+								li ブランドローンチ
+							div.branding-ph__illust.-unique6.js-trigger.js-fadeup
+								img(src!=this_img_path+"ph_illust_6.webp" alt="" decoding="async")
+							div.branding-ph__contents
+								p.branding-ph__txt.c-txt-lg3.c-crop ネーミング開発/コピー制作には、ブランドコンセプトを活用していきます。ブランドの構成要素の、どの部分にフォーカスすれば魅力が効果的に伝わるのかを考えます。こうしたプロセスを経てネーミングのコンセプトを構築し、デザインの創案作業へとつなげていきます。ネーミング開発/コピー制作は、ブランディングという一連のプロジェクトにおいて背骨のような役割を果たすものであり、筋の通った戦略が特に必要とされるフェーズです。
+								div.branding-ph__member
+									h5.branding-ph__member__title メンバー
+									ul.branding-ph__member__list.c-list-disc-small.c-crop
+										li クリエイティブ・ディレクター
+										li アートディレクター
+										li ウェブデザイナー
+										li 動画ディレクター
+										li フォトグラファー
+										li イラストレーター
+									p.branding-ph__member__etc etc..
+					// /branding-ph
+			// /branding-group
+			// branding-group
+			section.branding-group.c-inner-max
+				header.branding-group__header.c-sticky.js-trigger.js-fadeups
+					p.branding-group__stroke
+						span.c-stroke C
+					h2.branding-group__title 検証フェーズ
+					p.branding-group__title2 ［計画を振り返り対策を練る］
+				div.branding-group__main
+					// branding-ph
+					section.branding-ph
+						h3.branding-ph__title Phase7
+						div.branding-ph__main
+							h4.branding-ph__title2 検証する
+							p.branding-ph__title3.c-crop PDCA
+							ul.branding-ph__list.c-list-disc-small.c-crop
+								li 販促物の効果測定
+								li 次期の課題設定
+							div.branding-ph__illust.-unique7.js-trigger.js-fadeup
+								img(src!=this_img_path+"ph_illust_7.webp" alt="" decoding="async")
+							div.branding-ph__contents
+								p.branding-ph__txt.c-txt-lg3.c-crop BI構築の際に立てた目標設定を元に、販売促進が適切に行われたか、利益に結びついたかを数値で測定し、クリエイターとの共有を行います。計画・実行・評価・改善のサイクルを繰り返し、社内外で情報を共有することで、各々の課題としっかり見据え、長期的なブランド戦略へと繋いでいくことができます。
+								div.branding-ph__member
+									h5.branding-ph__member__title メンバー
+									ul.branding-ph__member__list.c-list-disc-small.c-crop
+										li クリエイティブ・ディレクター
+					// /branding-ph
+			// /branding-group
+		// /branding-groups
+		// branding-members
+		section.branding-members
+			div.branding-members__inner.c-inner-max
+				header.branding-members__header
+					h2.c-title4.js-trigger.js-fadeup: span.c-stroke Creative Members
+				div.branding-members__contents.js-trigger.js-fadeups
+					h3.branding-members__catch.c-crop.
+						ブランドづくりを支える、<br>
+						クリエイティブの仲間たち
+					p.branding-members__txt.c-txt-xl2.c-crop ブランドの「らしさ」を見つけ、企業の課題を一緒に考えるパートナー。そして言葉やカタチにアウトプットし社会に発信するためのプロの仲間たちがいます。自由にアイデアを出し合って、愉快なクリエイティブチームと共に楽しくデザインしていきましょう。
+					div.branding-members__illust.js-trigger.js-fadeup
+						img(src!=this_img_path+"members_illust.webp" alt="" decoding="async")
+				div.branding-members__carousel
+					div.swiper-wrapper
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_movie-director.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Movie director
+							p.branding-members__slide__txt.c-txt-lg4.c-crop 映像のストーリーテラー。映像作品の企画、撮影、編集を統括し、メッセージを視覚的に伝える。映画や広告、プロモーションビデオで、視聴者を魅了するストーリーを描きます。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_creative-director.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Creative Director
+							p.branding-members__slide__txt.c-txt-lg4.c-crop クライアントのビジョンを現実にするため、クリエイティブなチームを導く司令塔。広告、デザイン、コンテンツ制作を総合的にプロデュースし、ブランドの魅力を最大限に引き出します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_art-director.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Art Director
+							p.branding-members__slide__txt.c-txt-lg4.c-crop デザインの頂点を極めるアートの指揮者。ビジュアルコンセプトを統括し、クリエイティブプロジェクトの美的方向性を決定。アートとデザインの融合で、印象的なビジュアルを生み出します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_graphic-designer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Graphic Designer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop ビジュアルの職人。ポスター、ロゴ、広告など、視覚的な要素を駆使してメッセージを伝えるデザインを制作。色彩やフォントの選択にもこだわり、目を引くデザインを創り出します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_copy-writer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Copy Writer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop 言葉のアーティスト。巧みな言葉遣いで、読者の心を掴むキャッチコピーや魅力的な文章を作成。広告やウェブコンテンツで、ブランドのストーリーを伝えます。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_web-designer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Web Designer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop デジタル空間のアーティスト。魅力的で使いやすいウェブサイトをデザインし、ユーザーエクスペリエンスを向上。最新のトレンドを取り入れたクリエイティブなウェブページを構築します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_web-engineer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Web Engineer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop コードの魔術師。ウェブサイトやアプリの機能を実現するためのプログラミングを担当。技術と創造性を駆使して、ユーザーに最高のデジタル体験を提供します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_photographer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Photographer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop 瞬間を切り取るプロフェッショナル。美しい風景、ポートレート、イベント写真を撮影し、感動を画像で伝える。光と影の魔法使いで、見たことのない世界を見せてくれます。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_illustrator.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Illustrator
+							p.branding-members__slide__txt.c-txt-lg4.c-crop 絵の魔術師。書籍、広告、ウェブなどで使われるイラストを描き、視覚的な物語を紡ぐ。独自のスタイルと豊かな想像力で、夢の世界を現実に描きます。
+						// clone
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_movie-director.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Movie director
+							p.branding-members__slide__txt.c-txt-lg4.c-crop 映像のストーリーテラー。映像作品の企画、撮影、編集を統括し、メッセージを視覚的に伝える。映画や広告、プロモーションビデオで、視聴者を魅了するストーリーを描きます。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_creative-director.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Creative Director
+							p.branding-members__slide__txt.c-txt-lg4.c-crop クライアントのビジョンを現実にするため、クリエイティブなチームを導く司令塔。広告、デザイン、コンテンツ制作を総合的にプロデュースし、ブランドの魅力を最大限に引き出します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_art-director.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Art Director
+							p.branding-members__slide__txt.c-txt-lg4.c-crop デザインの頂点を極めるアートの指揮者。ビジュアルコンセプトを統括し、クリエイティブプロジェクトの美的方向性を決定。アートとデザインの融合で、印象的なビジュアルを生み出します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_graphic-designer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Graphic Designer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop ビジュアルの職人。ポスター、ロゴ、広告など、視覚的な要素を駆使してメッセージを伝えるデザインを制作。色彩やフォントの選択にもこだわり、目を引くデザインを創り出します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_copy-writer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Copy Writer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop 言葉のアーティスト。巧みな言葉遣いで、読者の心を掴むキャッチコピーや魅力的な文章を作成。広告やウェブコンテンツで、ブランドのストーリーを伝えます。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_web-designer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Web Designer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop デジタル空間のアーティスト。魅力的で使いやすいウェブサイトをデザインし、ユーザーエクスペリエンスを向上。最新のトレンドを取り入れたクリエイティブなウェブページを構築します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_web-engineer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Web Engineer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop コードの魔術師。ウェブサイトやアプリの機能を実現するためのプログラミングを担当。技術と創造性を駆使して、ユーザーに最高のデジタル体験を提供します。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_photographer.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Photographer
+							p.branding-members__slide__txt.c-txt-lg4.c-crop 瞬間を切り取るプロフェッショナル。美しい風景、ポートレート、イベント写真を撮影し、感動を画像で伝える。光と影の魔法使いで、見たことのない世界を見せてくれます。
+						div.branding-members__slide.swiper-slide
+							figure.branding-members__slide__illust
+								img(src!=this_img_path+"members_illustrator.webp" alt="" decoding="async")
+							h4.branding-members__slide__title Illustrator
+							p.branding-members__slide__txt.c-txt-lg4.c-crop 絵の魔術師。書籍、広告、ウェブなどで使われるイラストを描き、視覚的な物語を紡ぐ。独自のスタイルと豊かな想像力で、夢の世界を現実に描きます。
+						// /clone
+					ul.branding-members__ui
+						li.branding-members__ui__prev: button: i.c-arrow2.-small.c-icon
+						li.branding-members__ui__next: button: i.c-arrow2.-small.c-icon
+		// /branding-members
+
+
+	//- ------------------------------------------------------------
+	//- /main
+	//- ------------------------------------------------------------
+
+	//- ------------------------------------------------------------
+	//- _tpl_footer
+	//- ------------------------------------------------------------
+	include ../include_pug/_tpl_footer.pug

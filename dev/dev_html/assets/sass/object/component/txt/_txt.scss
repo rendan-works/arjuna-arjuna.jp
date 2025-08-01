@@ -1,0 +1,238 @@
+/**
+ *
+ * txt.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-txts
+------------------------------------------------------------ */
+.c-txts{
+	> *{
+		&:not(:last-child){
+			&::after{
+				content: '\A\A';
+				display: inline;
+				white-space: pre;
+			}
+		}
+	}
+}
+
+.c-txts2{
+	> *{
+		&:not(:last-child){
+			&::after{
+				content: '\A';
+				display: block;
+				white-space: pre;
+			}
+		}
+	}
+}
+
+
+
+
+/*
+	xs   : 12
+	sm   : 13
+	rg   : 14
+	md   : 15
+	lg   : 16
+	xl   : 18
+	xxl  : 20
+	xxxl : 22
+	xxxxl: 24
+ */
+/* ------------------------------------------------------------
+ c-txt-medium
+------------------------------------------------------------ */
+// .c-txt-medium{
+// 	@include mq-up{
+// 		@include font-var(14);
+// 		@include var-line-height(14,24);
+// 	}
+// 	@include mq-down{
+// 		@include font-var(11);
+// 		@include var-line-height(22,36);
+// 	}
+// }
+
+
+/* ------------------------------------------------------------
+ c-txt-md
+------------------------------------------------------------ */
+.c-txt-md{
+	@include font-var(15);
+
+	@include mq-up{
+		@include var-line-height(15,32);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include var-line-height(30,68);
+	}
+}
+
+.c-txt-md2{
+	@include mq-up{
+		@include font-var(15);
+		@include var-line-height(15,32);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(13);
+		@include var-line-height(30,68);
+	}
+}
+
+
+/* ------------------------------------------------------------
+ c-txt-lg
+------------------------------------------------------------ */
+.c-txt-lg{
+	@include mq-up{
+		@include font-var(16);
+		@include var-line-height(16,32);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(15);
+		@include var-line-height(30,68);
+	}
+}
+
+.c-txt-lg2{
+	@include mq-up{
+		@include font-var(16);
+		@include var-line-height(16,32);
+	}
+	@include mq-down{
+		@include font-var(13);
+		@include var-line-height(26,52);
+	}
+}
+
+.c-txt-lg3{
+	@include letter-spacing(40);
+
+	@include mq-up{
+		@include font-var(16);
+		@include var-line-height(16,32);
+	}
+	@include mq-down{
+		@include font-var(13);
+		@include var-line-height(26,52);
+	}
+}
+
+.c-txt-lg4{
+	@include letter-spacing(40);
+
+	@include mq-up{
+		@include font-var(16);
+		@include var-line-height(16,28);
+	}
+	@include mq-down{
+		@include font-var(13);
+		@include var-line-height(26,48);
+	}
+}
+
+
+/* ------------------------------------------------------------
+ c-txt-lgx
+------------------------------------------------------------ */
+.c-txt-lgx{
+	@include mq-up{
+		@include font-var(17);
+		@include var-line-height(17,38);
+	}
+	@include mq-down{
+		@include font-var(15);
+		@include var-line-height(30,68);
+	}
+}
+
+
+/* ------------------------------------------------------------
+ c-txt-xl
+------------------------------------------------------------ */
+.c-txt-xl{
+	@include mq-up{
+		@include font-var(18);
+		@include var-line-height(18,36);
+	}
+	@include mq-down{
+		@include font-var(15);
+		@include var-line-height(30,68);
+	}
+}
+
+.c-txt-xl2{
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(18);
+		@include var-line-height(18,36);
+	}
+	@include mq-down{
+		@include font-var(13);
+		@include var-line-height(26,52);
+	}
+}
+
+.c-txt-xl3{
+	@include font-weight(bold);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(18);
+		@include var-line-height(18,42);
+	}
+	@include mq-down{
+		@include font-var(14);
+		@include var-line-height(28,54);
+	}
+}
+
+.c-txt-xl4{
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(18);
+		@include var-line-height(18,51);
+		@include letter-spacing(100);
+
+		@media screen and ( max-width: 1500px ){
+			font-size: calcVw(18,1500);
+		}
+	}
+	@include mq-down{
+		@include font-var(14);
+		@include var-line-height(28,54);
+		@include letter-spacing(40);
+	}
+}
+
+
+/* ------------------------------------------------------------
+ c-txt-xxxl
+------------------------------------------------------------ */
+.c-txt-xxxl{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(22);
+		@include var-line-height(22,36);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(15);
+		@include var-line-height(30,56);
+		// @include letter-spacing(-40);
+	}
+}
+
+
+

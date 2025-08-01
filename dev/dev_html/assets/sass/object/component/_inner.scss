@@ -1,0 +1,60 @@
+/**
+ *
+ * inner.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-inner
+------------------------------------------------------------ */
+[class*="c-inner"]{
+	--parent-width: var( --inner-width );
+	margin: 0 auto;
+}
+
+.c-inner-sm,
+.c-inner-md,
+.c-inner-lg{
+	width: var( --contents );
+
+	@include mq-up{
+		max-width: calc( var(--inner-width) * 0.1rem );
+	}
+	@include mq-down{
+		--inner-width: 320;
+	}
+}
+
+@include mq-up{
+	// .c-inner-sm{ --inner-width : 840; }
+	// .c-inner-rg{ --inner-width : 1000; }
+	.c-inner-md{ --inner-width : 1100; }
+	// .c-inner-lg{ --inner-width : 1200; }
+	// .c-inner-xl{ --inner-width : 1300; }
+	// .c-inner-xxl{ --inner-width: 1400; }
+}
+
+
+/* ------------------------------------------------------------
+ c-inner-max
+------------------------------------------------------------ */
+.c-inner-max{
+	width: var( --contents );
+
+	@include mq-up{
+		--inner-width: 1300;
+		@include rem( max-width , 2200px );
+	}
+	@include mq-down{
+		--inner-width: 320;
+
+		&.-contents-lg{
+			--inner-width: 360;
+			width: var( --contents-lg );
+		}
+		&.-contents-full{
+			--inner-width: 400;
+			width: 100%;
+		}
+	}
+}
+

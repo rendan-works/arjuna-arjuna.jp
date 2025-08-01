@@ -1,0 +1,68 @@
+//
+//
+// breakpoint.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// breakpoint
+// max-widthは下記のまま、min-widthは下記から+1px足したものとなる
+//
+// 基本的にはmax-widthでキリの良い数字となります。(320pxや1280pxなど)
+// ただ、iPadはスマホ表示よりPC表示の方がサイズ的にもほどよいので、
+// 768px,1024のsm,mdのみ、1px引いた数字となっています。
+///////////////////////////////////////////////////////////////
+$breakpoint: (
+	'xxxs': 320,
+	'xxs' : 400,
+	'xs'  : 430,
+	'sm'  : 560,
+	'md'  : 767,
+	'lg'  : 1023,
+	'xl'  : 1280,
+	'xxl' : 1440,
+	'xxxl': 1680,
+	'fhd' : 1920,
+	'2k'  : 2048,
+	'wqhd': 2560,
+) !default;
+
+///////////////////////////////////////////////////////////////
+// breakpoint-up-width
+///////////////////////////////////////////////////////////////
+$breakpoint-up-width: (
+	'xxxs': '(min-width: '+ ( map-get($breakpoint, 'xxxs') + 1 ) +'px)',
+	'xxs' : '(min-width: '+ ( map-get($breakpoint, 'xxs') + 1 ) +'px)',
+	'xs'  : '(min-width: '+ ( map-get($breakpoint, 'xs') + 1 ) +'px)',
+	'sm'  : '(min-width: '+ ( map-get($breakpoint, 'sm') + 1 ) +'px)',
+	'md'  : '(min-width: '+ ( map-get($breakpoint, 'md') + 1 ) +'px)',
+	'lg'  : '(min-width: '+ ( map-get($breakpoint, 'lg') + 1 ) +'px)',
+	'xl'  : '(min-width: '+ ( map-get($breakpoint, 'xl') + 1 ) +'px)',
+	'xxl' : '(min-width: '+ ( map-get($breakpoint, 'xxl') + 1 ) +'px)',
+	'xxxl': '(min-width: '+ ( map-get($breakpoint, 'xxxl') + 1 ) +'px)',
+	'fhd' : '(min-width: '+ ( map-get($breakpoint, 'fhd') + 1 ) +'px)',
+	'2k'  : '(min-width: '+ ( map-get($breakpoint, '2k') + 1 ) +'px)',
+	'wqhd': '(min-width: '+ ( map-get($breakpoint, 'wqhd') + 1 ) +'px)',
+) !default;
+
+///////////////////////////////////////////////////////////////
+// breakpoint-down-width
+///////////////////////////////////////////////////////////////
+$breakpoint-down-width: (
+	'xxxs': '(max-width: '+ ( map-get($breakpoint, 'xxxs') ) +'px)',
+	'xxs' : '(max-width: '+ ( map-get($breakpoint, 'xxs') ) +'px)',
+	'xs'  : '(max-width: '+ ( map-get($breakpoint, 'xs') ) +'px)',
+	'sm'  : '(max-width: '+ ( map-get($breakpoint, 'sm') ) +'px)',
+	'md'  : '(max-width: '+ ( map-get($breakpoint, 'md') ) +'px)',
+	'lg'  : '(max-width: '+ ( map-get($breakpoint, 'lg') ) +'px)',
+	'xl'  : '(max-width: '+ ( map-get($breakpoint, 'xl') ) +'px)',
+	'xxl' : '(max-width: '+ ( map-get($breakpoint, 'xxl') ) +'px)',
+	'xxxl': '(max-width: '+ ( map-get($breakpoint, 'xxxl') ) +'px)',
+	'fhd' : '(max-width: '+ ( map-get($breakpoint, 'fhd') ) +'px)',
+	'2k'  : '(max-width: '+ ( map-get($breakpoint, '2k') ) +'px)',
+	'wqhd': '(max-width: '+ ( map-get($breakpoint, 'wqhd') ) +'px)',
+) !default;
+
+
+
+

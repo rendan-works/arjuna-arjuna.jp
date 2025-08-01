@@ -1,0 +1,57 @@
+/**
+ *
+ * down.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-down
+------------------------------------------------------------ */
+.c-down{
+	display: block;
+	background-color: currentColor;
+	clip-path: polygon(0 0, 50% 100%, 100% 0);
+	transition: transform var( --transition-hover ), clip-path var( --transition-accordion );
+
+	@include mq-up{
+		@include rem( width , 22px );
+		@include rem( height , 21px );
+	}
+	@include mq-down{
+		@include rem( width , 12px );
+		@include rem( height , 10px );
+	}
+
+
+
+
+	@include hover-query{
+		a:hover &,
+		button:hover &{
+			transform: scale( var(--hover-scale2) );
+		}
+	}
+
+	.js-accordion-click.is-open &{
+		clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	}
+
+}
+
+
+
+
+/* ------------------------------------------------------------
+ c-down2
+------------------------------------------------------------ */
+.c-down2{
+	display: block;
+
+	svg{
+		@include rem( width , 55px );
+		@include rem( height , 46px );
+	}
+
+}
+
+
+

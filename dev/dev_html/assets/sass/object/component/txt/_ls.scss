@@ -1,0 +1,42 @@
+/**
+ *
+ * ls.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-ls
+ letter-spacingで生じる余白をmarginを使って相殺
+------------------------------------------------------------ */
+[class*="c-ls"]{
+	letter-spacing: var( --letter-spacing );
+}
+
+.c-ls{
+	margin-right: calc( var( --letter-spacing ) * -1 );
+}
+
+.c-ls-v{
+	margin-bottom: calc( var( --letter-spacing ) * -1 );
+}
+
+.c-ls-v-h-lg{
+	@include mq-up{
+		margin-bottom: calc( var( --letter-spacing ) * -1 );
+	}
+	@include mq-down{
+		margin-right: calc( var( --letter-spacing ) * -1 );
+	}
+}
+
+.c-ls-h-v-lg{
+	@include mq-up{
+		margin-right: calc( var( --letter-spacing ) * -1 );
+	}
+	@include mq-down{
+		margin-bottom: calc( var( --letter-spacing ) * -1 );
+	}
+}
+
+
+
+

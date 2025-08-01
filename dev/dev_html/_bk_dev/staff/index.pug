@@ -1,0 +1,163 @@
+.
+	<?php $this_path = 'staff/'; ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/variable.php' ); ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/functions.php' ); ?>
+	<?php
+		$directory = array(
+			array('HOME','Home',''),
+			array('STAFF','Staff','staff/'),
+		);
+		$robots = true;
+
+		$meta = array(
+			'title'       => getTitle($directory),
+			'description' => '',
+			'keywords'    => '',
+		);
+
+		$preload = array();
+		$style = array(
+			$root . 'assets/css/page-staff.css',
+		);
+		$script = array();
+		$jquery = false;
+
+		$contact_class = '';
+	 ?>
+//- ------------------------------------------------------------
+//- _tpl_header
+//- ------------------------------------------------------------
+include ../include_pug/_tpl_header.pug
+	//- ------------------------------------------------------------
+	//- main
+	//- ------------------------------------------------------------
+	main.l-main.staff-main
+		// p-hero
+		header.p-hero.-bg3
+			div.p-hero__inner.c-inner-max
+				h1.p-hero__en
+					span.js-splittext STAFF
+		// /p-hero
+		// staff-list
+		div.staff-list
+			div.c-inner-max
+				// staff-article
+				article.staff-article
+					div.staff-article__main
+						div.staff-article__flex
+							div.staff-article__profile
+								h2.staff-article__name 笹田 健一
+								p.staff-article__kana Kenichi Sasada
+								p.staff-article__post 代表取締役
+								p.staff-article__degree クリエイティブマネージャー
+							figure.staff-article__figure.u-n-mqUp-lg
+								img(src!=this_img_path+"kenichi-sasada.webp" alt="" decoding="async")
+						div.staff-article__txts.c-txts2.c-txt-lg2.c-crop
+							p 1979年長崎県時津町生まれ。長崎県立長崎北陽台高校卒業、久留米大学経済学部経済学科卒業後、長崎県の印刷会社にて営業職を務める。 印刷とデザインの関係性をもっと深めた提案をしたいと悶々とし続ける中、小中高の先輩（牛島）に誘われ2008年長崎県にてデザインオフィスdesignARJUNAを設立。 印刷に関する知識を活かしたデザインの提案をはじめ、商品開発や販路開拓をはじめ、経営戦略に係わるデザインの提案を積極的に行っている。
+							div
+								h3 取得資格
+								ul
+									li 平成25年度農商工連携プロデューサー育成塾修了
+									li 長崎県産業振興財団　企業インストラクター
+									li 長崎県商工会　企業インストラクター
+							div
+								p 特技：どれだけ遅く寝ても必ず朝５時に起きる
+								p 趣味：マラソン、お酒（ハイボール）、仕事
+					div.staff-article__side
+						figure.staff-article__figure.u-n-mqDown-lg
+							img(src!=this_img_path+"kenichi-sasada.webp" alt="" decoding="async")
+						p.staff-article__button.p-button5
+							a(href!=root+"blog/category/kenichi-sasada/#target-archive")
+								span.p-button5__en BLOG
+								i.c-icon.c-arrow.-large
+								span.p-button5__ja 経営デザインのイノベーション経営デザインのイノベーション
+				// /staff-article
+				// staff-article
+				article.staff-article
+					div.staff-article__main
+						div.staff-article__flex
+							div.staff-article__profile
+								h2.staff-article__name 亀井 樹世
+								p.staff-article__kana Kiyo Kamei
+								p.staff-article__post 取締役
+								p.staff-article__degree アートディレクター
+							figure.staff-article__figure.u-n-mqUp-lg
+								img(src!=this_img_path+"kiyo-kamei.webp" alt="" decoding="async")
+						div.staff-article__txts.c-txts2.c-txt-lg2.c-crop
+							p 1978年長崎県時津町生まれ。長崎県立長崎北陽台高校卒業。2001年京都造形芸術大学芸術学部情報デザイン学科卒業。株式会社ダイアモンドヘッズにウェブデザイナーとして入社後大手化粧品ブランド、スポーツメーカー等のウェブサイト制作に従事。2007年京都の大谷専修学院にて僧侶・教師の資格を取得。大乗仏教の祖、龍樹（ナーガールジュナ）から取った「アルジュナ」という名を賜り、2008年designARJUNAを設立。アートディレクターとして活動中。実家は浄土真宗の寺院。 2017年 北海道パッケージデザインコンテストグランプリ、2018年K-ADCアワードベストナイン、2022年日本タイポグラフィー年鑑入選。九州ADC会員、JAGDA会員。
+							div
+								h3 取得資格
+								ul
+									li 真宗大谷派僧侶教師資格
+								p 得意技：書道とDJとエレキベース
+								p 尊敬する人物：ジョージ秋山、セオ・パリッシュ、キャプテン・センシブル。
+					div.staff-article__side
+						figure.staff-article__figure.u-n-mqDown-lg
+							img(src!=this_img_path+"kiyo-kamei.webp" alt="" decoding="async")
+						p.staff-article__button.p-button5
+							a(href!=root+"blog/category/kiyo-kamei/#target-archive")
+								span.p-button5__en BLOG
+								i.c-icon.c-arrow.-large
+								span.p-button5__ja 樹世の雑記「わたしがわらえば」
+				// /staff-article
+				// staff-article
+				article.staff-article
+					div.staff-article__main
+						div.staff-article__flex
+							div.staff-article__profile
+								h2.staff-article__name 宮崎 拓也
+								p.staff-article__kana Takuya Miyazaki
+								p.staff-article__degree グラフィックデザイナー
+							figure.staff-article__figure.u-n-mqUp-lg
+								img(src!=this_img_path+"takuya-miyazaki.webp" alt="" decoding="async")
+						div.staff-article__txts.c-txts2.c-txt-lg2.c-crop
+							p 1998年佐賀県小城市生まれ。 小さい頃からモノづくりが好きで、高校を卒業後地元を離れて、崇城大学芸術学部デザイン学科に入学。 プロダクトデザインの道に進むつもりが、文字の魅力に取り憑かれ、グラフィックデザインを専攻。 DM、パンフレット、図録など紙媒体をメインで制作。大学卒業後、様々な媒体でデザインを生み出す株式会社アルジュナに入社。 今後は、クライアントの想いにそっと寄り添い、期待に答える、期待を超えるデザインで返していきたいです。
+							div
+								h3 取得資格
+								ul
+									li 学芸員資格
+								p 特技：桑田佳祐
+								p 趣味：映画鑑賞、文字観賞
+					div.staff-article__side
+						figure.staff-article__figure.u-n-mqDown-lg
+							img(src!=this_img_path+"takuya-miyazaki.webp" alt="" decoding="async")
+						p.staff-article__button.p-button5
+							a(href!=root+"blog/category/takuya-miyazaki/#target-archive")
+								span.p-button5__en BLOG
+								i.c-icon.c-arrow.-large
+								span.p-button5__ja 旅するデザイン
+				// /staff-article
+				// staff-article
+				article.staff-article
+					div.staff-article__main
+						div.staff-article__flex
+							div.staff-article__profile
+								h2.staff-article__name 大坪　響
+								p.staff-article__kana Hibiki Otsubo
+								p.staff-article__degree 進行管理／イラストレーター
+							figure.staff-article__figure.u-n-mqUp-lg
+								img(src!=this_img_path+"hibiki-otsubo.webp" alt="" decoding="async")
+						div.staff-article__txts.c-txts2.c-txt-lg2.c-crop
+							p 1990年長崎県長崎市生まれ。 長崎県立長崎北陽台高校卒業。 2015年東北芸術工科大学修士課程芸術文化専攻洋画領域修了。 その後、化学メーカーの壁紙部門で壁紙の企画開発に従事。退職後、地元長崎でデザインの仕事に携わりたいという思いからアルジュナの扉を叩く。 本当に必要とされているものを見極め、お客様の背中をそっと後押しできるような、そんな仕事ができるよう頑張っていきたいです。
+							div
+								p 特技：人の顔を覚える
+								p 趣味：紙見本収集、グミ
+					div.staff-article__side
+						figure.staff-article__figure.u-n-mqDown-lg
+							img(src!=this_img_path+"hibiki-otsubo.webp" alt="" decoding="async")
+						p.staff-article__button.p-button5
+							a(href!=root+"blog/category/hibiki-otsubo/#target-archive")
+								span.p-button5__en BLOG
+								i.c-icon.c-arrow.-large
+								span.p-button5__ja タイトルが長い時の表示イメージですタイトルが長い時の表示イメージですタイトルが長い時の表示イメージです
+				// /staff-article
+		// /staff-list
+
+	//- ------------------------------------------------------------
+	//- /main
+	//- ------------------------------------------------------------
+
+	//- ------------------------------------------------------------
+	//- _tpl_footer
+	//- ------------------------------------------------------------
+	include ../include_pug/_tpl_footer.pug

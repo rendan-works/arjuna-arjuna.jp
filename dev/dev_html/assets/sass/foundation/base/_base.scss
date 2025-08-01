@@ -1,0 +1,161 @@
+/**
+ *
+ * base.scss
+ *
+ */
+/* ------------------------------------------------------------
+ setting
+------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	// backface-visibility: hidden;
+}
+
+
+/* ---------- scrollbar ---------- */
+// ::-webkit-scrollbar{
+// 	width: 8px;
+// 	height: 6px;
+// }
+// ::-webkit-scrollbar-track{
+// 	background: var( --color-white );
+// 	border-left: solid 1px $color-gray-2;
+// }
+// ::-webkit-scrollbar-thumb{
+// 	background: $color-gray-2;
+// }
+
+
+/* ---------- selection ---------- */
+::selection {
+}
+
+//Firefox
+::-moz-selection {
+}
+
+
+
+
+/* ------------------------------------------------------------
+ base
+------------------------------------------------------------ */
+/*
+	htmlのフォントサイズは、下記のブラウザ幅では62.5%ではなくvwに。
+
+	・1280px ~ 1024px
+	・768px ~ 561px
+	・375px ~
+ */
+html{
+	height: 100vh;
+	font-size: 62.5%;
+
+	@include mq-updown(xl,lg){
+		font-size: 10 / 1280 * 100 + vw;
+	}
+	@include mq-updown(md,sm){
+		font-size: 10 / 767 * 100 + vw;
+	}
+	@include mq-down(xxs){
+		font-size: 10 / 400 * 100 + vw;
+	}
+}
+
+
+body{
+	width: 100%;
+	background-color: var( --color-bg );
+	color: var( --color-txt );
+	@include font-family( gothic );
+	@include font-weight( regular );
+	font-size: 1.0rem;
+	// @include kerning;
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
+	text-rendering: geometricPrecision;
+	text-decoration-thickness: 1px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: rgba(0,0,0,.2);
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	overscroll-behavior: none;
+
+	// *:not(a):not(span):not(small):not(time):not(budoux-ja){
+	// 	@include letter-spacing(50);
+	// }
+}
+
+h1,h2,h3,h4,h5,h6{
+	// @include font16;
+	@include font-weight( regular );
+}
+
+dt,dd,address,th,td,li{
+	font-size: inherit;
+	line-height: inherit;
+}
+
+ul,ol{
+	list-style-position: inside;
+}
+
+p{
+	// @include line-height(16,24);
+
+	// @include mq-up(sm){
+	// 	@include font13;
+	// }
+	// @include mq-down(sm){
+	// 	@include font12;
+	// }
+}
+
+a,
+input,
+select,
+textarea,
+button{
+	@include transition;
+	// @include hover-opacity;
+}
+
+input,
+select,
+textarea,
+button{
+	font-family: inherit;
+}
+
+svg{
+	fill: currentColor;
+	@include transition( fill );
+}
+
+img{
+	body.ua-chrome &{
+		image-rendering: -webkit-optimize-contrast;
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ ページ内リンク
+ ページ内リンクのターゲットで上に余白を持たせたい場合は、idを [area-] から記述する。
+ 以下スタイルでアニメーション後の上の余白を一括調整
+ 上の余白がいらないものは、 [target-] で記述する。
+------------------------------------------------------------ */
+[id^="area-"]{
+	transform: translateY(-8.0rem);
+}
+
+[id^="area2-"]{
+	@include rem( margin-top , -80px );
+	@include rem( padding-top , 80px );
+}
+

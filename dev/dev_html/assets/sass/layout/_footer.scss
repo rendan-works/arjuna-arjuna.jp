@@ -1,0 +1,224 @@
+/**
+ *
+ * footer.scss
+ *
+ */
+/* ------------------------------------------------------------
+ l-footer
+------------------------------------------------------------ */
+.l-footer{
+	background-color: var( --color-bg2 );
+	color: var( --color-txt2 );
+}
+
+
+.l-footer__inner{
+	@include mq-up{
+		display: flex;
+		justify-content: space-between;
+		@include rem( padding-top , 60px );
+		@include rem( padding-bottom , 47px );
+	}
+	@include mq-down{
+		@include rem( padding-top , 35px );
+		@include rem( padding-bottom , 35px );
+	}
+}
+
+
+
+/* ----------------------------------------
+ l-footer__profile
+---------------------------------------- */
+.l-footer__profile{
+	display: flex;
+	flex-direction: column;
+
+	@include mq-up{
+		@include rem( margin-top , 5px );
+	}
+}
+
+/* ---------- l-footer__logo ----------*/
+.l-footer__logo{
+	@include mq-down{
+		display: flex;
+		justify-content: center;
+	}
+
+	a{
+		display: block;
+		@include hover-opacity;
+	}
+
+	svg{
+		@include mq-up{
+			@include rem( width , 324px * .8 );
+			@include rem( height , 52px * .8 );
+		}
+		@include mq-up(xxl){
+			@include rem( width , 324px );
+			@include rem( height , 52px );
+		}
+		@include mq-down{
+			@include rem( width , 151px );
+			@include rem( height , 24px );
+		}
+	}
+}
+
+/* ---------- l-footer__service ----------*/
+.l-footer__service{
+	// text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+	@include var-line-height(13,23);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(13);
+		@include rem( margin-top , 35px );
+	}
+	@include mq-down{
+		@include font-var(7);
+		text-align: center;
+		@include rem( margin-top , 22px );
+	}
+}
+
+/* ---------- l-footer__service ----------*/
+.l-footer__address{
+	@include font-var(14);
+	@include var-line-height(14,22);
+	margin-top: auto;
+
+	@include mq-down{
+		display: none;
+	}
+
+	.u-font-sans-serif{
+		@include font-weight(medium);
+		@include letter-spacing(200);
+		margin: 0 0.2em;
+	}
+}
+
+
+
+
+/* ----------------------------------------
+ l-footer__nav
+---------------------------------------- */
+.l-footer__nav{
+	@include mq-up{
+		display: flex;
+		align-items: flex-start;
+	}
+	@include mq-down{
+		display: none;
+	}
+
+	a{
+		display: block;
+	}
+}
+
+
+/* ---------- l-footer__nav__en ----------*/
+.l-footer__nav__en{
+	li{
+		+ li{
+			@include rem( margin-top , 25px );
+		}
+	}
+
+	a{
+		text-transform: uppercase;
+		@include font-family(sans-serif);
+		@include font-weight(medium);
+		@include font-var(17);
+		@include letter-spacing(200);
+		@include hover-opacity;
+	}
+}
+
+
+/* ---------- l-footer__nav__group ----------*/
+.l-footer__nav__group{
+	@include rem( min-width , 182px );
+	@include rem( margin-left , 144px );
+
+	+ .l-footer__nav__group{
+		@include rem( margin-left , 47px );
+	}
+}
+
+.l-footer__nav__parent{
+	color: var( --color-txt3 );
+	border-bottom: var( --solid-current );
+	@include rem( padding-bottom , 15px );
+
+	a{
+		color: var( --color-txt3 );
+		@include font-var(14);
+
+		@include hover{
+			color: var( --color-txt2 );
+		}
+	}
+}
+
+.l-footer__nav__children{
+	@include rem( margin-top , 18px );
+
+	li{
+		+ li{
+			@include rem( margin-top , 11px );
+		}
+	}
+
+	a{
+		@include font-var(14);
+		color: var( --color-txt3 );
+
+		@include hover{
+			color: var( --color-txt2 );
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

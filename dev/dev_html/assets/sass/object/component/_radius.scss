@@ -1,0 +1,48 @@
+/**
+ *
+ * radius.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-radius
+------------------------------------------------------------ */
+figure,
+a{
+	&[class*="c-radius-"]{
+		position: relative;
+		z-index: 0;
+		overflow: hidden;
+	}
+}
+
+[class*="c-radius-"]{
+	&.-hidden{
+		position: relative;
+		z-index: 0;
+		overflow: hidden;
+	}
+}
+
+
+// .c-radius-xs{ border-radius: var(--radius-xs); }
+// .c-radius-sm{ border-radius: var(--radius-sm); }
+// .c-radius-sm2{ border-radius: var(--radius-sm2); }
+// .c-radius-rg{ border-radius: var(--radius-rg); }
+// .c-radius-rg-m{ border-radius: var(--radius-rg-m); }
+// .c-radius-md{ border-radius: var(--radius-md); }
+.c-radius-max{ border-radius: var(--radius-max); }
+
+.c-radius-circle{ border-radius: 50%; }
+
+
+// .c-radius-md-right{
+// 	border-radius: 0 var(--radius-md) var(--radius-md) 0;
+// }
+
+@include mq-up{
+	.c-radius-rg-mqUp-lg{ border-radius: var(--radius-rg); }
+}
+// @include mq-down{
+// 	.c-radius-rg-mqDown-lg{ border-radius: var(--radius-rg); }
+// 	.c-radius-md-mqDown-lg{ border-radius: var(--radius-md); }
+// }

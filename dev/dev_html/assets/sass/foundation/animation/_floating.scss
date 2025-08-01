@@ -1,0 +1,35 @@
+/**
+ *
+ * floating.scss
+ *
+ */
+/* ------------------------------------------------------------
+ floating
+------------------------------------------------------------ */
+@keyframes floating-y{
+	0%,100%{
+		transform: translateY(-2.0rem)
+	}
+	50% {
+		transform: translateY(2.0rem);
+	}
+}
+@keyframes floating-y2{
+	0%,100%{
+		transform: translateY(-1.0rem)
+	}
+	50% {
+		transform: translateY(1.0rem);
+	}
+}
+@keyframes floating-rotate{
+	0% {
+		transform: rotate(0deg)
+	}
+	50% {
+		transform: rotate(8deg)
+	}
+	100% {
+		transform: rotate(0deg)
+	}
+}

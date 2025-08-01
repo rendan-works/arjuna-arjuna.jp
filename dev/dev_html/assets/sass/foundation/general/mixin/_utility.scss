@@ -1,0 +1,37 @@
+//
+//
+// utility.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// utility-style
+///////////////////////////////////////////////////////////////
+//
+// overview : css変数の配列と連動して、utilityクラスを自動生成。
+// usage    : @include utility-style( color , font , $pallets-neutral );
+// caution : 第一引数はプロパティ（複数の場合は配列で指定）
+//           第二引数は省略クラス
+//           第三引数はcss変数配列
+//           css変数配列に css変数を登録する際のプロパティも入っているので、それを使用しクラスのレベルを指定しています。
+//
+@mixin utility-style( $propertys , $class , $array ){
+	$prefix: nth($array, 1);
+	$map   : nth($array, 2);
+
+	@each $name, $value in $map {
+		.u-#{$class}-#{$name}{
+			@each $property in $propertys {
+				#{$property}: var( --#{$prefix}-#{$name} );
+			}
+		}
+		.u-#{$class}-#{$name}s > *:not(:last-of-type){
+			@each $property in $propertys {
+				#{$property}: var( --#{$prefix}-#{$name} );
+			}
+		}
+	}
+}
+
+
+

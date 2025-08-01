@@ -1,0 +1,52 @@
+/**
+ *
+ * loopslider.scss
+ *
+ */
+/* ------------------------------------------------------------
+ js-loopslider
+------------------------------------------------------------ */
+.js-loopslider-wrap{
+	&.is-running{
+		.js-loopslider__content > *{
+			animation-play-state: running;
+		}
+	}
+}
+
+@mixin style-loopslider(){
+	overflow: hidden;
+
+	.js-loopslider__content{
+		width: var( --all-width );
+		display: flex;
+		@include clearfix;
+
+		&:not(.is-set){
+			height: 0;
+			opacity: 0;
+		}
+
+		> *{
+			display: flex;
+			animation: loopslider-x var( --animation-duration-horizontal ) linear infinite;
+			animation-play-state: paused;
+		}
+	}
+}
+
+.js-loopslider{
+	@include style-loopslider;
+}
+
+.js-loopslider-mqUp-lg{
+	@include mq-up{
+		@include style-loopslider;
+	}
+	@include mq-down{
+		.is-clone{
+			display: none;
+		}
+	}
+}
+

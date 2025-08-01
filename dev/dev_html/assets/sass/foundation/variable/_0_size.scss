@@ -1,0 +1,115 @@
+//
+//
+// 0_size.scss
+// sizeは重要なので一番最初に読み込む様に変更
+//
+//
+
+/* ------------------------------------------------------------
+ size
+------------------------------------------------------------ */
+:root{
+	/* ----------------------------------------
+	 window size
+	---------------------------------------- */
+	// --ww: calc( 100vw - var( --scrollbar-width ) ); // --window-widthの略
+	--ww: calc( var( --vw ) * 100 ); // --window-widthの略
+	--wh: calc( var( --vh ) * 100 ); // --window-heightの略
+	--vw: calc( 100vw / 100 ); // デフォルト JavaScriptで書き換えられる
+	--vh: calc( 100vh / 100 ); // デフォルト JavaScriptで書き換えられる
+	--scrollbar-width: 0px; // デフォルト JavaScriptで書き換えられる
+
+
+	/* ----------------------------------------
+	 ブレイクポイント
+	 JavaScriptでは取得して使用する変数
+	 ハンバーガーメニューなどブレイクポイントで発動する関数などで使用する
+	 ※cssのメディアクエリでは使用できない
+	---------------------------------------- */
+	/* ---------- min-width mqUp ----------  */
+	--mqUp-xxxs: #{map-get($breakpoint, 'xxxs') + 1};
+	--mqUp-xxs : #{map-get($breakpoint, 'xxs') + 1};
+	--mqUp-xs  : #{map-get($breakpoint, 'xs') + 1};
+	--mqUp-sm  : #{map-get($breakpoint, 'sm') + 1};
+	--mqUp-md  : #{map-get($breakpoint, 'md') + 1};
+	--mqUp-lg  : #{map-get($breakpoint, 'lg') + 1};
+	--mqUp-xl  : #{map-get($breakpoint, 'xl') + 1};
+	--mqUp-xxl : #{map-get($breakpoint, 'xxl') + 1};
+	--mqUp-xxxl: #{map-get($breakpoint, 'xxxl') + 1};
+	--mqUp-fhd : #{map-get($breakpoint, 'fhd') + 1};
+	--mqUp-2k  : #{map-get($breakpoint, '2k') + 1};
+	--mqUp-wqhd: #{map-get($breakpoint, 'wqhd') + 1};
+
+	/* ---------- max-width mqDown ----------  */
+	--mqDown-xxxs: #{map-get($breakpoint, 'xxxs')};
+	--mqDown-xxs : #{map-get($breakpoint, 'xxs')};
+	--mqDown-xs  : #{map-get($breakpoint, 'xs')};
+	--mqDown-sm  : #{map-get($breakpoint, 'sm')};
+	--mqDown-md  : #{map-get($breakpoint, 'md')};
+	--mqDown-lg  : #{map-get($breakpoint, 'lg')};
+	--mqDown-xl  : #{map-get($breakpoint, 'xl')};
+	--mqDown-xxl : #{map-get($breakpoint, 'xxl')};
+	--mqDown-xxxl: #{map-get($breakpoint, 'xxxl')};
+	--mqDown-fhd : #{map-get($breakpoint, 'fhd')};
+	--mqDown-2k  : #{map-get($breakpoint, '2k')};
+	--mqDown-wqhd: #{map-get($breakpoint, 'wqhd')};
+
+
+
+
+	/* ----------------------------------------
+	 インナーの横幅
+	 デフォルトはデザインサイズを入れる
+	---------------------------------------- */
+	@include mq-up{
+		--inner-width: 1500;
+	}
+	@include mq-down{
+		--inner-width: 400;
+	}
+
+
+
+	/* ----------------------------------------
+	 コンテンツの横幅
+	---------------------------------------- */
+	@include mq-up{
+		--contents: #{ calcVw( 1300 , 1500 ) };
+		--outside : #{ calcVw( 100 , 1500 ) };
+	}
+	@include mq-down{
+		--contents-lg        : #{ calcVw( 720 , 800 ) };
+		--contents-lg-outside: #{ calcVw( 40 , 800 ) };
+
+		--contents           : #{ calcVw( 640 , 800 ) };
+		--contents-outside   : #{ calcVw( 80 , 800 ) };
+	}
+
+
+	/* ----------------------------------------
+	 ヘッダー
+	---------------------------------------- */
+	// --header-height: 100;
+
+	// @include mq-down{
+	// 	--header-height: 68;
+	// }
+
+
+	/* ----------------------------------------
+	 ハンバーガーメニュー
+	---------------------------------------- */
+	// --button-width : 100;
+	// --button-height: var( --button-width );
+
+	// @include mq-down{
+	// 	--button-width: 60;
+	// }
+
+}
+
+
+
+
+
+

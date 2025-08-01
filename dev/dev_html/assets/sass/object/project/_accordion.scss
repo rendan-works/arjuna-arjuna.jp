@@ -1,0 +1,128 @@
+/**
+ *
+ * accordion.scss
+ *
+ */
+/* ------------------------------------------------------------
+ p-accordion
+|
+|<?php
+|	$accordionAarry = array(
+|		array(
+|			'switch' => '質問',
+|			'panel'  => '回答',
+|		),
+|	);
+| ?>
+<?php foreach ($accordionAarry as $value) : ?>
+dl.p-accordion.js-accordion-click
+	dt.p-accordion__switch
+		button( type="button" ).js-accordion__switch
+			span.p-accordion__switch__txt.c-disc
+				span.c-crop <?= $value['switch'] ?>
+			i.c-plus
+	dd.p-accordion__panel.js-accordion__panel
+		div.p-accordion__panel__inner
+			p.c-txt-xs.c-crop <?= $value['panel'] ?>
+<?php endforeach; ?>
+
+------------------------------------------------------------ */
+// .p-accordion{
+// 	border-top: solid 1px var( --color-line4 );
+// 	border-bottom: solid 1px var( --color-line4 );
+// 	background-color: var( --bg-color );
+// 	--bg-color: var( --color-bg );
+// 	transition: background-color var( --transition-accordion );
+
+// 	+ .p-accordion{
+// 		border-top: none;
+// 	}
+
+
+// 	/* ---------- is-open ---------- */
+// 	&.is-open{
+// 		--bg-color: var( --color-accordion2 );
+
+// 		.p-accordion__switch{
+// 			button{
+// 				background-color: var( --pallet-transp );
+// 			}
+// 		}
+
+// 		.c-plus2{
+// 			--bg-color  : var( --color-main2 );
+// 			--icon-color: var( --color-txt2 );
+
+// 			span::before{
+// 				opacity: 0;
+// 			}
+// 		}
+// 	}
+
+// }
+
+
+// /* ----------------------------------------
+//  p-accordion__switch
+// ---------------------------------------- */
+// .p-accordion__switch{
+// 	button{
+// 		display: flex;
+// 		align-items: center;
+// 		width: 100%;
+// 		background-color: var( --bg-color );
+
+// 		@include mq-up{
+// 			@include rem( padding , 15px 12px 15px 18px );
+// 		}
+// 		@include mq-down{
+// 			@include rem( padding , 13px 6px 13px 13px );
+// 		}
+
+// 		.p-accordion:not(.is-open) &{
+// 			@include hover{
+// 				background-color: var( --color-accordion-hover2 );
+// 				color: var( --color-txt2 );
+// 			}
+// 		}
+// 	}
+
+// 	.c-plus2{
+// 		@include mq-up{
+// 			@include rem( margin-left , 30px );
+// 		}
+// 		@include mq-down{
+// 			@include rem( margin-left , 20px );
+// 		}
+// 	}
+// }
+
+// .p-accordion__switch__txt{
+// 	flex: 1;
+// 	text-align: left;
+// 	@include font-weight(medium);
+
+// 	@include mq-up{
+// 		@include font-var(14);
+// 	}
+// 	@include mq-down{
+// 		@include font-var(12);
+// 	}
+// }
+
+
+
+// /* ----------------------------------------
+//  p-accordion__panel
+// ---------------------------------------- */
+// .p-accordion__panel__inner{
+// 	@include mq-up{
+// 		@include rem( padding , 0 67px 33px 30px );
+// 	}
+// 	@include mq-down{
+// 		@include rem( padding , 0 46px 27px 23px );
+// 	}
+// }
+
+
+

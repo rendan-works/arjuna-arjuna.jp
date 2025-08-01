@@ -1,0 +1,317 @@
+//
+//
+// hover.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// hover
+// is-hoverに比べてやや制約あり
+///////////////////////////////////////////////////////////////
+@mixin hover {
+	@media( hover: hover ){
+		&:hover{
+			@content;
+		}
+	}
+}
+
+@mixin hover-query {
+	@media( hover: hover ){
+		@content;
+	}
+}
+
+
+
+
+///////////////////////////////////////////////////////////////
+// hover-opacity
+///////////////////////////////////////////////////////////////
+//
+// overview: hover時に、opacityを変えるアニメーション
+//           引数には不透明どを入れる。
+//
+@mixin hover-opacity( $alpha: var( --hover-opacity ) ) {
+	transition-property: opacity;
+
+	@include hover{
+		opacity: $alpha;
+	}
+}
+
+
+
+
+///////////////////////////////////////////////////////////////
+// hover-bg
+///////////////////////////////////////////////////////////////
+//
+// overview: hover時に、after要素で背景の色を変えるアニメーション
+//           第一引数には色、第二引数には不透明度を入れる。
+//
+@mixin hover-bg(
+	$base-color: var( --pallet-black0--rgb ),
+	$alpha: .1
+) {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+
+	&::after{
+		content: '';
+		@include display-block;
+		@include position-absolute;
+		z-index: 0;
+		background-color: rgba($base-color, $alpha);
+		opacity: 0;
+		@include transition(opacity);
+		pointer-events: none;
+	}
+
+	@include hover{
+		opacity: 1;
+
+		&::after{
+			opacity: 1;
+		}
+	}
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// hover-line
+///////////////////////////////////////////////////////////////
+//
+// overview: hover時に、lineが出たり消えたりするアニメーション
+//           第一引数に千太さ、第二引数に色、第三引数に独自のhoverのセレクタを入れる。
+// caution : 第三引数は、@at-root が用いられる。
+//
+@mixin hover-line-base( $color ){
+	background-repeat: no-repeat;
+	@if $color != '' {
+		background-image: linear-gradient( 180deg, $color , $color);
+	}
+	transition: background-size var( --transition-hover );
+}
+
+
+///////////////////////////////////////////
+// hover-lineIn
+///////////////////////////////////////////
+//
+// overview: hover時に、lineが出てくるアニメーション
+//
+@mixin hover-lineIn-hover( $height ){
+	background-size: 100% $height;
+	background-position: 0% 100%;
+}
+
+@mixin hover-lineIn(
+	$height : 1px ,
+	$color  : currentColor,
+	$current: false,
+	$hover  : all,
+) {
+	@include hover-line-base( $color );
+	background-size: 0 $height;
+	background-position: 100% 100%;
+
+	@if $current == true {
+		@if $hover == all {
+			@include hover-query{
+				&:hover,
+				a:hover &{
+					@include hover-lineIn-hover( $height );
+				}
+			}
+			&.-type-current.is-current,
+			.-type-current.is-current &{
+				@include hover-lineIn-hover( $height );
+			}
+		} @else if $hover == basic {
+			@include hover{
+				@include hover-lineIn-hover( $height );
+			}
+			&.-type-current.is-current{
+				@include hover-lineIn-hover( $height );
+			}
+		} @else if $hover == parent {
+			@include hover-query{
+				a:hover &{
+					@include hover-lineIn-hover( $height );
+				}
+			}
+			.-type-current.is-current{
+				@include hover-lineIn-hover( $height );
+			}
+		} @else {
+			@include hover-query{
+				@at-root #{$hover}{
+					@include hover-lineIn-hover( $height );
+				}
+			}
+		}
+	} @else {
+		@if $hover == all {
+			@include hover-query{
+				&:hover,
+				a:hover &{
+					@include hover-lineIn-hover( $height );
+				}
+			}
+		} @else if $hover == basic {
+			@include hover{
+				@include hover-lineIn-hover( $height );
+			}
+		} @else if $hover == parent {
+			@include hover-query{
+				a:hover &{
+					@include hover-lineIn-hover( $height );
+				}
+			}
+		} @else {
+			@include hover-query{
+				@at-root #{$hover}{
+					@include hover-lineIn-hover( $height );
+				}
+			}
+		}
+	}
+}
+
+
+///////////////////////////////////////////
+// hover-lineOut
+///////////////////////////////////////////
+//
+// overview: hover時に、lineが消えるアニメーション
+//
+@mixin hover-lineOut-hover( $height ){
+	background-size: 0 $height;
+	background-position: 100% 100%;
+}
+
+@mixin hover-lineOut(
+	$height : 1px ,
+	$color  : currentColor,
+	$current: false,
+	$hover  : all,
+) {
+	@include hover-line-base( $color );
+	background-size: 100% $height;
+	background-position: 0% 100%;
+
+	@if $current == true {
+		@if $hover == all {
+			@include hover-query{
+				&:hover,
+				a:hover &{
+					@include hover-lineOut-hover( $height );
+				}
+			}
+			&.-type-current.is-current,
+			.-type-current.is-current &{
+			}
+		} @else if $hover == basic {
+			@include hover{
+				@include hover-lineOut-hover( $height );
+			}
+			&.-type-current.is-current{
+				@include hover-lineOut-hover( $height );
+			}
+		} @else if $hover == parent {
+			@include hover-query{
+				a:hover &{
+					@include hover-lineOut-hover( $height );
+				}
+			}
+			.-type-current.is-current{
+				@include hover-lineOut-hover( $height );
+			}
+		} @else {
+			@include hover-query{
+				@at-root #{$hover}{
+					@include hover-lineOut-hover( $height );
+				}
+			}
+		}
+	} @else {
+		@if $hover == all {
+			@include hover-query{
+				&:hover,
+				a:hover &{
+					@include hover-lineOut-hover( $height );
+				}
+			}
+		} @else if $hover == basic {
+			@include hover{
+				@include hover-lineOut-hover( $height );
+			}
+		} @else if $hover == parent {
+			@include hover-query{
+				a:hover &{
+					@include hover-lineOut-hover( $height );
+				}
+			}
+		} @else {
+			@include hover-query{
+				@at-root #{$hover}{
+					@include hover-lineOut-hover( $height );
+				}
+			}
+		}
+	}
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// hover-slide
+///////////////////////////////////////////////////////////////
+//
+// overview: hover時に、before要素で左から右に流れるアニメーション
+//           引数には色入れる
+//
+@mixin hover-slide( $color: currentColor , $opacity: var( --hover-opacity )  ) {
+	position: relative;
+
+	&::before{
+		content: '';
+		display: block;
+		width: 0;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: auto;
+		right: 0;
+		z-index: 0;
+		background-color: $color;
+		opacity: 0;
+		transition: var( --transition-hover );
+		transition-property: opacity,width;
+	}
+
+	@include hover{
+		&:hover{
+			&::before{
+				width: 100%;
+				left: 0;
+				right: auto;
+				opacity: $opacity;
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+/**
+ *
+ * spcae.scss
+ *
+ */
+/* ------------------------------------------------------------
+ fixed
+------------------------------------------------------------ */
+/* --------- margin ---------- */
+// .u-m-center{ margin: 0 auto; }
+// .u-m-center-mqDown-lg{
+// 	@include mq-down(lg){
+// 		margin: 0 auto;
+// 	}
+// }
+
+
+// .u-mt-0 { margin-top: 0 !important; }
+// .u-mb-0 { @include rem( margin-bottom , 0px ); }
+
+/* --------- padding ---------- */
+
+
+/* ------------------------------------------------------------
+ variable
+ 基本的に余白は下から上に付けるので、top系しか設定しない
+------------------------------------------------------------ */
+// @include utility-style( margin-top , mt , $spaces-base );
+// @include utility-style( margin-bottom , mb , $spaces-base );
+// @include utility-style( (margin-top,margin-bottom) , mtb , $spaces-base );
+// @include utility-style( padding-top , pt , $spaces-base );
+// @include utility-style( padding-bottom , pb , $spaces-base );
+// @include utility-style( (padding-top,padding-bottom) , ptb , $spaces-base );
+
+
+

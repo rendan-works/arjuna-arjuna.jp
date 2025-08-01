@@ -1,0 +1,244 @@
+/**
+ *
+ * wp-admin.scss
+ *
+ * 管理画面 カスタマイズ SCSS
+ *
+ */
+
+///////////////////////////////////////////////////////////////
+// general
+///////////////////////////////////////////////////////////////
+@import './foundation/general/**/*.scss';
+
+
+/* ------------------------------------------------------------
+ login
+ ログイン画面
+------------------------------------------------------------ */
+body.login{
+	background-color: #ffffff;
+
+	h1.wp-login-logo{
+		width: 245px;
+		height: 41px;
+		margin: 0 auto 60px;
+
+		a{
+			@include display-block;
+			@include text-indent;
+			@include bg-contain;
+			background-image: url('../img/common/logo.svg');
+			pointer-events: none;
+		}
+	}
+}
+
+
+
+
+/* ------------------------------------------------------------
+ is-load
+------------------------------------------------------------ */
+/**
+ * 公開・更新ボタン、プレビューボタン、カテゴリーをloadするまでオフ
+ */
+body:not(.is-load){
+	#publish,
+	#post-preview,
+	.categorychecklist{
+		opacity: .2;
+		pointer-events: none;
+	}
+}
+
+/**
+ * スマートカスタムフィールドの説明は、jsで改行を制御しているため、loadまで非表示
+ */
+body:not(.is-load){
+	.description{
+		opacity: .025;
+		display: none;
+	}
+}
+
+
+
+
+/* ------------------------------------------------------------
+ サイドナビゲーション
+------------------------------------------------------------ */
+/* ---------- カテゴリ ---------- */
+.category-tabs li.hide-if-no-js{
+	display: none;
+}
+
+/* ---------- 親カテゴリー ---------- */
+.term-parent-wrap{
+	display: none;
+}
+
+/* ---------- カテゴリ説明 ---------- */
+.term-description-wrap{
+	display: none;
+}
+
+/* ---------- カテゴリ詳細 ---------- */
+#edittag{
+	max-width: 100%;
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ 投稿画面
+------------------------------------------------------------ */
+/* ---------- パーマリンク ---------- */
+.post-type-press {
+	#edit-slug-box,
+	#minor-publishing-actions{
+		display: none;
+	}
+}
+
+/* ---------- カテゴリー ---------- */
+#category-adder,
+#works_industry-adder,
+#works_category-adder,
+#works_tag-adder,
+#works_client-adder{
+	display: none;
+}
+
+#category-all,
+#works_industry-all,
+#works_category-all,
+#works_tag-all,
+#works_client-all{
+	max-height: fit-content;
+	min-height: fit-content;
+}
+
+#works_tagdiv{
+	display: none;
+}
+
+/* ---------- パーマリンク ---------- */
+.post-type-attachment{
+	#edit-slug-box{
+		display: none;
+	}
+}
+
+/* ---------- アイキャッチ ---------- */
+.post-type-page{
+	#postimagediv{
+		display: none;
+	}
+}
+
+/* ---------- SCF ---------- */
+[data-size="160_160_thumbnail"]{
+	max-width: 160px;
+}
+[data-size="376_376_thumbnail"]{
+	max-width: 376px;
+}
+[data-size="590_333_thumbnail"]{
+	max-width: 590px;
+}
+[data-size="840_470_figure"]{
+	max-width: 840px;
+}
+[data-size="940_auto_figure"]{
+	max-width: 940px;
+}
+[data-size="2560_1920_figure"]{
+	max-width: 940px;
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ カラム
+------------------------------------------------------------ */
+.cat-checklist.works_tag-checklist{
+	display: none;
+}
+
+/* ---------- カテゴリ ---------- */
+.column-works_client,
+.column-works_industry,
+.column-works_category{
+	width: 15%;
+}
+
+/* ---------- サムネイル ---------- */
+.column-thumbnail{
+	width: 10%;
+}
+
+.column-thumbnail{
+	img{
+		max-width: 150px;
+		width: 100%;
+		height: auto;
+	}
+
+	a{
+		transition: opacity 200ms ease;
+		@include hover{
+			opacity: .5;
+		}
+	}
+}
+
+/* ---------- 作成者 ---------- */
+#authordiv,
+.inline-edit-author{
+	display: none !important;
+}
+
+/* ---------- SCF ---------- */
+.column-scf-works_brand{
+	width: 15%;
+}
+.column-scf-press_publisher{
+	width: 15%;
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ SCF
+------------------------------------------------------------ */
+.smart-cf-meta-box-table .smart-cf-relation-left ul li, .smart-cf-meta-box-table .smart-cf-relation-right ul li{
+	color: inherit;
+}
+
+.smart-cf-meta-box-table .smart-cf-relation-left, .smart-cf-meta-box-table .smart-cf-relation-right{
+	height: 365px;
+}
+
+.smart-cf-meta-box-table .smart-cf-relation-left .smart-cf-relation-children-select{
+	height: 324px;
+}
+
+
+
+
+
+
+
+
+
+

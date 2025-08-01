@@ -1,0 +1,50 @@
+/*
+ *
+ * scale.scss
+ *
+ */
+/* ------------------------------------------------------------
+ scaleX-InOut
+------------------------------------------------------------ */
+@keyframes scaleX-InOut{
+	0% {
+		transform: scale3d(1,1,1);
+		transform-origin: 100% 0;
+	}
+	50% {
+		transform: scale3d(0,1,1);
+		transform-origin: 100% 0;
+	}
+	50.00001% {
+		transform: scale3d(0,1,1);
+		transform-origin: 0 0;
+	}
+	100% {
+		transform: scale3d(1,1,1);
+		transform-origin: 0 0;
+	}
+}
+
+
+/* ------------------------------------------------------------
+ scaleY-InOut
+------------------------------------------------------------ */
+// @keyframes scaleY-InOut{
+// 	0% {
+// 		transform: scale3d(1,0,1);
+// 		transform-origin: 0 0;
+// 	}
+// 	50% {
+// 		transform: scale3d(1,1,1);
+// 		transform-origin: 0 0;
+// 	}
+// 	50.00001% {
+// 		transform: scale3d(1,1,1);
+// 		transform-origin: 0 100%;
+// 	}
+// 	100% {
+// 		transform: scale3d(1,0,1);
+// 		transform-origin: 0 100%;
+// 	}
+// }
+

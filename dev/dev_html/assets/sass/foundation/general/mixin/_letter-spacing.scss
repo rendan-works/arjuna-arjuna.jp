@@ -1,0 +1,18 @@
+//
+//
+// letter-spacing.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// letter-spacing
+///////////////////////////////////////////////////////////////
+//
+// overview : letter-spacingを計算。デザインデータの数値を入れる
+//
+@mixin letter-spacing( $value:100 ) {
+	letter-spacing: calc( #{$value} / 1000 * 1em );
+}
+
+
+

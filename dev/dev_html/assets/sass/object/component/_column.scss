@@ -1,0 +1,251 @@
+/**
+ *
+ * column.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-column
+------------------------------------------------------------ */
+.c-column{
+	display: grid;
+}
+
+// .c-column-mqDown-lg{
+// 	@include mq-down{
+// 		display: grid;
+// 	}
+// }
+
+
+[class*="c-column"]{
+	/* ------------------------------------------------------------
+	 column
+	------------------------------------------------------------ */
+	/* ---------- -col-2 ---------- */
+	// &.-col-2{
+	// 	grid-template-columns: repeat(2, 1fr);
+	// }
+
+	&.-col-2-md{
+		@include mq-up(md){
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include mq-down(md){
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	/* ---------- -col-3 ---------- */
+	&.-col-3-md{
+		@include mq-up(md){
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include mq-down(md){
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&.-col-3-lg-sm{
+		@include mq-up{
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include mq-updown{
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include mq-down(sm){
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	/* ---------- -col-4 ---------- */
+	&.-col-4-xl-md{
+		@include mq-up(xl){
+			grid-template-columns: repeat(4, 1fr);
+		}
+		@include mq-updown(xl,md){
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@include mq-down(md){
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+
+	/* ------------------------------------------------------------
+	 gap
+	------------------------------------------------------------ */
+	/* ----- -gap-30 ----- */
+	&.-gap-30{
+		@include rem( gap , 30px );
+	}
+
+
+	/* ------------------------------------------------------------
+	 gap column
+	------------------------------------------------------------ */
+	/* ----- -gap-c-70 ----- */
+	&.-gap-c-70{
+		@include mq-up{
+			@include rem( column-gap , 70px );
+		}
+		@include mq-down{
+			@include rem( column-gap , 30px );
+		}
+	}
+
+	/* ----- -gap-c-86 ----- */
+	&.-gap-c-86{
+		@include mq-up{
+			@include rem( column-gap , 86px );
+		}
+		@include mq-down{
+			@include rem( column-gap , 30px );
+		}
+	}
+
+	/* ----- -gap-c-118 ----- */
+	&.-gap-c-118{
+		@include mq-up{
+			@include rem( column-gap , 118px );
+		}
+		@include mq-down{
+			@include rem( column-gap , 30px );
+		}
+	}
+
+
+	/* ------------------------------------------------------------
+	 gap row
+	------------------------------------------------------------ */
+	/* ----- -gap-r-70 ----- */
+	&.-gap-r-70{
+		@include mq-up{
+			@include rem( row-gap , 70px );
+		}
+		@include mq-down{
+			@include rem( row-gap , 30px );
+		}
+	}
+
+	/* ----- -gap-r-100 ----- */
+	&.-gap-r-100{
+		@include mq-up{
+			@include rem( row-gap , 100px );
+		}
+		@include mq-down{
+			@include rem( row-gap , 15px );
+		}
+	}
+	&.-gap-r-100-2{
+		@include mq-up{
+			@include rem( row-gap , 100px );
+		}
+		@include mq-down{
+			@include rem( row-gap , 70px );
+		}
+	}
+
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+ c-column-flex
+ [html] .c-column-flex > .c-column-flex__inner
+
+ marginはtopで統一するので、内側に一つ要素を作り、それでネガディブマージンを使用する
+------------------------------------------------------------ */
+// .c-column-flex{
+	// &.-center-mqUp-lg{
+	// 	@include mq-up{
+	// 		.c-column-flex__inner{
+	// 			justify-content: center;
+	// 		}
+	// 	}
+	// }
+
+	/* ------------------------------------------------------------
+	 gap column
+	------------------------------------------------------------ */
+	// /* ----- -gap-c-1em ----- */
+	// &.-gap-c-1em{
+	// 	--column-gap: 1em;
+	// }
+	// /* ----- -gap-c-28 ----- */
+	// &.-gap-c-28{
+	// 	@include mq-up{
+	// 		@include rem( --column-gap , 28px );
+	// 	}
+	// 	@include mq-down{
+	// 		@include rem( --column-gap , 19px );
+	// 	}
+	// }
+
+
+	/* ------------------------------------------------------------
+	 gap row
+	------------------------------------------------------------ */
+	/* ----- -gap-r-18 ----- */
+	// &.-gap-r-18{
+	// 	@include mq-up{
+	// 		@include rem( --row-gap , 18px );
+	// 	}
+	// 	@include mq-down{
+	// 		@include rem( --row-gap , 14px );
+	// 	}
+	// }
+// }
+
+// .c-column-flex__inner{
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	margin-top: calc( var( --row-gap , 0px ) * -1 );
+// 	margin-left: calc( var( --column-gap , 0px ) * -1 );
+
+// 	> *{
+// 		margin-top: var( --row-gap , 0px );
+// 		margin-left: var( --column-gap , 0px );
+// 	}
+// }
+
+
+
+
+
+/* ------------------------------------------------------------
+ c-column-scroll
+ スマホのみ横スクロールするカラム
+------------------------------------------------------------ */
+// .c-column-scroll{
+// 	@include mq-up{
+// 		display: block;
+// 	}
+// 	@include mq-down{
+// 		white-space: nowrap;
+// 		overflow-x: scroll;
+// 		-webkit-overflow-scrolling: touch;
+
+// 		.c-column{
+// 			display: block;
+// 			padding-right: var( --side-width-percent );
+// 			padding-left: var( --side-width-percent );
+
+// 			> *{
+// 				display: inline-block;
+// 				vertical-align: top;
+// 				white-space: normal;
+// 				margin-top: 0;
+
+// 				&:last-of-type{
+// 					margin-right: var( --side-width-percent );
+// 				}
+// 			}
+// 		}
+// 	}
+
+// }
+
+
+

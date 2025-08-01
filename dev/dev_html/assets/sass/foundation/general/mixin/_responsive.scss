@@ -1,0 +1,93 @@
+//
+//
+// responsive.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// responsive
+///////////////////////////////////////////////////////////////
+//
+// overview: タブレット .8倍、スマホ .5倍で値が変化する。
+// usage:
+// 		@include responsive((
+// 			width: 10px,
+// 			padding: 20px 20px,
+//		));
+// caution : cssで引き継いでも良いように、calcで計算し、raitoは個別指定できるように
+//
+@mixin responsive( $styles , $raito-tb: 0.8 , $raito-sp: 0.5, ){
+	@include mq-up{
+		@each $property, $style in $styles {
+			$values: ();
+
+			@each $value in $style {
+				$values: join($values, $value);
+			}
+
+			#{$property}: $values;
+		}
+	}
+	@include mq-updown{
+		@each $property, $style in $styles {
+			$values: ();
+
+			@each $value in $style {
+				$value: calc(#{$value} * #{$raito-tb});
+				$values: join( $values , $value );
+			}
+
+			#{$property}: $values;
+		}
+	}
+	@include mq-down(sm){
+		@each $property, $style in $styles {
+			$values: ();
+
+			@each $value in $style {
+				$value: calc(#{$value} * #{$raito-sp});
+				$values: join( $values , $value );
+			}
+
+			#{$property}: $values;
+		}
+	}
+}
+
+
+
+
+
+///////////////////////////////////////////////////////////////
+// responsive-lg
+///////////////////////////////////////////////////////////////
+@mixin responsive-lg( $styles , $ratio: 0.5 , $breakpoint: lg ) {
+	@include mq-up( $breakpoint ){
+		@each $property, $style in $styles {
+			$values: ();
+
+			@each $value in $style {
+				$values: join($values, $value);
+			}
+
+			#{$property}: $values;
+		}
+	}
+	@include mq-down( $breakpoint ){
+		@each $property, $style in $styles {
+			$values: ();
+
+			@each $value in $style {
+				$value: calc(#{$value} * #{$ratio});
+				$values: join( $values , $value );
+			}
+
+			#{$property}: $values;
+		}
+	}
+}
+
+
+
+
+

@@ -1,0 +1,37 @@
+//
+//
+// webp.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// webp-bg
+///////////////////////////////////////////////////////////////
+//
+// overview: webpの振り分け。.use-webp などは使用するjsによって変更する
+// usage: @include webp-bg( '../assets/img/top/visual_bg' , 'jpg' );
+//
+@mixin webp-bg( $path , $extension: 'jpg' , $body: 'body', ){
+	background-image: url( $path + '.webp' );
+
+	#{$body}:not(.use-webp) & {
+		background-image: url( $path + '.' + $extension );
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

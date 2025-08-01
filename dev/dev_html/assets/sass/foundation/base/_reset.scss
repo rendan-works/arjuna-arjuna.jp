@@ -1,0 +1,142 @@
+/**
+ *
+ * reset.scss
+ *
+ */
+
+/* ------------------------------------------------------------
+ reset basic
+------------------------------------------------------------- */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	vertical-align:baseline;
+	background:transparent;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section,main{
+	display: block;
+}
+body{
+	line-height: 1;
+}
+address,caption,cite,code,dfn,em,strong,th,var{
+	font-style:normal;
+	font-weight:normal;
+}
+ol, ul{
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img,
+picture {
+	max-width: 100%;
+}
+picture{
+	display: block;
+}
+img{
+	max-width:100%;
+	height:auto;
+	vertical-align: bottom;
+	padding: 0;
+}
+a img{
+	border:none;
+}
+a {
+	background:transparent;
+	vertical-align:baseline;
+	font-size:100%;
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover,
+a:hover img{
+	backface-visibility: hidden;
+}
+
+a,
+span,
+small,
+time,
+button{
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+}
+template {
+	display: none;
+}
+
+
+
+/* ------------------------------------------------------------
+ reset form
+------------------------------------------------------------- */
+input, button, textarea, select {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	appearance: none;
+	box-sizing: border-box;
+	cursor: pointer;
+
+	&:disabled{
+		// opacity: .4;
+	}
+}
+
+textarea {
+	resize: vertical;
+	overflow: auto;
+	// min-height: 100px;
+	// max-height: 300px;
+}
+
+[type="file"]{
+	line-height: 1 !important;
+}
+
+select::-ms-expand {
+	display: none;
+}
+select::-moz-focusring {
+	color: transparent;
+	text-shadow: 0 0 0 #fff;
+}
+
+input:-webkit-autofill ,
+select:-webkit-autofill ,
+option:-webkit-autofill {
+	-webkit-text-fill-color: #000 !important;
+	-webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}

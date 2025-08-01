@@ -1,0 +1,42 @@
+//
+//
+// space.scss
+//
+//
+
+/* ------------------------------------------------------------
+ space
+ 上下の余白
+ utilityクラスと連動しているため、ここのみメディアクエリで上書きをして良い。
+------------------------------------------------------------ */
+$spaces-base: ('space',(
+	// 'list': 1.5rem,
+	// 'xxs' : 5.0rem,
+	// 'sm'  : 7.0rem,
+	// 'md'  : 8.0rem,
+	// 'lg'  : 9.0rem,
+	// 'xlg' : 10.0rem,
+));
+
+$spaces-mqDown-lg: ('space',(
+	// 'list': 1.0rem,
+	// 'xxs' : 2.5rem,
+	// 'sm'  : 3.5rem,
+	// 'md'  : 4.0rem,
+	// 'lg'  : 4.5rem,
+	// 'xlg' : 5.0rem,
+));
+
+:root{
+	@include var-set( $spaces-base );
+
+	@include mq-down{
+		@include var-set( $spaces-mqDown-lg );
+	}
+}
+
+
+
+
+
+

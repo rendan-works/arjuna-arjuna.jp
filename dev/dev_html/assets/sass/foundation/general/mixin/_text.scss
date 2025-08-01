@@ -1,0 +1,109 @@
+//
+//
+// text.scss
+//
+//
+
+
+///////////////////////////////////////////////////////////////
+// text-gradation
+///////////////////////////////////////////////////////////////
+//
+// overview : 文字のグラデーション
+//
+@mixin text-gradation( $gradation , $color ){
+	width: fit-content;
+	color: $color;
+	background: $gradation;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// font-smoothing-auto
+///////////////////////////////////////////////////////////////
+//
+// overview : フォントのアンチエイリアシングの解除
+//
+@mixin font-smoothing-auto{
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+	text-rendering: auto;
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// text-ellipsis
+///////////////////////////////////////////////////////////////
+//
+// overview : ３点リーダー
+//
+@mixin text-ellipsis{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+//
+// overview : ３点リーダー（複数行にも対応）
+//
+@mixin text-leader( $line: 1 ){
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: #{$line};
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// text_indent
+///////////////////////////////////////////////////////////////
+//
+// overview : text-indentで非表示
+//
+@mixin text-indent{
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// text-vertical
+///////////////////////////////////////////////////////////////
+//
+// overview : 縦書き
+//
+@mixin text-vertical {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	// font-feature-settings: normal;
+}
+
+//
+// overview : 縦書き EN版
+//
+@mixin text-vertical-en {
+	writing-mode: vertical-rl;
+	// font-feature-settings: normal;
+}
+
+//
+// overview : 数字を横にしたい時とかに使う
+//
+@mixin text-vertical-tdigits{
+	-webkit-text-combine: horizontal;
+	-ms-text-combine-horizontal: all;
+	text-combine-upright: all;
+}
+
+
+
+

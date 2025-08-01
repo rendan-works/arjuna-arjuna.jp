@@ -1,0 +1,193 @@
+/**
+ *
+ * title.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-title
+ 英字のみのタイトル
+------------------------------------------------------------ */
+.c-title{
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(42);
+	}
+
+	&.-small{
+		@include mq-down{
+			@include font-var(28);
+		}
+	}
+	&.-medium{
+		@include mq-down{
+			@include font-var(35);
+		}
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ c-title2
+ ブログアーカイブタイトル
+------------------------------------------------------------ */
+.c-title2{
+	text-align: center;
+}
+
+.c-title2__main{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(30);
+	}
+	@include mq-down{
+		@include font-var(15);
+	}
+}
+
+.c-title2__ja{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(22);
+		@include letter-spacing(100);
+		@include rem( margin-top , 30px );
+	}
+	@include mq-down{
+		@include font-var(11);
+		@include rem( margin-top , 24px );
+	}
+}
+
+.c-title2__en{
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(100);
+		@include rem( margin-top , 18px );
+	}
+	@include mq-down{
+		@include font-var(11);
+		@include rem( margin-top , 11px );
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ c-title3
+ 実績詳細タイトル
+------------------------------------------------------------ */
+.c-title3{
+
+}
+
+.c-title3__en{
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(semi-bold);
+
+	@include mq-up{
+		@include font-var(46);
+		@include var-line-height(46,57);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(35);
+		@include var-line-height(70,90);
+	}
+}
+
+.c-title3__ja{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(100);
+		@include rem( margin-top , 31px );
+	}
+	@include mq-down{
+		@include font-var(14);
+		@include var-line-height(28,46);
+		@include rem( margin-top , 20px );
+	}
+}
+
+
+
+
+/* ------------------------------------------------------------
+ c-title4
+ c-strokeタイトル
+------------------------------------------------------------ */
+.c-title4{
+	--stroke-width: 1px;
+	--stroke-color: var( --color-line );
+	color: var( --color-txt2 );
+	@include font-family(sans-serif);
+	@include font-weight(bold);
+	@include letter-spacing(40);
+
+	@include mq-up{
+		@include font-var(68);
+	}
+	@include mq-down{
+		@include font-var(33);
+	}
+}
+
+
+
+
+/* ------------------------------------------------------------
+ c-title5
+ 英語、日本語の縦並びタイトル
+------------------------------------------------------------ */
+.c-title5{
+}
+
+.c-title5__en{
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(semi-bold);
+	@include font-weight(medium);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(42);
+	}
+	@include mq-down{
+		@include font-var(26);
+	}
+}
+
+.c-title5__ja{
+	@include font-weight(medium);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(18);
+		@include rem( margin-top , 22px );
+	}
+	@include mq-down{
+		@include font-var(13);
+		@include rem( margin-top , 16px );
+	}
+}
+
+
+
+
+
+
+
+
+

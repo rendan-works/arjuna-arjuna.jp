@@ -1,0 +1,514 @@
+/**
+ *
+ * category.scss
+ *
+ */
+/* ------------------------------------------------------------
+ p-category
+ ブログのカテゴリー
+------------------------------------------------------------ */
+
+
+/* ----------------------------------------
+ p-category__main
+---------------------------------------- */
+.p-category__main{
+	display: grid;
+	align-items: start;
+
+	@include mq-up{
+		grid-template-columns: repeat(2, 1fr);
+		@include rem( gap , 100px );
+	}
+	@include mq-down{
+		@include rem( gap , 70px );
+	}
+}
+
+.p-category__card{
+	background-color: var( --color-bg );
+
+	@include mq-up{
+		@include rem( padding , 30px 40px );
+	}
+	@include mq-down{
+		@include rem( padding , 20px 25px );
+	}
+}
+
+
+/* ---------- p-category__card__another ---------- */
+.p-category__card__another{
+	display: flex;
+	align-items: flex-start;
+}
+
+/* ----- p-category__card__figure ----- */
+.p-category__card__figure{
+	@include mq-up{
+		@include rem( width , 160px );
+	}
+	@include mq-down{
+		@include rem( width , 85px );
+	}
+}
+
+/* ----- p-category__card__profile ----- */
+.p-category__card__profile{
+	flex: 1;
+
+	@include mq-up{
+		@include rem( margin-top , 14px );
+		@include rem( margin-left , 50px );
+	}
+	@include mq-down{
+		@include rem( margin-left , 20px );
+	}
+}
+
+.p-category__card__name{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(20);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(16);
+	}
+}
+
+.p-category__card__kana{
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(100);
+		@include rem( margin-top , 18px );
+	}
+	@include mq-down{
+		@include font-var(11);
+		@include rem( margin-top , 11px );
+	}
+
+	+ *{
+		@include mq-up{
+			@include rem( margin-top , 30px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 16px );
+		}
+	}
+}
+
+.p-category__card__post{
+	@include mq-up{
+		@include font-var(16);
+	}
+	@include mq-down{
+		@include font-var(12);
+	}
+
+	+ *{
+		@include mq-up{
+			@include rem( margin-top , 10px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 3px );
+		}
+	}
+}
+
+.p-category__card__degree{
+	@include mq-up{
+		@include font-var(16);
+	}
+	@include mq-down{
+		@include font-var(12);
+	}
+}
+
+
+/* ---------- p-category__card__accordion ---------- */
+.p-category__card__accordion{
+	position: relative;
+
+	@include mq-up{
+		@include rem( margin-top , 50px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 20px );
+	}
+}
+
+/* ----- p-category__card__accordion__heading ----- */
+.p-category__card__title{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(24);
+		@include var-line-height(28,40);
+		@include rem( margin-right , 80px );
+	}
+	@include mq-down{
+		@include font-var(17);
+		@include var-line-height(34,52);
+		@include rem( margin-right , 60px );
+	}
+}
+
+/* ----- p-category__card__plus ----- */
+.p-category__card__plus{
+	position: absolute;
+	right: 0;
+
+	@include mq-up{
+		top: 0;
+	}
+	@include mq-down{
+		@include rem( top , -5px );
+	}
+
+}
+
+
+/* ----- p-category__card__outline ----- */
+.p-category__card__outline{
+	p{
+		@include mq-up{
+			@include rem( padding-top , 38px );
+			@include rem( padding-bottom , 10px );
+		}
+		@include mq-down{
+			@include rem( padding-top , 29px );
+			@include rem( padding-bottom , 11px );
+		}
+	}
+}
+
+
+/* ---------- p-category__card__button ---------- */
+.p-category__card__button{
+	@include mq-up{
+		@include rem( margin-top , 38px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 20px );
+	}
+}
+
+
+
+
+/* ----------------------------------------
+ p-category__sub
+---------------------------------------- */
+.p-category__sub{
+	display: flex;
+	flex-wrap: wrap;
+
+	@include mq-up{
+		@include rem( margin-top , 100px );
+		@include rem( gap , 35px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 70px );
+		@include rem( gap , 15px );
+	}
+
+	a{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include font-weight(bold);
+		background-color: var( --color-bg );
+		transition-property: background-color,color;
+
+		@include mq-up{
+			@include rem( min-width , 185px );
+			@include rem( height , 57px );
+			@include rem( padding , 10px );
+			@include font-var(16);
+		}
+		@include mq-down{
+			@include rem( min-width , 150px );
+			@include rem( height , 50px );
+			@include rem( padding , 10px );
+			@include font-var(15);
+		}
+
+		@include hover{
+			background-color: var( --color-bg2 );
+			color: var( --color-txt2 );
+		}
+	}
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-category2
+ 制作事例のカテゴリー
+------------------------------------------------------------ */
+.p-category2__inner{
+	@include mq-up{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		@include rem( padding , 80px 0 );
+	}
+	@include mq-down{
+		@include rem( padding , 48px 0 );
+	}
+
+
+	&.is-open{
+		.p-category2__button__txt{
+			span{
+				&:nth-of-type(1){
+					opacity: 0;
+					visibility: hidden;
+				}
+				&:nth-of-type(2){
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------
+ p-category2__header
+---------------------------------------- */
+.p-category2__header{
+	@include mq-up{
+		@include rem( width , 346px );
+	}
+	@include mq-down{
+		display: flex;
+		align-items: center;
+	}
+}
+
+
+/* ---------- p-category2__title ---------- */
+.p-category2__title{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(200);
+	}
+	@include mq-down{
+		@include font-var(12);
+	}
+}
+
+
+/* ---------- p-category2__button ---------- */
+.p-category2__button{
+	display: flex;
+	align-items: center;
+	transition: none;
+
+	@include mq-up{
+		@include rem( gap , 8px );
+		@include rem( margin-top , 20px );
+	}
+	@include mq-down{
+		@include rem( gap , 6px );
+		@include rem( margin-left , 18px );
+	}
+
+	@include hover{
+		.p-category2__button__txt{
+			opacity: var( --hover-opacity );
+		}
+	}
+}
+
+.p-category2__button__txt{
+	position: relative;
+	transition: opacity var( --transition-hover );
+
+	span{
+		display: block;
+		text-transform: uppercase;
+		@include font-family(sans-serif);
+		@include font-weight(medium);
+		@include letter-spacing(200);
+		transition: var( --transition-accordion );
+		transition-property: opacity,visibility;
+
+		@include mq-up{
+			@include font-var(30);
+		}
+		@include mq-down{
+			@include font-var(11);
+		}
+
+		&:nth-of-type(1){
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&:nth-of-type(2){
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+
+
+/* ----------------------------------------
+ p-category2__contents
+---------------------------------------- */
+.p-category2__contents{
+	@include mq-up{
+		flex: 1;
+	}
+	@include mq-down{
+	}
+}
+
+.p-category2__contents__inner{
+	@include mq-down{
+		@include rem( padding-top , 40px );
+		@include rem( padding-bottom , 20px );
+	}
+}
+
+.p-category2__cell{
+	@include mq-up{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	+ .p-category2__cell{
+		@include mq-up{
+			@include rem( margin-top , 110px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 40px );
+		}
+	}
+
+	dt{
+		@include mq-up{
+			@include rem( width , 278px );
+		}
+		@include mq-down{
+			display: flex;
+			align-items: center;
+		}
+
+		span{
+			display: block;
+		}
+	}
+
+	dd{
+		@include mq-up{
+			flex: 1;
+		}
+	}
+}
+
+/* ---------- p-category2__cell__en ---------- */
+.p-category2__cell__en{
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(16);
+		@include letter-spacing(200);
+	}
+	@include mq-down{
+		@include font-var(12);
+	}
+}
+
+
+/* ---------- p-category2__cell__ja ---------- */
+.p-category2__cell__ja{
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(20);
+		@include letter-spacing(200);
+		@include rem( margin-top , 18px );
+	}
+	@include mq-down{
+		@include font-var(14);
+		@include rem( margin-left , 20px );
+	}
+}
+
+
+/* ---------- p-category2__cell__list ---------- */
+.p-category2__cell__list{
+	display: flex;
+	flex-wrap: wrap;
+
+	@include mq-up{
+		@include rem( column-gap , 16px );
+		@include rem( row-gap , 14px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 30px );
+		@include rem( gap , 10px );
+	}
+
+	a{
+		display: block;
+		border-radius: var( --radius-max );
+		background-color: var( --color-bg5 );
+		transition-property: background-color,color;
+
+		@include mq-up{
+			@include font-var(16);
+			@include rem( padding , 8px 22px );
+		}
+		@include mq-down{
+			@include font-var(14);
+			@include rem( padding , 7px 19px );
+		}
+
+		@include hover{
+			background-color: var( --color-bg2 );
+			color: var( --color-txt2 );
+		}
+
+		&.is-current{
+			background-color: var( --color-bg2 );
+			color: var( --color-txt2 );
+			pointer-events: none;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

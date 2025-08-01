@@ -1,0 +1,433 @@
+/**
+ *
+ * button.scss
+ *
+ */
+/* ------------------------------------------------------------
+ p-button
+ 矢印ありのボタン（矢印なしとしての運用もあり）
+ サイズ、色違いあり
+------------------------------------------------------------ */
+.p-button{
+	a,button{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: var( --gap );
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 0;
+		overflow: hidden;
+		border-radius: var( --radius-max );
+		border: solid 1px var( --border-color );
+		background-color: var( --bg-color );
+		color: var( --txt-color );
+		transition-property: background-color , color;
+
+		@include hover{
+			background-color: var( --txt-color );
+			color: var( --bg-color );
+		}
+	}
+
+	.c-arrow{
+		&.-md{
+			@include mq-up{
+				@include rem( margin-top , -5px );
+			}
+		}
+	}
+
+
+	/* ----------------------------------------
+	 size
+	---------------------------------------- */
+	/* ---------- -regular ---------- */
+	&.-regular{
+		@include mq-up{
+			@include rem( width , 286px );
+			@include rem( height , 54px );
+			@include rem( --gap , 20px );
+		}
+		@include mq-down{
+			@include rem( width , 220px );
+			@include rem( height , 35px );
+			@include rem( --gap , 26px );
+		}
+	}
+
+	&.-regular2{
+		@include mq-up{
+			@include rem( width , 286px );
+			@include rem( height , 54px );
+			@include rem( --gap , 20px );
+		}
+		@include mq-down{
+			@include rem( width , 165px );
+			@include rem( height , 35px );
+			@include rem( --gap , 15px );
+		}
+
+		.c-arrow:not(.-small){
+			@include mq-down{
+				display: none;
+			}
+		}
+
+		.c-arrow.-small{
+			@include mq-up{
+				display: none;
+			}
+		}
+	}
+
+	/* ---------- -medium ---------- */
+	&.-medium{
+		@include mq-up{
+			@include rem( width , 300px );
+			@include rem( height , 54px );
+			@include rem( --gap , 10px );
+		}
+		@include mq-down{
+			@include rem( width , 175px );
+			@include rem( height , 35px );
+			@include rem( --gap , 9px );
+		}
+	}
+
+	/* ---------- -large ---------- */
+	&.-large{
+		@include mq-up{
+			@include rem( width , 296px );
+			@include rem( height , 56px );
+		}
+		@include mq-down{
+			@include rem( width , 220px );
+			@include rem( height , 35px );
+		}
+	}
+
+
+	/* ----------------------------------------
+	 color
+	---------------------------------------- */
+	/* ---------- -black ---------- */
+	&.-black{
+		--border-color: var( --color-bg2 );
+		--bg-color    : var( --color-bg2 );
+		--txt-color   : var( --color-txt2 );
+	}
+
+	/* ---------- -border ---------- */
+	&.-border{
+		--border-color: var( --color-bg2 );
+		--bg-color    : var( --color-bg );
+		--txt-color   : var( --color-txt );
+	}
+}
+
+.p-button__en{
+	display: block;
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(14);
+		@include letter-spacing(200);
+	}
+	@include mq-down{
+		@include font-var(13);
+	}
+}
+
+.p-button__ja{
+	display: block;
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-weight(medium);
+		@include font-var(16);
+	}
+	@include mq-down{
+		@include font-weight(bold);
+		@include font-var(13);
+	}
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-button2
+ l-contactのボタン
+------------------------------------------------------------ */
+.p-button2{
+	--border-color: var( --color-bg2 );
+	--bg-color    : var( --color-bg2 );
+	--txt-color   : var( --color-txt2 );
+
+	@include mq-up{
+		@include rem( width , 286px );
+		@include rem( height , 54px );
+	}
+	@include mq-down{
+		@include rem( width , 220px );
+		@include rem( height , 35px );
+	}
+
+	a{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		border-radius: var( --radius-max );
+		border: solid 1px var( --border-color );
+		background-color: var( --bg-color );
+		color: var( --txt-color );
+		transition-property: background-color , color;
+
+		@include hover{
+			background-color: var( --txt-color );
+			color: var( --bg-color );
+		}
+	}
+
+
+	/* ---------- -tel ---------- */
+	&.-tel{
+		.p-button2__txt{
+			@include font-family(sans-serif);
+			@include font-weight(medium);
+
+			@include mq-up{
+				@include font-var(24);
+				@include letter-spacing(50);
+				@include rem( margin-left , 16px );
+			}
+			@include mq-down{
+				@include font-var(18);
+				@include rem( margin-left , 10px );
+			}
+		}
+	}
+
+	/* ---------- -contact ---------- */
+	&.-contact{
+		.p-button2__txt{
+			@include font-weight(bold);
+			@include rem( margin-right , 15px );
+
+			@include mq-up{
+				@include font-var(16);
+			}
+			@include mq-down{
+				@include font-var(13);
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-button3
+ 黒の小さいボタン（日本語）
+------------------------------------------------------------ */
+.p-button3{
+	--border-color: var( --color-bg2 );
+	--bg-color    : var( --color-bg2 );
+	--txt-color   : var( --color-txt2 );
+
+	@include mq-up{
+		@include rem( width , 176px );
+		@include rem( height , 54px );
+	}
+	@include mq-down{
+		@include rem( width , 120px );
+		@include rem( height , 35px );
+	}
+
+	a{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		border-radius: var( --radius-max );
+		border: solid 1px var( --border-color );
+		background-color: var( --bg-color );
+		color: var( --txt-color );
+		transition: var( --transition-hover );
+		transition-property: background-color , color;
+
+		@include mq-up{
+			@include font-var(16);
+		}
+		@include mq-down{
+			@include font-var(13);
+		}
+
+		@include hover{
+			background-color: var( --txt-color );
+			color: var( --bg-color );
+		}
+	}
+
+	&.-small{
+		@include mq-down{
+			@include rem( width , 85px );
+		}
+
+		a{
+			@include mq-down{
+				@include font-var(9);
+			}
+		}
+	}
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-button4
+ indexに戻るボタン
+------------------------------------------------------------ */
+.p-button4{
+	width: fit-content;
+
+	a{
+		display: flex;
+		align-items: center;
+	}
+
+	.c-arrow3{
+		@include mq-up{
+			@include font-var(18);
+			@include rem( margin-left , 30px );
+		}
+		@include mq-down{
+			@include font-var(11);
+			@include rem( margin-left , 10px );
+		}
+	}
+}
+
+.p-button4__txt{
+	text-transform: uppercase;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(200);
+	}
+	@include mq-down{
+		@include font-var(11);
+	}
+}
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-button5
+ ブログボタン
+------------------------------------------------------------ */
+.p-button5{
+	--border-color: var( --color-bg2 );
+	--bg-color    : var( --color-bg2 );
+	--txt-color   : var( --color-txt2 );
+
+	@include mq-up{
+		@include rem( width , 400px );
+		@include rem( height , 110px );
+	}
+	@include mq-down{
+		@include rem( width , 320px );
+		@include rem( height , 75px );
+	}
+
+	a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: solid 1px var( --border-color );
+		background-color: var( --bg-color );
+		color: var( --txt-color );
+		transition: var( --transition-hover );
+		transition-property: background-color , color;
+
+		@include mq-up{
+			@include rem( padding , 24px 22px );
+		}
+		@include mq-down{
+			@include rem( padding , 13px 25px );
+		}
+
+		@include hover{
+			background-color: var( --txt-color );
+			color: var( --bg-color );
+		}
+	}
+
+	.c-arrow{
+		@include mq-up{
+			@include rem( margin-top , 5px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 6px );
+		}
+	}
+}
+
+.p-button5__en{
+	display: block;
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(13);
+	}
+}
+
+.p-button5__ja{
+	display: block;
+	@include text-leader(1);
+
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(50);
+		@include rem( margin-top , 17px );
+	}
+	@include mq-down{
+		@include font-var(12);
+		@include rem( margin-top , 10px );
+	}
+}
+
+
+
+
+
+
+
+
+
+

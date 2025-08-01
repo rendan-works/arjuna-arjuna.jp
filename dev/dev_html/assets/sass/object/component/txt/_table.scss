@@ -1,0 +1,237 @@
+/**
+ *
+ * table.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-table
+ ベーシックな表
+------------------------------------------------------------ */
+.c-table{
+	@include mq-down{
+		border-top: var( --solid );
+	}
+
+	> div{
+		+ div{
+			dt,dd{
+				@include mq-up{
+					@include rem( padding-top , 41px );
+				}
+			}
+		}
+	}
+
+	dl{
+		@include mq-up{
+			display: flex;
+			justify-content: space-between;
+		}
+		@include mq-down{
+			border-bottom: var( --solid );
+			@include rem( padding-top , 26px );
+			@include rem( padding-bottom , 26px );
+		}
+	}
+
+	dt,dd{
+		@include font-weight(regular);
+
+		@include mq-up{
+			border-bottom: var( --solid );
+			@include font-var(18);
+			@include var-line-height(18,36);
+			@include rem( padding-bottom , 41px );
+		}
+		@include mq-down{
+			@include font-var(13);
+			@include var-line-height(26,52);
+		}
+
+		&.-year{
+			@include letter-spacing(200);
+		}
+	}
+
+	dt{
+		@include mq-up{
+			width: calcPercent('290 / var(--inner-width)');
+			@include rem( min-width , 290px );
+		}
+	}
+
+	dd{
+		@include mq-up{
+			flex: 1;
+			@include rem( margin-left , 77px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 16px );
+		}
+	}
+}
+
+.c-table__line-height{
+	display: block;
+
+	@include mq-up{
+		@include line-height(18,30);
+	}
+	@include mq-down{
+		@include line-height(26,44);
+	}
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ c-table2
+ 実績の表
+------------------------------------------------------------ */
+.c-table2{
+	dl{
+		@include mq-up{
+			display: flex;
+			justify-content: space-between;
+
+			&:nth-of-type(1){
+				dt,dd{
+					padding-top: 0;
+				}
+			}
+		}
+		@include mq-down{
+			+ dl{
+				margin-top: var( --dl-margin-top );
+
+			}
+		}
+	}
+
+	dt, dd{
+		@include mq-up{
+			border-bottom: var( --solid );
+			padding-top: var( --padding-top );
+			padding-bottom: var( --padding-bottom );
+		}
+	}
+
+	dt{
+		@include mq-up{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			min-width: calc( var(--dt-width) * 0.1rem );
+			width: calcPercent('var(--dt-width) / var(--inner-width)');
+		}
+		@include mq-down{
+			width: calc( var(--dt-width) * 0.1rem );
+			border-bottom: var( --solid );
+			@include rem( padding-bottom , 10px );
+		}
+	}
+
+	dd{
+		@include mq-up{
+			flex: 1;
+			margin-left: var( --dd-gap );
+		}
+		@include mq-down{
+			@include rem( margin-top , 20px );
+		}
+	}
+
+	a{
+		@include anchor-padding;
+	}
+
+
+
+	/* ---------- -size1 ---------- */
+	&.-size1{
+		@include mq-up{
+			--dt-width: 200;
+			@include rem( --dd-gap , 138px );
+			@include rem( --padding-top , 49px );
+			@include rem( --padding-bottom , 49px );
+		}
+		@include mq-down{
+			@include rem( --dl-margin-top , 42px );
+			--dt-width: 75;
+		}
+
+		.c-table2__txt{
+			@include mq-up{
+				@include font-weight(bold);
+			}
+		}
+	}
+
+	/* ---------- -size2 ---------- */
+	&.-size2{
+		@include mq-up{
+			// --dt-width: 230;
+			@include rem( --dd-gap , 70px );
+			@include rem( --padding-top , 60px );
+			@include rem( --padding-bottom , 20px );
+
+			dt{
+				width: calc( (100% - var(--dd-gap) * 2) / 3 );
+			}
+		}
+		@include mq-down{
+			@include rem( --dl-margin-top , 40px );
+			--dt-width: 150;
+		}
+	}
+}
+
+
+/* ---------- c-table2__en ---------- */
+.c-table2__en{
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(200);
+	}
+	@include mq-down{
+		@include font-var(11);
+	}
+}
+
+
+/* ---------- c-table2__ja ---------- */
+.c-table2__ja{
+	@include mq-up{
+		@include font-var(18);
+	}
+	@include mq-down{
+		@include font-var(11);
+	}
+}
+
+
+/* ---------- c-table2__txt ---------- */
+.c-table2__txt{
+	@include mq-up{
+		@include font-var(18);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(15);
+	}
+}
+
+a.c-table2__txt{
+	@include anchor-padding;
+}
+
+
+

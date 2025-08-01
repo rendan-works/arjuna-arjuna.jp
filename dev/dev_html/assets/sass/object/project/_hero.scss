@@ -1,0 +1,108 @@
+/**
+ *
+ * hero.scss
+ *
+ */
+/* ------------------------------------------------------------
+ p-hero
+------------------------------------------------------------ */
+.p-hero{
+	@include mq-up{
+		@include rem( margin-top , 357px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 113px );
+	}
+
+
+	&.-bg3{
+		background-color: var( --color-bg3 );
+	}
+}
+
+.p-hero__inner{
+	position: relative;
+}
+
+
+/* ---------- p-hero__en ---------- */
+.p-hero__en{
+	position: relative;
+
+	&::before{
+		content: '';
+		display: block;
+		width: var(--ww);
+		height: 50%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 0;
+		background-color: var( --color-bg );
+	}
+
+	> span{
+		display: block;
+		position: relative;
+		z-index: 1;
+		@include font-family(sans-serif);
+		@include font-weight(medium);
+		@include letter-spacing(100);
+
+		@include mq-up{
+			@include font-var(42);
+		}
+		@include mq-updown{
+			@include font-var(32);
+		}
+		@include mq-down(sm){
+			// @include font-var(21);
+			@include font-var(28);
+		}
+	}
+}
+
+/* ---------- p-hero__ja ---------- */
+.p-hero__ja{
+	@include mq-up{
+		@include font-var(20);
+		@include rem( margin-top , 30px );
+	}
+	@include mq-down{
+		@include font-var(14);
+		@include rem( margin-top , 20px );
+	}
+}
+
+/* ---------- p-hero__catch ---------- */
+.p-hero__catch{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(22);
+		@include var-line-height(22,46);
+		@include letter-spacing(100);
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		}
+	@include mq-down{
+		@include font-var(16);
+		@include var-line-height(32,52);
+		@include rem( margin-top , 40px );
+	}
+}
+
+
+/* ---------- p-hero__txt ---------- */
+.p-hero__txt{
+	@include mq-up{
+		@include rem( margin-top , 50px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 20px );
+	}
+}
+

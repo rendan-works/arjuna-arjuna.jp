@@ -1,0 +1,43 @@
+/**
+ *
+ * object-fit.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-objectfit
+------------------------------------------------------------ */
+.c-objectfit{
+	/* ---------- -cover ---------- */
+	&.-cover{
+		@include object-fit(cover);
+	}
+
+	/* ---------- -contain ---------- */
+	&.-contain{
+		@include object-fit(contain);
+	}
+}
+
+
+
+
+/* ---------- video ---------- */
+// .c-objectfit-video{
+// 	@include object-fit(cover);
+// }
+
+// .ua-ie,
+// .ua-edge {
+// 	video.c-objectfit-video {
+// 		display: block;
+// 		width: auto;
+// 		height: auto;
+// 		min-width: 100%;
+// 		min-height: 100%;
+// 		@include absolute-center;
+// 		z-index: 0;
+// 		pointer-events: none;
+// 	}
+// }
+
+

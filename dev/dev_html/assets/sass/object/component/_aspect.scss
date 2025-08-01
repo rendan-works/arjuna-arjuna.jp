@@ -1,0 +1,27 @@
+/**
+ *
+ * aspect.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-aspect
+------------------------------------------------------------ */
+.c-aspect{
+	position: relative;
+
+	&::after{
+		@include aspect-base;
+	}
+
+	&.-square::after{
+		padding-top: 100%;
+	}
+	&.-silver::after{
+		padding-top: percentage( 1 / 1.414 );
+	}
+	&.-gold::after{
+		padding-top: percentage( 1 / 1.618 );
+	}
+}
+
+

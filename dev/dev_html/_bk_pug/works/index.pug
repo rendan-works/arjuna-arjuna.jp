@@ -1,0 +1,181 @@
+.
+	<?php $this_path = 'works/'; ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/variable.php' ); ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/functions.php' ); ?>
+	<?php
+		$directory = array(
+			array('HOME','Home',''),
+			array('WORKS','Works','works/'),
+		);
+		$robots = true;
+
+		$meta = array(
+			'title'       => getTitle($directory),
+			'description' => '',
+			'keywords'    => '',
+		);
+
+		$preload = array();
+		$style = array(
+			$root . 'assets/css/page-works.css',
+		);
+		$script = array();
+		$jquery = false;
+
+		$contact_class = '';
+	 ?>
+//- ------------------------------------------------------------
+//- _tpl_header
+//- ------------------------------------------------------------
+include ../include_pug/_tpl_header.pug
+	//- ------------------------------------------------------------
+	//- main
+	//- ------------------------------------------------------------
+	main.l-main.works-main
+		// p-hero
+		header.p-hero
+			div.p-hero__inner.c-inner-max
+				h1.p-hero__en
+					span WORKS
+		// /p-hero
+		// works-terms
+		aside.works-terms.p-category2
+			div.p-category2__inner.c-inner-max.js-accordion-click
+				header.p-category2__header
+					h2.p-category2__title 絞り込み条件
+					button( type="button" ).p-category2__button.js-accordion__switch
+						span.p-category2__button__txt
+							span Open
+							span Close
+						i.c-down
+				div.p-category2__contents.js-accordion__panel
+					div.p-category2__contents__inner
+						dl.p-category2__cell
+							dt
+								span.p-category2__cell__en Industry
+								span.p-category2__cell__ja 業種
+							dd
+								ul.p-category2__cell__list
+									li: a(href!=root+"") すべて
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+						dl.p-category2__cell
+							dt
+								span.p-category2__cell__en Category
+								span.p-category2__cell__ja 製作物の種類
+							dd
+								ul.p-category2__cell__list
+									li: a(href!=root+"") すべて
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+									li: a(href!=root+"") カテゴリ１
+		// /works-terms
+		// works-list
+		div.works-list
+			div.c-inner-max
+				div.c-column.-col-4-md.-gap-30
+					// p-card2
+					article.p-card2
+						a(href!=root+"")
+							figure.c-aspect.-square.c-bg2
+								img(src!="https://placehold.jp/604x604.png" alt="" decoding="async").c-objectfit.-cover
+							div.p-card2__contents
+								h2.p-card2__title たまらん堂
+								p.p-card2__category パッケージデザイン
+					// /p-card2
+					// p-card2
+					article.p-card2
+						a(href!=root+"")
+							figure.c-aspect.-square.c-bg2
+								img(src!="https://placehold.jp/604x604.png" alt="" decoding="async").c-objectfit.-cover
+							div.p-card2__contents
+								h2.p-card2__title たまらん堂
+								p.p-card2__category パッケージデザイン
+					// /p-card2
+					// p-card2
+					article.p-card2
+						a(href!=root+"")
+							figure.c-aspect.-square.c-bg2
+								img(src!="https://placehold.jp/604x604.png" alt="" decoding="async").c-objectfit.-cover
+							div.p-card2__contents
+								h2.p-card2__title たまらん堂
+								p.p-card2__category パッケージデザイン
+					// /p-card2
+					// p-card2
+					article.p-card2
+						a(href!=root+"")
+							figure.c-aspect.-square.c-bg2
+								img(src!="https://placehold.jp/604x604.png" alt="" decoding="async").c-objectfit.-cover
+							div.p-card2__contents
+								h2.p-card2__title たまらん堂
+								p.p-card2__category パッケージデザイン
+					// /p-card2
+					// p-card2
+					article.p-card2
+						a(href!=root+"")
+							figure.c-aspect.-square.c-bg2
+								img(src!="https://placehold.jp/604x604.png" alt="" decoding="async").c-objectfit.-cover
+							div.p-card2__contents
+								h2.p-card2__title たまらん堂
+								p.p-card2__category パッケージデザイン
+					// /p-card2
+					// p-card2
+					article.p-card2
+						a(href!=root+"")
+							figure.c-aspect.-square.c-bg2
+								img(src!="https://placehold.jp/604x604.png" alt="" decoding="async").c-objectfit.-cover
+							div.p-card2__contents
+								h2.p-card2__title たまらん堂
+								p.p-card2__category パッケージデザイン
+					// /p-card2
+					// p-card2
+					article.p-card2
+						a(href!=root+"")
+							figure.c-aspect.-square.c-bg2
+								img(src!="https://placehold.jp/604x604.png" alt="" decoding="async").c-objectfit.-cover
+							div.p-card2__contents
+								h2.p-card2__title たまらん堂
+								p.p-card2__category パッケージデザイン
+					// /p-card2
+					// p-card2
+					article.p-card2
+						a(href!=root+"")
+							figure.c-aspect.-square.c-bg2
+								img(src!="https://placehold.jp/604x604.png" alt="" decoding="async").c-objectfit.-cover
+							div.p-card2__contents
+								h2.p-card2__title たまらん堂
+								p.p-card2__category パッケージデザイン
+					// /p-card2
+		// /works-list
+		// p-pagination
+		footer.p-pagination
+			ul.p-pagination__list
+				li: a(href!=root+"") 1
+				li: a(href!=root+"") 2
+				li: a(href!=root+"") 3
+				li.p-pagination__ellipsis …
+				li: a(href!=root+"") 6
+				li: a(href!=root+"") 7
+		// /p-pagination
+
+	//- ------------------------------------------------------------
+	//- /main
+	//- ------------------------------------------------------------
+
+	//- ------------------------------------------------------------
+	//- _tpl_footer
+	//- ------------------------------------------------------------
+	include ../include_pug/_tpl_footer.pug

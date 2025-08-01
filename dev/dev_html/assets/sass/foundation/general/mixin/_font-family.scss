@@ -1,0 +1,56 @@
+//
+//
+// font-family.scss
+//
+//
+
+//
+// font-familyは、css変数で管理
+//
+
+///////////////////////////////////////////////////////////////
+// font-family
+///////////////////////////////////////////////////////////////
+@mixin font-family( $font: null, $negative: true , $vertical: false, ){
+
+	@if $font == sans-serif {
+		font-family: var( --font-sans-serif );
+
+		@if $negative == true {
+			padding-top: 0.1px;
+			padding-bottom: 0.1px;
+
+			&::before,
+			&::after{
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				font-size: inherit;
+			}
+
+			@if $vertical == false {
+				&::before {
+					margin-top: var( --font-sans-serif-top );
+				}
+				&::after {
+					margin-bottom: var( --font-sans-serif-bottom );
+				}
+			} @else{
+				&::before {
+					margin-right: var( --font-sans-serif-top );
+				}
+				&::after {
+					margin-left: var( --font-sans-serif-bottom );
+				}
+			}
+		}
+	}
+	@if $font == serif { font-family: var( --font-serif ) }
+	@if $font == gothic { font-family: var( --font-gothic ) }
+	@if $font == mincho { font-family: var( --font-mincho ) }
+	@if $font == mix { font-family: var( --font-mix ) }
+}
+
+
+

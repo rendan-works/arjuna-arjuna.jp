@@ -1,0 +1,115 @@
+// /*
+//  *
+//  * slider.scss
+//  *
+//  */
+// /* ------------------------------------------------------------
+//  js-slider
+// ------------------------------------------------------------ */
+// .js-slider{
+// 	width: 100%;
+// 	height: 100%;
+
+// 	.intervalChange__dots{
+// 		position: absolute;
+// 		left: 50%;
+// 		transform: translateX(-50%);
+// 		display: flex;
+// 		justify-content: center;
+
+// 		@include mq-up(sm){
+// 			bottom: 20px;
+// 		}
+// 		@include mq-down(sm){
+// 			bottom: 10px;
+// 		}
+
+// 		li{
+// 			background-color: var( --color-white );
+// 			transition: background-color 400ms lienar;
+// 			cursor: pointer;
+
+// 			@include mq-up{
+// 				width: 30px;
+// 				height: 3px;
+// 				margin: 0 1.5px;
+// 			}
+// 			@include mq-down{
+// 				width: 15px;
+// 				height: 1.5px;
+// 				margin: 0 1px;
+// 			}
+
+// 			&.is-active{
+// 				// background-color: $color-light-brown;
+// 			}
+// 		}
+// 	}
+// }
+
+// /* ---------- js-slider__content ---------- */
+// .js-slider__content{
+// 	background-color: var( --color-white );
+// 	width: 100%;
+// 	height: 100%;
+// 	position: relative;
+// 	overflow: hidden;
+
+// 	li{
+// 		width: 100%;
+// 		height: 100%;
+// 		@include position-absolute;
+// 		@include bg-cover;
+// 		opacity: 0;
+// 		visibility: hidden;
+// 		transition: 1200ms ease;
+// 		transition-property: opacity,visibility;
+// 		will-change: transform;
+
+
+// 		&.is-active{
+// 			opacity: 1;
+// 			visibility: visible;
+// 		}
+
+// 		&.--tb{
+// 			height: 102%;
+// 			transform: translate3d(0,-2%,0);
+// 			&.is-put{
+// 				animation: 6000ms linear slide_tb forwards;
+// 			}
+// 		}
+// 		&.--bt{
+// 			height: 102%;
+// 			transform: translate3d(0,0,0);
+// 			&.is-put{
+// 				animation: 6000ms linear slide_bt forwards;
+// 			}
+// 		}
+// 		&.--lr{
+// 			width: 102%;
+// 			transform: translate3d(-2%,0,0);
+// 			&.is-put{
+// 				animation: 6000ms linear slide_lr forwards;
+// 			}
+// 		}
+// 		&.--rl{
+// 			width: 102%;
+// 			transform: translate3d(0,0,0);
+// 			&.is-put{
+// 				animation: 6000ms linear slide_rl forwards;
+// 			}
+// 		}
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,276 @@
+//
+//
+// font.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// font-var
+///////////////////////////////////////////////////////////////
+//
+// overview: font-sizeをCSS変数で扱う場合に使用する。
+//           max関数かremはjs-canIUseを使用し判定し、font-size: var( --font-size14 ) のような形で指定します。
+//           ただ、毎回記述するのは面倒なのでmixin化し、第一引数には該当の変数の「--font-size」以降を入れる。
+// usage   : @include font-var(13,12) // 1.3remと12pxの中で可変する
+//
+@mixin font-var( $variable-size ){
+	font-size: var( --font-size#{$variable-size} );
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// font-min
+///////////////////////////////////////////////////////////////
+//
+// overview: htmlのフォントサイズが62.5%ではなくvwの幅があった場合に使用する。
+//           cssのmin関数を使用し、基本はremで可変するものの、最小値をpxで指定して それ以下にならないようにする。
+//           第一引数は最大値、第二引数には最小値を入れる。
+// usage   : @include font-min(13,12) // 1.3remと12pxの中で可変する
+//
+@mixin font-min( $max-size,$min-size ){
+	// font-size: #{$max-size}px;
+	font-size: #{$max-size / 10}rem;
+	font-size: unquote('max( #{$max-size / 10}rem , #{$min-size}px )');
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// font-vw
+///////////////////////////////////////////////////////////////
+//
+// overview: font-sizeからvwを計算する。
+//           第一引数にはフォントサイズ、第二引数にはデザインデータのサイズを入れる。
+//
+@mixin font-vw( $font-size,$design-width: 750 ){
+	$rate: 100 / $design-width;
+	font-size: $rate * $font-size * 1vw;
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// font-range
+///////////////////////////////////////////////////////////////
+//
+// overview: フォントの最大値・最小値を決め、vwで制御する
+//
+@mixin font-range($font-size-min,$font-size-max,$range-min:320,$range-max:560){
+	$x: $range-min / 100 * 0.1rem;
+	$y: 100 * ($font-size-max - $font-size-min) / ($range-max - $range-min);
+	$z: $font-size-min * 0.1rem;
+	font-size: calc( #{$z} + ( (1vw - #{$x}) * #{$y} ) );
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// rem
+///////////////////////////////////////////////////////////////
+@mixin font0   { font-size:   $rem-0; }
+@mixin font1   { font-size:   $rem-1; }
+@mixin font2   { font-size:   $rem-2; }
+@mixin font3   { font-size:   $rem-3; }
+@mixin font4   { font-size:   $rem-4; }
+@mixin font5   { font-size:   $rem-5; }
+@mixin font6   { font-size:   $rem-6; }
+@mixin font7   { font-size:   $rem-7; }
+@mixin font8   { font-size:   $rem-8; }
+@mixin font9   { font-size:   $rem-9; }
+@mixin font10  { font-size:  $rem-10; }
+@mixin font11  { font-size:  $rem-11; }
+@mixin font12  { font-size:  $rem-12; }
+@mixin font13  { font-size:  $rem-13; }
+@mixin font14  { font-size:  $rem-14; }
+@mixin font15  { font-size:  $rem-15; }
+@mixin font16  { font-size:  $rem-16; }
+@mixin font17  { font-size:  $rem-17; }
+@mixin font18  { font-size:  $rem-18; }
+@mixin font19  { font-size:  $rem-19; }
+@mixin font20  { font-size:  $rem-20; }
+@mixin font21  { font-size:  $rem-21; }
+@mixin font22  { font-size:  $rem-22; }
+@mixin font23  { font-size:  $rem-23; }
+@mixin font24  { font-size:  $rem-24; }
+@mixin font25  { font-size:  $rem-25; }
+@mixin font26  { font-size:  $rem-26; }
+@mixin font27  { font-size:  $rem-27; }
+@mixin font28  { font-size:  $rem-28; }
+@mixin font29  { font-size:  $rem-29; }
+@mixin font30  { font-size:  $rem-30; }
+@mixin font31  { font-size:  $rem-31; }
+@mixin font32  { font-size:  $rem-32; }
+@mixin font33  { font-size:  $rem-33; }
+@mixin font34  { font-size:  $rem-34; }
+@mixin font35  { font-size:  $rem-35; }
+@mixin font36  { font-size:  $rem-36; }
+@mixin font37  { font-size:  $rem-37; }
+@mixin font38  { font-size:  $rem-38; }
+@mixin font39  { font-size:  $rem-39; }
+@mixin font40  { font-size:  $rem-40; }
+@mixin font41  { font-size:  $rem-41; }
+@mixin font42  { font-size:  $rem-42; }
+@mixin font43  { font-size:  $rem-43; }
+@mixin font44  { font-size:  $rem-44; }
+@mixin font45  { font-size:  $rem-45; }
+@mixin font46  { font-size:  $rem-46; }
+@mixin font47  { font-size:  $rem-47; }
+@mixin font48  { font-size:  $rem-48; }
+@mixin font49  { font-size:  $rem-49; }
+@mixin font50  { font-size:  $rem-50; }
+@mixin font51  { font-size:  $rem-51; }
+@mixin font52  { font-size:  $rem-52; }
+@mixin font53  { font-size:  $rem-53; }
+@mixin font54  { font-size:  $rem-54; }
+@mixin font55  { font-size:  $rem-55; }
+@mixin font56  { font-size:  $rem-56; }
+@mixin font57  { font-size:  $rem-57; }
+@mixin font58  { font-size:  $rem-58; }
+@mixin font59  { font-size:  $rem-59; }
+@mixin font60  { font-size:  $rem-60; }
+@mixin font61  { font-size:  $rem-61; }
+@mixin font62  { font-size:  $rem-62; }
+@mixin font63  { font-size:  $rem-63; }
+@mixin font64  { font-size:  $rem-64; }
+@mixin font65  { font-size:  $rem-65; }
+@mixin font66  { font-size:  $rem-66; }
+@mixin font67  { font-size:  $rem-67; }
+@mixin font68  { font-size:  $rem-68; }
+@mixin font69  { font-size:  $rem-69; }
+@mixin font70  { font-size:  $rem-70; }
+@mixin font71  { font-size:  $rem-71; }
+@mixin font72  { font-size:  $rem-72; }
+@mixin font73  { font-size:  $rem-73; }
+@mixin font74  { font-size:  $rem-74; }
+@mixin font75  { font-size:  $rem-75; }
+@mixin font76  { font-size:  $rem-76; }
+@mixin font77  { font-size:  $rem-77; }
+@mixin font78  { font-size:  $rem-78; }
+@mixin font79  { font-size:  $rem-79; }
+@mixin font80  { font-size:  $rem-80; }
+@mixin font81  { font-size:  $rem-81; }
+@mixin font82  { font-size:  $rem-82; }
+@mixin font83  { font-size:  $rem-83; }
+@mixin font84  { font-size:  $rem-84; }
+@mixin font85  { font-size:  $rem-85; }
+@mixin font86  { font-size:  $rem-86; }
+@mixin font87  { font-size:  $rem-87; }
+@mixin font88  { font-size:  $rem-88; }
+@mixin font89  { font-size:  $rem-89; }
+@mixin font90  { font-size:  $rem-90; }
+@mixin font91  { font-size:  $rem-91; }
+@mixin font92  { font-size:  $rem-92; }
+@mixin font93  { font-size:  $rem-93; }
+@mixin font94  { font-size:  $rem-94; }
+@mixin font95  { font-size:  $rem-95; }
+@mixin font96  { font-size:  $rem-96; }
+@mixin font97  { font-size:  $rem-97; }
+@mixin font98  { font-size:  $rem-98; }
+@mixin font99  { font-size:  $rem-99; }
+@mixin font100 { font-size: $rem-100; }
+@mixin font101 { font-size: $rem-101; }
+@mixin font102 { font-size: $rem-102; }
+@mixin font103 { font-size: $rem-103; }
+@mixin font104 { font-size: $rem-104; }
+@mixin font105 { font-size: $rem-105; }
+@mixin font106 { font-size: $rem-106; }
+@mixin font107 { font-size: $rem-107; }
+@mixin font108 { font-size: $rem-108; }
+@mixin font109 { font-size: $rem-109; }
+@mixin font110 { font-size: $rem-110; }
+@mixin font111 { font-size: $rem-111; }
+@mixin font112 { font-size: $rem-112; }
+@mixin font113 { font-size: $rem-113; }
+@mixin font114 { font-size: $rem-114; }
+@mixin font115 { font-size: $rem-115; }
+@mixin font116 { font-size: $rem-116; }
+@mixin font117 { font-size: $rem-117; }
+@mixin font118 { font-size: $rem-118; }
+@mixin font119 { font-size: $rem-119; }
+@mixin font120 { font-size: $rem-120; }
+@mixin font121 { font-size: $rem-121; }
+@mixin font122 { font-size: $rem-122; }
+@mixin font123 { font-size: $rem-123; }
+@mixin font124 { font-size: $rem-124; }
+@mixin font125 { font-size: $rem-125; }
+@mixin font126 { font-size: $rem-126; }
+@mixin font127 { font-size: $rem-127; }
+@mixin font128 { font-size: $rem-128; }
+@mixin font129 { font-size: $rem-129; }
+@mixin font130 { font-size: $rem-130; }
+@mixin font131 { font-size: $rem-131; }
+@mixin font132 { font-size: $rem-132; }
+@mixin font133 { font-size: $rem-133; }
+@mixin font134 { font-size: $rem-134; }
+@mixin font135 { font-size: $rem-135; }
+@mixin font136 { font-size: $rem-136; }
+@mixin font137 { font-size: $rem-137; }
+@mixin font138 { font-size: $rem-138; }
+@mixin font139 { font-size: $rem-139; }
+@mixin font140 { font-size: $rem-140; }
+@mixin font141 { font-size: $rem-141; }
+@mixin font142 { font-size: $rem-142; }
+@mixin font143 { font-size: $rem-143; }
+@mixin font144 { font-size: $rem-144; }
+@mixin font145 { font-size: $rem-145; }
+@mixin font146 { font-size: $rem-146; }
+@mixin font147 { font-size: $rem-147; }
+@mixin font148 { font-size: $rem-148; }
+@mixin font149 { font-size: $rem-149; }
+@mixin font150 { font-size: $rem-150; }
+@mixin font151 { font-size: $rem-151; }
+@mixin font152 { font-size: $rem-152; }
+@mixin font153 { font-size: $rem-153; }
+@mixin font154 { font-size: $rem-154; }
+@mixin font155 { font-size: $rem-155; }
+@mixin font156 { font-size: $rem-156; }
+@mixin font157 { font-size: $rem-157; }
+@mixin font158 { font-size: $rem-158; }
+@mixin font159 { font-size: $rem-159; }
+@mixin font160 { font-size: $rem-160; }
+@mixin font161 { font-size: $rem-161; }
+@mixin font162 { font-size: $rem-162; }
+@mixin font163 { font-size: $rem-163; }
+@mixin font164 { font-size: $rem-164; }
+@mixin font165 { font-size: $rem-165; }
+@mixin font166 { font-size: $rem-166; }
+@mixin font167 { font-size: $rem-167; }
+@mixin font168 { font-size: $rem-168; }
+@mixin font169 { font-size: $rem-169; }
+@mixin font170 { font-size: $rem-170; }
+@mixin font171 { font-size: $rem-171; }
+@mixin font172 { font-size: $rem-172; }
+@mixin font173 { font-size: $rem-173; }
+@mixin font174 { font-size: $rem-174; }
+@mixin font175 { font-size: $rem-175; }
+@mixin font176 { font-size: $rem-176; }
+@mixin font177 { font-size: $rem-177; }
+@mixin font178 { font-size: $rem-178; }
+@mixin font179 { font-size: $rem-179; }
+@mixin font180 { font-size: $rem-180; }
+@mixin font181 { font-size: $rem-181; }
+@mixin font182 { font-size: $rem-182; }
+@mixin font183 { font-size: $rem-183; }
+@mixin font184 { font-size: $rem-184; }
+@mixin font185 { font-size: $rem-185; }
+@mixin font186 { font-size: $rem-186; }
+@mixin font187 { font-size: $rem-187; }
+@mixin font188 { font-size: $rem-188; }
+@mixin font189 { font-size: $rem-189; }
+@mixin font190 { font-size: $rem-190; }
+@mixin font191 { font-size: $rem-191; }
+@mixin font192 { font-size: $rem-192; }
+@mixin font193 { font-size: $rem-193; }
+@mixin font194 { font-size: $rem-194; }
+@mixin font195 { font-size: $rem-195; }
+@mixin font196 { font-size: $rem-196; }
+@mixin font197 { font-size: $rem-197; }
+@mixin font198 { font-size: $rem-198; }
+@mixin font199 { font-size: $rem-199; }
+@mixin font200 { font-size: $rem-200; }
+
+
+
+
+

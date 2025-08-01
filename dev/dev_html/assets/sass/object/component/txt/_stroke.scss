@@ -1,0 +1,28 @@
+/*
+ *
+ * stroke.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-stroke
+ 文字の境界線
+ text-strokeは内側と外側ににつくため、実際の数値より2倍にする
+ さらに、擬似要素を被せ、内側のは見せないようにする
+------------------------------------------------------------ */
+.c-stroke{
+	position: relative;
+	-webkit-text-stroke: calc( var( --stroke-width ) * 1 ) var( --stroke-color );
+
+	&::before{
+		content: attr(data-txt);
+		font-size: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 1;
+		transform: translate(-50%,-50%);
+		-webkit-text-stroke: 0;
+		white-space: nowrap;
+	}
+}
+

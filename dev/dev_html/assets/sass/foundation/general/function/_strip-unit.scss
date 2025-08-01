@@ -1,0 +1,24 @@
+//
+//
+// strip-unit.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// strip-unit
+///////////////////////////////////////////////////////////////
+//
+// overview : 単位を削除する関数。@mixin remで使用しています。
+// usage    : $value : strip-unit($value);
+//
+@function strip-unit ($number) {
+	@if type-of($number) != number {
+		@warn '#{ $number } is not a number.';
+		@return $number;
+	}
+	@return $number / ($number * 0 + 1);
+}
+
+
+
+

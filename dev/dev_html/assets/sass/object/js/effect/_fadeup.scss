@@ -1,0 +1,84 @@
+/**
+ *
+ * fadeup.scss
+ *
+ */
+/* ------------------------------------------------------------
+ js-fadeup
+------------------------------------------------------------ */
+.js-fadeup{
+	opacity: 0;
+	transform: translate3d(0,2.5rem,0) rotate(0.001deg);
+	transition: var( --transition-fadeup );
+	transition-property: opacity,transform;
+	transition-delay: var( --transition-delay , 200ms );
+
+	&.is-shown,
+	.is-shown &{
+		opacity: 1;
+		transform: translate3d(0,0,0) rotate(0.001deg);
+	}
+}
+
+
+
+
+/* ------------------------------------------------------------
+ js-fadeups
+------------------------------------------------------------ */
+.js-fadeups{
+	> *{
+		opacity: 0;
+		transform: translate3d(0,2.5rem,0) rotate(0.001deg);
+		transition: var( --transition-fadeup );
+		transition-property: opacity,transform;
+
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}){
+				transition-delay: calc( var( --transition-delay , 200ms ) + #{$i * 180ms} );
+			}
+		}
+	}
+
+	&.is-shown,
+	.is-shown &{
+		> *{
+			opacity: 1;
+			transform: translate3d(0,0,0) rotate(0.001deg);
+		}
+	}
+
+
+	/* ---------- -slow ---------- */
+	// &.-slow{
+	// 	--transition-delay: 200ms;
+
+	// 	> *{
+	// 		transition: var( --transition-fadeup-slow );
+
+	// 		@for $i from 1 through 20 {
+	// 			&:nth-child(#{$i}){
+	// 				transition-delay: calc( var( --transition-delay , 0ms ) + #{$i * 240ms} );
+	// 			}
+	// 		}
+	// 	}
+	// }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

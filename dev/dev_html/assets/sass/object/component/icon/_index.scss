@@ -1,0 +1,30 @@
+/**
+ *
+ * index
+ *
+ */
+/* ------------------------------------------------------------
+ c-index
+------------------------------------------------------------ */
+.c-index{
+	svg{
+		fill: var( --color-icon );
+		transition: fill var( --transition-hover );
+
+		@include mq-up{
+			@include rem( width , 40px );
+			@include rem( height , 40px );
+		}
+		@include mq-down{
+			@include rem( width , 21px );
+			@include rem( height , 21px );
+		}
+
+		@include hover-query(){
+			a:hover &{
+				fill: var( --color-txt );
+			}
+		}
+	}
+}
+

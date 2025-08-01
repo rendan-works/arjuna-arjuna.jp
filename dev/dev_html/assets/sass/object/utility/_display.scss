@@ -1,0 +1,53 @@
+/**
+ *
+ * display.scxxs
+ *
+ */
+/* ------------------------------------------------------------
+ display
+------------------------------------------------------------ */
+.u-ib     { display: inline-block; }
+.u-inline { display: inline; }
+.u-block  { display: block; }
+.u-n      { display: none; }
+// .u-flex   { display: flex; }
+// .u-grid   { display: grid; }
+
+@include mq-up(xl){
+	.u-n-mqUp-xl { display: none; }
+}
+@include mq-up(lg){
+	.u-n-mqUp-lg { display: none; }
+}
+@include mq-up(md){
+	.u-n-mqUp-md { display: none; }
+}
+@include mq-up(sm){
+	.u-n-mqUp-sm { display: none; }
+}
+@include mq-up(xs){
+	.u-n-mqUp-xs { display: none; }
+}
+@include mq-up(xxs){
+	.u-n-mqUp-xxs { display: none; }
+}
+@include mq-down(xl){
+	.u-n-mqDown-xl { display: none; }
+}
+@include mq-down(lg){
+	.u-n-mqDown-lg { display: none; }
+}
+@include mq-down(md){
+	.u-n-mqDown-md { display: none; }
+}
+@include mq-down(sm){
+	.u-n-mqDown-sm { display: none; }
+}
+@include mq-down(xs){
+	.u-n-mqDown-xs { display: none; }
+}
+@include mq-down(xxs){
+	.u-n-mqDown-xxs { display: none; }
+}
+
+

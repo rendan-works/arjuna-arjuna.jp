@@ -1,0 +1,66 @@
+//
+//
+// mediaquery.scss
+//
+//
+
+//
+// overview : メディアクエリの管理
+//            引数にはvariableディレクトリのbreakpointから選び、freeの場合は自由に入れる。
+// reference: https://www.tam-tam.co.jp/tipsnote/html_css/post10708.html
+//
+
+
+///////////////////////////////////////////////////////////////
+// min-width
+///////////////////////////////////////////////////////////////
+@mixin mq-up( $breakpoint: lg ) {
+	@media screen and #{map-get($breakpoint-up-width, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq-up-free( $breakpoint ) {
+	@media screen and ( min-width: $breakpoint ) {
+		@content;
+	}
+}
+
+
+///////////////////////////////////////////////////////////////
+// max-width
+///////////////////////////////////////////////////////////////
+@mixin mq-down( $breakpoint: lg ) {
+	@media screen and #{map-get($breakpoint-down-width, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq-down-free( $breakpoint ) {
+	@media screen and ( max-width: $breakpoint ){
+		@content;
+	}
+}
+
+
+///////////////////////////////////////////////////////////////
+// min-width and max-width
+///////////////////////////////////////////////////////////////
+@mixin mq-updown( $breakpoint-up: lg , $breakpoint-down: sm ) {
+	@media screen and #{map-get($breakpoint-down-width, $breakpoint-up)} and #{map-get($breakpoint-up-width, $breakpoint-down)} {
+		@content;
+	}
+}
+
+@mixin mq-updown-free( $breakpoint-up:1023px, $breakpoint-down:561px) {
+	@media screen and ( max-width: $breakpoint-up ) and ( min-width: $breakpoint-down ) {
+		@content;
+	}
+}
+
+
+
+
+
+
+

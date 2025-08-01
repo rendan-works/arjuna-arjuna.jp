@@ -1,0 +1,181 @@
+/**
+ *
+ * arrow.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-arrow
+ 横長矢印
+------------------------------------------------------------ */
+.c-arrow{
+	transition: transform var( --transition-hover );
+
+	/* レギュラーサイズ */
+	svg{
+		@include mq-up{
+			@include rem( width , 91px );
+			@include rem( height , 10px );
+		}
+		@include mq-down{
+			@include rem( width , 71px );
+			@include rem( height , 8px );
+		}
+	}
+
+	@include hover-query{
+		a:hover &{
+			transform: translateX(0.6rem);
+		}
+	}
+
+
+
+	/* ---------- -reverse ---------- */
+	&.-reverse{
+		transform: scale(-1,1);
+
+		@include hover-query{
+			a:hover &{
+				transform: scale(-1,1) translateX(0.6rem);
+			}
+		}
+	}
+
+
+	/* ---------- -small ---------- */
+	&.-small{
+		svg{
+			@include mq-down{
+				@include rem( width , 27px );
+				@include rem( height , 8px );
+			}
+		}
+	}
+
+	/* ---------- -medium ---------- */
+	&.-medium{
+		svg{
+			@include mq-up{
+				// @include rem( width , 121px );
+				// @include rem( height , 15px );
+				@include rem( width , 100px );
+				@include rem( height , 11px );
+			}
+			@include mq-down{
+				@include rem( width , 51px );
+				@include rem( height , 8px );
+			}
+		}
+	}
+
+	/* ---------- -large ---------- */
+	&.-large{
+		svg{
+			@include mq-up{
+				@include rem( width , 355px );
+				@include rem( height , 11px );
+			}
+			@include mq-down{
+				@include rem( width , 272px );
+				@include rem( height , 8px );
+			}
+		}
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ c-arrow2
+ スクエア矢印
+------------------------------------------------------------ */
+.c-arrow2{
+
+	/* ---------- -xsmall ---------- */
+	&.-xsmall{
+		transition: transform var( --transition-hover );
+
+		svg{
+			@include mq-up{
+				@include rem( width , 13px * .6 );
+				@include rem( height , 23px * .6 );
+			}
+			@include mq-down{
+				@include rem( width , 9px * .6 );
+				@include rem( height , 17px * .6 );
+			}
+		}
+
+		@include hover-query{
+			a:hover &{
+				transform: translateX(0.4rem);
+			}
+		}
+	}
+
+	/* ---------- -small ---------- */
+	&.-small{
+		transition: transform var( --transition-hover );
+
+		svg{
+			@include mq-up{
+				@include rem( width , 13px );
+				@include rem( height , 23px );
+			}
+			@include mq-down{
+				@include rem( width , 9px );
+				@include rem( height , 17px );
+			}
+		}
+
+		@include hover-query{
+			a:hover &{
+				transform: translateX(0.6rem);
+			}
+		}
+	}
+
+	/* ---------- -large ---------- */
+	&.-large{
+		transition: opacity var( --transition-hover );
+
+		svg{
+			@include mq-up{
+				@include rem( width , 60px );
+				@include rem( height , 118px );
+			}
+			@include mq-down{
+			}
+		}
+
+		@include hover-query{
+			a:hover &,
+			button:hover &{
+				opacity: var( --hover-opacity );
+			}
+		}
+	}
+
+}
+
+
+
+/* ------------------------------------------------------------
+ c-arrow3
+ 文字を使った矢印
+------------------------------------------------------------ */
+.c-arrow3{
+	transition: transform var( --transition-hover );
+
+	@include hover-query{
+		a:hover &{
+			transform: translateX(0.6rem);
+		}
+		a:hover &.-prev{
+			transform: translateX(-0.6rem);
+		}
+	}
+}
+
+
+

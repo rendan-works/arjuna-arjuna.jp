@@ -1,0 +1,64 @@
+//
+//
+// rem.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// rem
+///////////////////////////////////////////////////////////////
+//
+// overview : pxや数値をremに変換する。
+// usage    : @include rem(padding, 20 20)
+// caution  : remは入れない
+//
+
+@mixin rem(
+	$property,
+	$values,
+	$base: 10
+) {
+	$px-values : ();
+	$rem-values: ();
+
+	@each $value in $values {
+		@if $value {
+			@if $value == 0 or $value == 0px {
+				$px-values : join($px-values, 0);
+				$rem-values: join($rem-values, 0);
+			} @else if unitless($value) or type-of($value) == number and unit($value) == px {
+				// 数値 または px
+				$value        : strip-unit($value); // 単位を一旦削除
+				$new-px-value : $value + px;
+				$new-rem-value: $value / $base + rem;
+				$px-values    : join($px-values, $new-px-value);
+				$rem-values   : join($rem-values, $new-rem-value);
+			} @else {
+				$px-values: join($px-values, $value);
+			}
+		}
+	}
+
+	// #{$property}: $px-values;
+	#{$property}: $rem-values;
+
+}
+
+
+///////////////////////////////////////////////////////////////
+// rems
+///////////////////////////////////////////////////////////////
+//
+// overview : @includeのremを複数指定する
+// usage    : @include rems(( padding: 20 20 , margin: 20px, ));
+//
+@mixin rems(
+	$styles,
+	$base: 10
+) {
+	@each $property, $values in $styles {
+		@include rem( $property, $values, $base );
+	}
+}
+
+

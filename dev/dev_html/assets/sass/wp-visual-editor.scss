@@ -1,0 +1,38 @@
+/**
+ *
+ * wp-visual-editor.scss
+ *
+ *
+ */
+
+///////////////////////////////////////////////////////////////
+// general
+///////////////////////////////////////////////////////////////
+@import './foundation/general/**/*.scss';
+
+
+/* ------------------------------------------------------------
+ wp-visual-editor
+------------------------------------------------------------ */
+html{
+	font-size: 62.5% !important;
+}
+
+body.wp-visual-editor{
+	box-sizing: border-box;
+	height: auto !important;
+	min-height: auto !important;
+	padding-top: 50px !important;
+	padding-bottom: 50px !important;
+	padding-left: 50px !important;
+	padding-right: 50px !important;
+	margin: 0 !important;
+
+	&::after{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 1px;
+	}
+}
+

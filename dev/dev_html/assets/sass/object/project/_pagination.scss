@@ -1,0 +1,107 @@
+/**
+ *
+ * pagination.scss
+ *
+ */
+/* ------------------------------------------------------------
+ p-pagination
+------------------------------------------------------------ */
+.p-pagination{
+	@include mq-up{
+		@include rem( margin-top , 200px );
+	}
+	@include mq-down{
+		// @include rem( margin-top , 40px );
+		@include rem( margin-top , 70px );
+	}
+}
+
+
+/* ----------------------------------------
+ p-pagination__list
+---------------------------------------- */
+.p-pagination__list{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include mq-up{
+		@include rem( gap , 50px );
+	}
+	@include mq-down{
+		@include rem( gap , 25px );
+	}
+
+	a{
+		display: block;
+		width: auto;
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		border: var( --solid );
+		@include font-weight(bold);
+
+		@include mq-up{
+			@include rem( min-width , 40px );
+			@include rem( min-height , 40px );
+			@include font-var(18);
+		}
+		@include mq-down{
+			@include rem( min-width , 30px );
+			@include rem( min-height , 30px );
+			@include font-var(15);
+		}
+
+		&.is-current{
+			background-color: var( --color-bg2 );
+			color: var( --color-txt2 );
+			pointer-events: none;
+		}
+		@include hover{
+			background-color: var( --color-bg2 );
+			color: var( --color-txt2 );
+		}
+	}
+}
+
+.p-pagination__ellipsis{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(18);
+		@include rem( margin , 0 -10px );
+	}
+	@include mq-down{
+		@include font-var(14);
+		@include rem( margin , 0 -10px );
+	}
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-pagination2
+------------------------------------------------------------ */
+.p-pagination2{
+	@include mq-up{
+		@include rem( margin-top , 155px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 50px );
+	}
+}
+
+
+
+
+
+

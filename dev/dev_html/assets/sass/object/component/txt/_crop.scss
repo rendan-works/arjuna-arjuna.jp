@@ -1,0 +1,49 @@
+/**
+ *
+ * crop.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-crop
+ line-heightで生じる上下の余白を擬似要素を使って相殺
+ 上下の余白はline-heightによって変化するため、管理しやすいようにline-heightはCSS変数で指定する。
+ これにより、レスポンシブでline-heightの値が変わったり、line-heightの大きさ毎にクラスを生成する必要がなく、管理がしやすい。
+
+ line-heightの値は各要素で個別指定する。
+
+ 参考URL：https://coliss.com/articles/build-websites/operation/css/simple-css-remove-top-space.html
+------------------------------------------------------------ */
+.c-crop{
+	display: block;
+	@include line-height;
+	@include line-height-crop;
+}
+
+
+.c-crop-v{
+	display: block;
+	@include line-height;
+	@include line-height-crop( var( --line-height ) , vertical );
+}
+
+.c-crop-v-h-lg{
+	@include line-height;
+
+	@include mq-up{
+		@include line-height-crop( var( --line-height ) , vertical );
+	}
+	@include mq-down{
+		@include line-height-crop;
+	}
+}
+
+// .c-crop-h-v-lg{
+// 	@include line-height;
+
+// 	@include mq-up{
+// 		@include line-height-crop( var( --line-height ) , vertical );
+// 	}
+// 	@include mq-down{
+// 		@include line-height-crop;
+// 	}
+// }

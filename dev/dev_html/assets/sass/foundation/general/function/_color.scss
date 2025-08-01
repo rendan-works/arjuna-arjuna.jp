@@ -1,0 +1,21 @@
+//
+//
+// color.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// getAlphaColor
+///////////////////////////////////////////////////////////////
+//
+// overview : デザイン上でopacityで色が調節してある場合、sassで16進数に変換する
+// usage    : $color-black3-_4: getAlphaColor( rgba( $color-black3 , .4 ) );
+// caution  : 16新数がデザインとズレる場合があるが、見た目は一緒
+//
+@function getAlphaColor( $color, $background: var( --color-white--rgb ) ){
+	$percent: alpha($color) * 100%;
+	$opaque : opacify($color, 1);
+	$color  : mix($opaque, $background, $percent);
+	@return $color;
+}
+

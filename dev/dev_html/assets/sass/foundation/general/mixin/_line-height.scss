@@ -1,0 +1,91 @@
+//
+//
+// line-height.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// line-height
+///////////////////////////////////////////////////////////////
+//
+// overview : line-heightを計算
+//            第一引数にフォントサイズ、第二引数に行間、第三引数はcropを入れる。
+//            第三引数がtrueの時はline-height-cropも入り、クラス名の場合はそのクラスがある場合cropが有効になる。
+//            css変数を指定したい場合は、第一引数に入れた状態で使用してください。
+// usage    : @include line-height(13,30,true);
+// usage    : @include line-height(13,30,'-crop');
+//
+@mixin line-height( $value1: var( --line-height ) , $value2: '' ){
+
+	@if $value2 == '' {
+		// css変数や値を直接引数に入れた時→第二引数が空の時
+		line-height: calc( #{$value1} * 1em );
+	} @else {
+		// 一番オーソドックスな、計算をcalcで行う場合
+		line-height: calc( #{$value2} / #{$value1} * 1em );
+	}
+
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// line-height-crop
+///////////////////////////////////////////////////////////////
+//
+// overview : line-height分の上下の余白を擬似要素で打ち消す
+//            引数にline-heightの数値を入れる
+// usage    : @include line-height-crop(1.8)
+// reference: https://yuyakinoshita.com/blog/2020/01/20/line-height-crop/
+//
+@mixin line-height-crop-base(){
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+}
+
+@mixin line-height-crop( $line-height: var( --line-height ) , $direction: horizontal ) {
+	&::before,
+	&::after{
+		@include line-height-crop-base;
+	}
+
+	@if $direction == horizontal {
+		padding-top: 0.1px;
+		padding-bottom: 0.1px;
+
+		&::before {
+			margin-top: calc( (1 - #{$line-height}) * .5em );
+		}
+		&::after {
+			margin-bottom: calc( (1 - #{$line-height}) * .5em );
+		}
+	} @else{
+		padding-right: 0.1px;
+		padding-left: 0.1px;
+
+		&::before {
+			margin-right: calc( (1 - #{$line-height}) * .5em );
+		}
+		&::after {
+			margin-left: calc( (1 - #{$line-height}) * .5em );
+		}
+	}
+}
+
+@mixin line-height-crop-top( $line-height ) {
+	&::before {
+		margin-top: calc( (1 - #{$line-height}) * .5em );
+	}
+}
+
+@mixin line-height-crop-bottom( $line-height ) {
+	&::after {
+		margin-top: calc( (1 - #{$line-height}) * .5em );
+	}
+}
+
+
+
+

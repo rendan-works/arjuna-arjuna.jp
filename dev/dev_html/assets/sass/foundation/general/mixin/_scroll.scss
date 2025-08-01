@@ -1,0 +1,38 @@
+//
+//
+// scroll.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// h-scroll
+///////////////////////////////////////////////////////////////
+//
+// overview : 横スクロール
+// usage    : @include h-scroll(true);
+// caution  : 横スクロールを行いたいとき、全体を囲む親要素で使用する
+//
+@mixin h-scroll( $fullWidth: true , $padding: var( --outside ), $scrollbarHidden: true ){
+	@if $fullWidth == true {
+		width: var( --ww );
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	overscroll-behavior: none;
+	padding: 0 #{$padding};
+
+	@if $scrollbarHidden == true {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+
+		&::-webkit-scrollbar {
+			display:none;
+		}
+	}
+}
+
+

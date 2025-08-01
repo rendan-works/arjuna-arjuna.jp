@@ -1,0 +1,81 @@
+/**
+ *
+ * contact.scss
+ *
+ */
+/* ------------------------------------------------------------
+ l-contact
+------------------------------------------------------------ */
+.l-contact{
+	@include mq-up{
+		@include rem( padding , 250px 0 );
+	}
+	@include mq-down{
+		// @include rem( padding , 95px 0 90px );
+		@include rem( padding , 130px 0 90px );
+	}
+
+	.c-title{
+		@include mq-down{
+			text-align: center;
+		}
+	}
+}
+
+.l-contact__inner{
+	@include mq-up{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}
+
+
+/* ----------------------------------------
+ l-contact__contents
+---------------------------------------- */
+.l-contact__contents{
+	@include mq-up{
+		flex: 1;
+		padding-right: var( --outside );
+	}
+}
+
+/* ---------- l-contact__txt ---------- */
+.l-contact__txt{
+	@include font-weight(bold);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(22);
+		@include var-line-height(22,42);
+		@include rem( margin-top , 116px );
+	}
+	@include mq-down{
+		text-align: center;
+		@include font-var(14);
+		@include var-line-height(28,46);
+		@include rem( margin-top , 50px );
+	}
+}
+
+
+/* ----------------------------------------
+ l-contact__buttons
+---------------------------------------- */
+.l-contact__buttons{
+	display: flex;
+	flex-direction: column;
+
+	@include mq-up{
+		@include rem( width , 400px );
+		@include rem( gap , 50px );
+		@include rem( margin-top , 150px );
+	}
+	@include mq-down{
+		@include rem( max-width , 207px );
+		width: 100%;
+		margin: 4.0rem auto 0;
+		@include rem( gap , 40px );
+	}
+}

@@ -1,0 +1,48 @@
+// /*
+//  *
+//  * blend.scss
+//  *
+//  */
+// /* ------------------------------------------------------------
+//  c-blend
+// ------------------------------------------------------------ */
+// .c-blend{
+// 	position: relative;
+
+// 	&::before{
+// 		content: '';
+// 		@include display-block;
+// 		@include position-absolute;
+// 		z-index: 10;
+// 		background-color: var( --color-black0 );
+// 		pointer-events: none;
+// 		@include transition( opacity );
+
+
+// 		@include hover-query{
+// 			a:hover &{
+// 				opacity: .15;
+// 			}
+// 		}
+// 	}
+
+
+// 	&.-opacity2{
+// 		&::before{
+// 			opacity: .2;
+// 		}
+// 	}
+
+// 	&.-opacity4{
+// 		&::before{
+// 			opacity: .4;
+// 		}
+// 	}
+
+// 	&.-opacity5{
+// 		&::before{
+// 			opacity: .5;
+// 		}
+// 	}
+// }
+

@@ -1,0 +1,40 @@
+/**
+ *
+ * iframe.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-iframe
+------------------------------------------------------------ */
+// .c-iframe{
+// 	@include display-block;
+// 	@include position-absolute;
+// }
+
+
+/* ------------------------------------------------------------
+ c-iframe-child
+------------------------------------------------------------ */
+// .c-iframe-child{
+// 	position: relative;
+
+// 	> iframe{
+// 		@include display-block;
+// 		@include position-absolute;
+// 	}
+// }
+
+
+/* ------------------------------------------------------------
+ c-iframe-hidden
+------------------------------------------------------------ */
+// .c-iframe-hidden{
+// 	display: block;
+// 	width: calc( 100% + 40.0rem );
+// 	height: calc( 100% + 40.0rem );
+// 	position: absolute;
+// 	@include rem( top , -200px );
+// 	@include rem( left , -200px );
+// }
+
+

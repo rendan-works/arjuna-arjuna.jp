@@ -1,0 +1,29 @@
+//
+//
+// z-index.scss
+//
+//
+
+/* ------------------------------------------------------------
+ z-index
+ BEMシステムのBlock部分 のz-indexを一括管理
+ ページ固有のBlock部分は page-hoge.scssで指定する
+ BEMシステムのElement部分 は個別で直接指定
+------------------------------------------------------------ */
+:root{
+	@include var-z-index((
+		null,
+		l-main,
+		l-footer,
+		// l-sitemap-bg,
+		l-header__inner,
+		l-sitemap,
+		l-header__button,
+		l-loading,
+	));
+}
+
+
+
+
+

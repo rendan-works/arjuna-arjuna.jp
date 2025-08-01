@@ -1,0 +1,124 @@
+include ../include_pug/_variable.pug
+// l-header
+header.l-header
+	// l-header__inner
+	div.l-header__inner
+		|
+		| <?php if( $web_path == $root ): ?>
+		h1.l-header__logo
+			a(href!=root+"")
+				img(src!=img_path+"common/logo.svg" alt="デザインアルジュナ" decoding="async").js-svg
+		|
+		| <?php else: ?>
+		p.l-header__logo
+			a(href!=root+"")
+				img(src!=img_path+"common/logo.svg" alt="デザインアルジュナ" decoding="async").js-svg
+		|
+		| <?php endif; ?>
+		// l-header__nav
+		nav.l-header__nav
+			ul
+				li: a(href!=root+"about/").c-anchor-lineIn.-type-current
+					span.c-ls About us
+				li: a(href!=root+"branding/").c-anchor-lineIn.-type-current
+					span.c-ls Branding
+				li: a(href!=root+"works/").c-anchor-lineIn.-type-current
+					span.c-ls Works
+				li: a(href!=root+"blog/").c-anchor-lineIn.-type-current
+					span.c-ls Blog
+				li: a(href!=root+"contact/").c-anchor-lineIn.-type-current
+					span.c-ls Contact
+		// /l-header__nav
+	// /l-header__inner
+	// l-header__button
+	button.l-header__button( type="button" aria-label="メインメニューの切替" )
+		span
+		span
+	// /l-header__button
+// /l-header
+// l-sitemap
+nav.l-sitemap
+	div.l-sitemap__inner.c-inner-max.-contents-lg
+		header.l-sitemap__header
+			p.l-sitemap__logo
+				img(src!=img_path+"common/logo.svg" alt="デザインアルジュナ" decoding="async").js-svg
+			p.l-sitemap__service
+				span.c-crop.
+					Branding Design<br>
+					Graphic Design<br>
+					Web Design<br>
+					Product Development
+		div.l-sitemap__main
+			ul
+				li
+					a(href!=root+"about/").l-sitemap__parent
+						span.l-sitemap__main__en: span About us
+						span.l-sitemap__main__ja 私達について
+					ul.l-sitemap__children
+						li: a(href!=root+"staff/")
+							span.l-sitemap__main__en: span Staff
+							span.l-sitemap__main__ja スタッフ紹介
+						li: a(href!=root+"press/")
+							span.l-sitemap__main__en: span Press
+							span.l-sitemap__main__ja メディア掲載
+				li
+					a(href!=root+"branding/").l-sitemap__parent
+						span.l-sitemap__main__en: span Branding
+						span.l-sitemap__main__ja ブランディング
+			ul
+				li
+					a(href!=root+"works/").l-sitemap__parent
+						span.l-sitemap__main__en: span Works
+						span.l-sitemap__main__ja 製作実績
+					ul.l-sitemap__children2
+						li.js-accordion-click-mqDown-lg
+							p.l-sitemap__children2__title
+								button( type="button" ).js-accordion__switch
+									span [種別]
+									i.c-plus
+							div.l-sitemap__children2__list.js-accordion__panel
+								ul
+									li: a(href!=root+"works/") ブランディング
+									li: a(href!=root+"works/") ロゴ（CI・VI）・ネーミング
+									li: a(href!=root+"works/") パッケージ
+									li: a(href!=root+"works/") パンフレット・会社案内
+									li: a(href!=root+"works/") フライヤー・チラシ・DM
+									li: a(href!=root+"works/") 名刺・封筒・ショップカード
+									li: a(href!=root+"works/") イラスト
+									li: a(href!=root+"works/") コーポレートサイト
+									li: a(href!=root+"works/") ネットショップ
+									li: a(href!=root+"works/") ランディングページ
+									li: a(href!=root+"works/") 動画・ムービー
+						li.js-accordion-click-mqDown-lg
+							p.l-sitemap__children2__title
+								button( type="button" ).js-accordion__switch
+									span [業種]
+									i.c-plus
+							div.l-sitemap__children2__list.js-accordion__panel
+								ul
+									li: a(href!=root+"works/") すべて
+									li: a(href!=root+"works/") 病院・クリニック・医療
+									li: a(href!=root+"works/") 介護・福祉
+									li: a(href!=root+"works/") ホテル・旅館
+									li: a(href!=root+"works/") 製造・メーカー
+									li: a(href!=root+"works/") 学校・教育・保育
+									li: a(href!=root+"works/") 工業・インフラ・流通・交通
+									li: a(href!=root+"works/") 建築・住宅・不動産
+									li: a(href!=root+"works/") アパレル・ファッション
+									li: a(href!=root+"works/") 美容・化粧品・健康
+									li: a(href!=root+"works/") 飲食店・食品
+									li: a(href!=root+"works/") インテリア・雑貨・日用品
+									li: a(href!=root+"works/") ウェディング
+									li: a(href!=root+"works/") 行政・団体
+									li: a(href!=root+"works/") その他
+			ul
+				li
+					a(href!=root+"blog/").l-sitemap__parent
+						span.l-sitemap__main__en: span Blog
+						span.l-sitemap__main__ja ブログ
+			ul
+				li
+					a(href!=root+"contact/").l-sitemap__parent
+						span.l-sitemap__main__en: span Contact
+						span.l-sitemap__main__ja お問い合わせ
+// /l-sitemap

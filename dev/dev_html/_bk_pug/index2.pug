@@ -1,0 +1,435 @@
+.
+	<?php $this_path = 'home/'; ?>
+	<?php require_once( dirname( __FILE__ ) . '/include/variable.php' ); ?>
+	<?php require_once( dirname( __FILE__ ) . '/include/functions.php' ); ?>
+	<?php
+		$directory   = array(
+			array('HOME','Home',''),
+		);
+		$robots = true;
+
+		$meta = array(
+			// 'title'       => $site_name,
+			'title'       => getTitle($directory),
+			'description' => '',
+			'keywords'    => '',
+		);
+
+		$preload = array(
+			//- array(
+			//- 	'href' => $this_img_path . 'visual_01.jpg',
+			//- 	'as'   => 'image',
+			//- ),
+		);
+		$style = array(
+			$root . 'assets/css/page-home.css',
+		);
+		$script = array(
+			$root . 'assets/js/page-home.js',
+		);
+		$jquery  = false;
+
+		$contact_class = '';
+	 ?>
+//- ------------------------------------------------------------
+//- _tpl_header
+//- ------------------------------------------------------------
+include ./include_pug/_tpl_header.pug
+	//- ------------------------------------------------------------
+	//- main
+	//- ------------------------------------------------------------
+	main.home-main
+		// home-kv
+		div.home-kv
+			div.home-kv__inner.c-inner-max.-contents-full
+				p.home-kv__txt.-left branding&amp;design
+				p.home-kv__txt.-right arjuna.co
+				div.home-kv__image
+					img(src!=this_img_path+"apng-kv.png" alt="" decoding="async")
+		// /home-kv
+		// home-works
+		section.home-works.js-loopslider-wrap
+			div.home-works__row.js-loopslider-mqUp-lg
+				div.js-loopslider__content
+					div.home-works__row__list
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+			div.home-works__row.js-loopslider-mqUp-lg
+				div.js-loopslider__content
+					div.home-works__row__list
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+			div.home-works__row.js-loopslider-mqUp-lg
+				div.js-loopslider__content
+					div.home-works__row__list
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+						// p-card2
+						article.p-card2
+							a(href!=root+"")
+								figure.c-aspect.-square.c-bg2
+									img(src!="https://placehold.jp/700x700.png" alt="" decoding="async").c-objectfit.-cover
+								div.p-card2__contents
+									h2.p-card2__title たまらん堂
+									p.p-card2__category パッケージデザイン
+						// /p-card2
+		// /home-works
+		// home-about
+		section.home-about
+			div.home-about__inner.c-inner-max
+				h2.home-about__catch.js-trigger.js-splittext デザインが楽しくする
+				p.home-about__txt.-unique1.c-txt-xxl2.c-crop.
+					社会の何を。<br>
+					地域の何を。<br>
+					私たちの何を。<br>
+					<br>
+					デザインは、楽しくしてゆくのだろう。
+				div.home-about__illust.-unique1.js-parallax.-medium
+					img(src!=this_img_path+"about_illust_1.webp" alt="" decoding="async")
+				div.home-about__illust.-unique2.c-anime-floating2
+					picture
+						source( srcset!=this_img_path+"about_illust_2-pc.webp" media!=mqUpLg )
+						source( srcset!=this_img_path+"about_illust_2-sp.webp" media!=mqDownLg )
+						img(src!=this_img_path+"about_illust_2-pc.webp" alt="" decoding="async")
+				p.home-about__txt.-unique2.c-txt-xxl2.c-crop.
+					デザインは、装飾品でなければ、<br class="u-n-mqUp-lg">芸術品でもない。<br>
+					だから、みんなで一緒につくっていく<br class="u-n-mqUp-lg">プロセスが大事。<br>
+					デザインが、何を楽しくできるのか。<br>
+					立ち止まって考えて、オープンに問い続ける<br class="u-n-mqUp-lg">姿勢こそ<br class="u-n-mqDown-lg">
+					大切なのだと私たちは思います。
+				div.home-about__illust.-unique3.c-anime-floating2.c-delay-7
+					img(src!=this_img_path+"about_illust_3.webp" alt="" decoding="async")
+				p.home-about__txt.-unique3.c-txt-xxl2.c-crop.
+					想像して、工夫して、思い合って、寄り添って。<br>
+					頭を動かし、手を動かし、心を動かすまで。<br>
+					私たちの手を離れたあとに見えてくるもの、<br>
+					その道のりこそ、デザインと呼ばれるもので<br>はないでしょうか。
+				div.home-about__illusts.-group1
+					div.home-about__illust.-unique4.js-parallax.-small
+						img(src!=this_img_path+"about_illust_4.webp" alt="" decoding="async")
+					div.home-about__illust.-unique5.c-anime-floating2.c-delay-2
+						img(src!=this_img_path+"about_illust_5.webp" alt="" decoding="async")
+					div.home-about__illust.-unique8.js-parallax.-small
+						img(src!=this_img_path+"about_illust_8.webp" alt="" decoding="async")
+				p.home-about__txt.-unique4.c-txt-xxl2.c-crop.
+					だから、ともに重ねてゆく時間は、<br>
+					できるだけ、楽しいほうがいいというのが<br>
+					アルジュナの考えです。<br>
+				div.home-about__illusts.-group2
+					div.home-about__illust.-unique6.c-anime-floating2.c-delay-12
+						img(src!=this_img_path+"about_illust_6.webp" alt="" decoding="async")
+					div.home-about__illust.-unique7.js-parallax.-large
+						img(src!=this_img_path+"about_illust_7.webp" alt="" decoding="async")
+				p.home-about__txt.-unique5.c-txt-xxl2.c-crop.
+					あなたがどこの誰であっても、<br>
+					どんな立場であっても、<br>
+					デザインに関わることができる。<br>
+					そうすることでデザインは、みんなでつくる、<br>
+					あなたのものになってゆくのだと信じています。
+				div.home-about__illust.-unique9.c-anime-floating2.c-delay-8
+					img(src!=this_img_path+"about_illust_9.webp" alt="" decoding="async")
+				p.home-about__button.p-button.-regular.-black
+					a(href!=root+"about/")
+						span.p-button__en read more
+						i.c-icon.c-arrow
+		// /home-about
+		// home-service
+		section.home-service
+			div.home-service__inner.c-inner-max
+				header.home-service__header
+					h2.c-title.js-trigger.js-splittext Service
+					p.home-service__txt.c-txt-xxl.c-crop.
+						わたしたちは<br>
+						企業のマインドを<br class="u-n-mqDown-sm">
+						楽しさに変える<br>
+						ブランディングデザインの<br class="u-n-mqDown-sm">
+						会社です。
+					p.home-service__button.p-button.-regular.-black.u-n-mqDown-lg
+						a(href!=root+"works/")
+							span.p-button__en View More
+							i.c-icon.c-arrow
+				ul.home-service__list
+					li.c-crop ブランディング
+					li.c-crop MVV・BDM作成
+					li.c-crop CI・VI・デザイン開発（コンセプト/ストーリー）
+					li.c-crop パッケージデザイン
+					li.c-crop 広告制作（ペーパーツール、冊子、WEB、SNS、映像）等
+					li.c-crop イラスト
+				p.home-service__button.p-button.-regular.-black.u-n-mqUp-lg
+					a(href!=root+"works/")
+						span.p-button__en View More
+						i.c-icon.c-arrow
+		// /home-service
+		// home-blog
+		section.home-blog
+			header.home-blog__header
+				div.c-inner-max
+					h2.c-title.js-trigger.js-splittext Blog
+			div.home-blog__list
+				div.home-blog__list__inner.swiper-wrapper
+					// p-card
+					article.p-card.-type1.swiper-slide
+						figure.p-card__figure.c-bg2
+							img(src!=img_path+"common/noimage.webp" alt="" decoding="async").c-objectfit.-cover
+						div.p-card__contents
+							div
+								p.p-card__time
+									time 2024.05.01
+								h3.p-card__title.c-crop
+									span はじめてのロゴ制作
+							div.p-card__another
+								p.p-card__button.p-button3.-small
+									a(href!=root+"")
+										| 記事を読む&nbsp;
+										span.c-arrow3 ＞
+								div.p-card__info
+									p.p-card__term デザイン経営の三点倒立デザイン経営の三点倒立
+									p.p-card__name 笹田 健一
+								figure.p-card__term-image.c-aspect.-square.c-radius-circle
+									img(src!="https://placehold.jp/320x320.png" alt="" decoding="async").c-objectfit.-cover
+					// /p-card
+					// p-card
+					article.p-card.-type1.swiper-slide
+						figure.p-card__figure.c-bg2
+							img(src!=img_path+"common/noimage.webp" alt="" decoding="async").c-objectfit.-cover
+						div.p-card__contents
+							div
+								p.p-card__time
+									time 2024.05.01
+								h3.p-card__title.c-crop
+									span はじめてのロゴ制作はじめてのロゴ制作はじめてのロゴ制作はじめてのロゴ制作
+							div.p-card__another
+								p.p-card__button.p-button3.-small
+									a(href!=root+"")
+										| 記事を読む&nbsp;
+										span.c-arrow3 ＞
+								div.p-card__info
+									p.p-card__term デザイン経営の三点倒立デザイン経営の三点倒立
+									p.p-card__name 笹田 健一
+								figure.p-card__term-image.c-aspect.-square.c-radius-circle
+									img(src!="https://placehold.jp/320x320.png" alt="" decoding="async").c-objectfit.-cover
+					// /p-card
+					// p-card
+					article.p-card.-type1.swiper-slide
+						figure.p-card__figure.c-bg2
+							img(src!=img_path+"common/noimage.webp" alt="" decoding="async").c-objectfit.-cover
+						div.p-card__contents
+							div
+								p.p-card__time
+									time 2024.05.01
+								h3.p-card__title.c-crop
+									span はじめてのロゴ制作
+							div.p-card__another
+								p.p-card__button.p-button3.-small
+									a(href!=root+"")
+										| 記事を読む&nbsp;
+										span.c-arrow3 ＞
+								div.p-card__info
+									p.p-card__term デザイン経営の三点倒立デザイン経営の三点倒立
+									p.p-card__name 笹田 健一
+								figure.p-card__term-image.c-aspect.-square.c-radius-circle
+									img(src!="https://placehold.jp/320x320.png" alt="" decoding="async").c-objectfit.-cover
+					// /p-card
+					// p-card
+					article.p-card.-type1.swiper-slide
+						figure.p-card__figure.c-bg2
+							img(src!=img_path+"common/noimage.webp" alt="" decoding="async").c-objectfit.-cover
+						div.p-card__contents
+							div
+								p.p-card__time
+									time 2024.05.01
+								h3.p-card__title.c-crop
+									span はじめてのロゴ制作
+							div.p-card__another
+								p.p-card__button.p-button3.-small
+									a(href!=root+"")
+										| 記事を読む&nbsp;
+										span.c-arrow3 ＞
+								div.p-card__info
+									p.p-card__term デザイン経営の三点倒立デザイン経営の三点倒立
+									p.p-card__name 笹田 健一
+								figure.p-card__term-image.c-aspect.-square.c-radius-circle
+									img(src!="https://placehold.jp/320x320.png" alt="" decoding="async").c-objectfit.-cover
+					// /p-card
+					// p-card
+					article.p-card.-type1.swiper-slide
+						figure.p-card__figure.c-bg2
+							img(src!=img_path+"common/noimage.webp" alt="" decoding="async").c-objectfit.-cover
+						div.p-card__contents
+							div
+								p.p-card__time
+									time 2024.05.01
+								h3.p-card__title.c-crop
+									span はじめてのロゴ制作
+							div.p-card__another
+								p.p-card__button.p-button3.-small
+									a(href!=root+"")
+										| 記事を読む&nbsp;
+										span.c-arrow3 ＞
+								div.p-card__info
+									p.p-card__term デザイン経営の三点倒立デザイン経営の三点倒立
+									p.p-card__name 笹田 健一
+								figure.p-card__term-image.c-aspect.-square.c-radius-circle
+									img(src!="https://placehold.jp/320x320.png" alt="" decoding="async").c-objectfit.-cover
+					// /p-card
+			p.home-blog__button.p-button.-regular.-black
+				a(href!=root+"blog/")
+					span.p-button__en View More
+					i.c-icon.c-arrow
+		// /home-blog
+
+	//- ------------------------------------------------------------
+	//- /main
+	//- ------------------------------------------------------------
+
+	//- ------------------------------------------------------------
+	//- _tpl_footer
+	//- ------------------------------------------------------------
+	include ./include_pug/_tpl_footer.pug

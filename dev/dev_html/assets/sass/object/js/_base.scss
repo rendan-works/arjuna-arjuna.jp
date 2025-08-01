@@ -1,0 +1,74 @@
+/**
+ *
+ * base.scss
+ *
+ */
+/* ------------------------------------------------------------
+ js-trigger
+ js-triggerがスクロールアニメーションを管理するクラスです。
+ triggerには3種類あり、発火の対象や発火の位置が異なります。
+
+ - js-trigger  --- 自分自身のアニメーションが発火します。位置は画面下からの1/5 or 200pxです。
+ - js-trigger2 --- 自分と子要素のアニメーションが全て発火します。位置は画面下からの1/5 or 200pxです。
+ - js-trigger3 --- 自分と子要素のアニメーションが全て発火します。位置は画面下からの 0px です。
+------------------------------------------------------------ */
+
+
+
+/* ------------------------------------------------------------
+ delay
+------------------------------------------------------------ */
+// @for $i from 1 through 20 {
+// 	.js-delay-#{$i} {
+// 		transition-delay: calc( var( --transition-delay , 200ms ) + #{$i * 160ms} ) !important;
+// 	}
+// }
+
+@for $i from 1 through 20 {
+	.js-var-delay-#{$i} {
+		--transition-delay: #{$i * 160ms};
+	}
+}
+
+// .js-fadedowns,
+// .js-fadeups,
+// .js-scales,
+// .js-masks,
+// .js-mask-verticals,
+// .js-mask-h-v-lgs,
+// .js-mask-v-h-lgs{
+// 	> *{
+// 		@for $i from 1 through 20 {
+// 			&:nth-child(#{$i}){
+// 				transition-delay: calc( var( --transition-delay , 200ms ) + #{$i * 160ms} );
+// 			}
+// 		}
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

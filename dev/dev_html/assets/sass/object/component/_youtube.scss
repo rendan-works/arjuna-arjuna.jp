@@ -1,0 +1,44 @@
+/**
+ *
+ * youtube.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-youtube
+------------------------------------------------------------ */
+.c-youtube{
+	position: relative;
+
+	&::after{
+		@include aspect( percentage( 315 / 560 ) );
+	}
+
+	> iframe{
+		@include display-block;
+		@include position-absolute;
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ c-youtube2
+ JavaScriptと連動してアスペクト比の実装を行う。
+ 主にWPのthe_contentで使用するもので、
+ JavaScriptでiframeのsrcにyoutubeがあるか否かを判定して
+ ある場合「is-aspect」クラスを付与。レスポンシブ対応と行う。
+------------------------------------------------------------ */
+.c-youtube2{
+	&.is-aspect{
+		position: relative;
+
+		&::after{
+			@include aspect( percentage( 315 / 560 ) );
+		}
+
+		> iframe{
+			@include display-block;
+			@include position-absolute;
+		}
+	}
+}

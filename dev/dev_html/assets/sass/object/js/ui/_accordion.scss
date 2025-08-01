@@ -1,0 +1,35 @@
+/**
+ *
+ * accordion.scss
+ *
+ */
+/* ------------------------------------------------------------
+ js-accordion__panel
+------------------------------------------------------------ */
+@mixin style-panel(){
+	height: 0;
+	overflow: hidden;
+	transition: height var( --transition-accordion );
+}
+
+// .js-accordion-hover,
+.js-accordion-click{
+	&.is-first{
+		.js-accordion__panel{
+			height: auto;
+		}
+	}
+	.js-accordion__panel{
+		@include style-panel;
+	}
+}
+
+// .js-accordion-hover-mqDown-lg,
+.js-accordion-click-mqDown-lg{
+	@include mq-down{
+		.js-accordion__panel{
+			@include style-panel;
+		}
+	}
+}
+

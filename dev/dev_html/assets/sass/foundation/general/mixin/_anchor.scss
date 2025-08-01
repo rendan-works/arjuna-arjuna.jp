@@ -1,0 +1,27 @@
+//
+//
+// anchor.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// anchor-padding
+///////////////////////////////////////////////////////////////
+//
+// overview: hoverしやすくなるaタグの余白の設定。
+//
+@mixin anchor-padding($size: ''){
+	padding: var( --anchor-padding#{$size} ) 0;
+	margin: calc( var( --anchor-padding#{$size} ) * -1 ) 0;
+}
+
+@mixin anchor-padding-all($size: ''){
+	padding: var( --anchor-padding#{$size} );
+	margin: calc( var( --anchor-padding#{$size} ) * -1 );
+}
+
+
+
+
+
+

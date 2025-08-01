@@ -1,0 +1,41 @@
+/**
+ *
+ * mask.scss
+ *
+ */
+/* ------------------------------------------------------------
+ js-mask
+------------------------------------------------------------ */
+// .js-mask{
+// 	position: relative;
+
+// 	&::before{
+// 		content: '';
+// 		@include display-block;
+// 		position: absolute;
+// 		top: 0;
+// 		right: 0;
+// 		z-index: 100;
+// 		background-color: var( --color-white );
+// 		transition: var( --transition-mask );
+// 		transition-property: width;
+// 	}
+
+// 	&.is-shown,
+// 	.is-shown &{
+// 		&::before{
+// 			width: 0;
+// 		}
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+

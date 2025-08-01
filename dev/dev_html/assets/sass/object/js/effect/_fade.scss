@@ -1,0 +1,30 @@
+/**
+ *
+ * fade.scss
+ *
+ */
+/* ------------------------------------------------------------
+ js-fade
+------------------------------------------------------------ */
+.js-fade{
+	opacity: 0;
+	transition: var( --transition-fade );
+	transition-property: opacity;
+	transition-delay: var( --transition-delay , 200ms );
+
+	&.is-shown,
+	.is-shown &{
+		opacity: 1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

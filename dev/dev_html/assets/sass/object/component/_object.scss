@@ -1,0 +1,122 @@
+/**
+ *
+ * object.scss
+ *
+ */
+// [class*="c-object"]:not(.c-objectfit){
+// 	position: absolute;
+// 	z-index: var( --z-index , 1 );
+// 	top: var( --position-top );
+// 	right: var( --position-right );
+// 	left: var( --position-left );
+// 	bottom: var( --position-bottom );
+// 	pointer-events: none;
+
+// 	img{
+// 		width: 100%;
+// 	}
+// }
+
+/* ------------------------------------------------------------
+ c-object
+ 縦横方向ともに固定
+------------------------------------------------------------ */
+// .c-object{
+// 	--position-top   : calc( var(--top) * 0.1rem );
+// 	--position-bottom: calc( var(--bottom) * 0.1rem );
+// 	--position-right : calc( var(--right) * 0.1rem );
+// 	--position-left  : calc( var(--left) * 0.1rem );
+// 	width: calc( var(--width) * 0.1rem );
+// }
+
+/* ------------------------------------------------------------
+ c-object2
+ 縦横方向ともに親要素に対して可変
+------------------------------------------------------------ */
+// .c-object2{
+// 	--position-top   : #{calcPercent('var(--top) / var(--parent-height)')};
+// 	--position-bottom: #{calcPercent('var(--bottom) / var(--parent-height)')};
+// 	--position-left  : #{calcPercent('var(--left) / var(--parent-width)')};
+// 	--position-right : #{calcPercent('var(--right) / var(--parent-width)')};
+// 	width: calcPercent('var(--width) / var(--parent-width)');
+// }
+// .c-object2-2{
+// 	--position-top   : #{calcPercent('var(--top) / var(--parent-height)')};
+// 	--position-bottom: #{calcPercent('var(--bottom) / var(--parent-height)')};
+// 	--position-left  : #{calcPercent('var(--left) / var(--parent-width)')};
+// 	--position-right : #{calcPercent('var(--right) / var(--parent-width)')};
+// 	max-width: calc( var(--width) * 0.1rem );
+// 	width: calcPercent('var(--width) / var(--parent-width)');
+// }
+
+/* ------------------------------------------------------------
+ c-object3
+ [PC]
+ 横方向は親要素に対して可変
+ 縦方向は親要素に対して固定
+
+ [SP]
+ 横方向は固定、leftは中央からの値
+ 縦方向は親要素に対して固定
+------------------------------------------------------------ */
+// .c-object3{
+// 	--position-top   : calc( var(--top) * 0.1rem );
+// 	--position-bottom: calc( var(--bottom) * 0.1rem );
+
+// 	@include mq-up{
+// 		width: calcPercent('var(--width) / var(--parent-width)');
+// 		--position-left: #{calcPercent('var(--left) / var(--parent-width)')};
+// 		--position-right: #{calcPercent('var(--right) / var(--parent-width)')};
+// 	}
+// 	@include mq-down{
+// 		width: var(--width);
+// 		--position-left: #{calc(50% + var(--left))};
+// 		--position-right: #{calc(50% + var(--right))};
+// 	}
+// }
+
+/* ------------------------------------------------------------
+ c-object4
+ 横方向は親要素に対して可変
+ 縦方向は親要素に対して固定
+------------------------------------------------------------ */
+// .c-object4{
+// 	--position-top   : calc( var(--top) * 0.1rem );
+// 	--position-bottom: calc( var(--bottom) * 0.1rem );
+// 	--position-left  : #{calcPercent('var(--left) / var(--parent-width)')};
+// 	--position-right : #{calcPercent('var(--right) / var(--parent-width)')};
+// 	width: calcPercent('var(--width) / var(--parent-width)');
+// }
+
+/* ----------------
+ c-object4-2
+ ただし、横方向のみのみmax関数で大きい方を採用
+---------------- */
+// .c-object4-2{
+// 	--position-top   : calc( var(--top) * 0.1rem );
+// 	--position-bottom: calc( var(--bottom) * 0.1rem );
+// 	--position-left  : max( calc( ( var(--left) / var(--parent-width) ) * 100%) , calc( var(--left) * 0.1rem ) );
+// 	--position-right : max( calc( ( var(--right) / var(--parent-width) ) * 100%) , calc( var(--right) * 0.1rem ) );
+// 	max-width: calc( var(--width) * 0.1rem );
+// 	width: calcPercent('var(--width) / var(--parent-width)');
+// }
+
+/* ------------------------------------------------------------
+ c-object5
+ 横方向は親要素に対して可変
+ 縦方向は親要素に対して固定
+
+ positiionのみmin関数で小さい方を採用
+------------------------------------------------------------ */
+// .c-object5{
+// 	--position-top   : calc( var(--top) * 0.1rem );
+// 	--position-bottom: calc( var(--bottom) * 0.1rem );
+// 	--position-left  : min( calc( ( var(--left) / var(--parent-width) ) * 100%) , calc( var(--left) * 0.1rem ) );
+// 	--position-right : min( calc( ( var(--right) / var(--parent-width) ) * 100%) , calc( var(--right) * 0.1rem ) );
+// 	max-width: calc( var(--width) * 0.1rem );
+// 	width: calcPercent('var(--width) / var(--parent-width)');
+// }
+
+
+
+

@@ -1,0 +1,53 @@
+/*
+ *
+ * anchor.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-anchor-line
+------------------------------------------------------------ */
+.c-anchor-lineIn{
+	@include hover-lineIn( 1px , currentColor , true );
+}
+
+.c-anchor-lineOut{
+	@include hover-lineOut( 1px , currentColor , true );
+}
+
+
+
+/* ------------------------------------------------------------
+ c-anchor-bg-black
+------------------------------------------------------------ */
+// .c-anchor-bg-black{
+// 	@include hover{
+// 		background-color: rgba($color-black-0,.025);
+// 	}
+// }
+
+
+/* ------------------------------------------------------------
+ c-anchor-blank
+------------------------------------------------------------ */
+// .c-anchor-blank{
+// 	&::after{
+// 		content: '';
+// 		display: inline-block;
+// 		vertical-align: middle;
+// 		@include rems((
+// 			width: 8px,
+// 			height: 8px,
+// 			marign-left: 5px,
+// 		));
+// 		@include bg-100;
+// 	}
+
+
+// 	/* ---------- -white ---------- */
+// 	&.-white{
+// 		&::after{
+// 			background-image: url('../img/common/icon/blank-white.svg');
+// 		}
+// 	}
+
+// }

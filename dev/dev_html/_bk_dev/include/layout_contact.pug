@@ -1,0 +1,22 @@
+include ../include_pug/_variable.pug
+// l-contact
+aside.l-contact( class!="<?= $contact_class; ?>" )
+	div.l-contact__inner.c-inner-max
+		div.l-contact__contents
+			h2.c-title.-medium.js-trigger.js-splittext Contact
+			p.l-contact__txt.c-crop
+				span.u-ib ブランディング、パッケージデザイン、
+				span.u-ib webサイト、
+				br.u-n-mqDown-lg
+				span.u-ib 販促ツール制作などの
+				span.u-ib ご相談は、まずはお気軽にご連絡ください。
+		div.l-contact__buttons
+			p.p-button2.-tel
+				a(href!="tel:<?= $telephone; ?>")
+					i.c-call.c-icon
+					span.p-button2__txt <?= $telephone; ?>
+			p.p-button2.-contact
+				a(href!=root+"contact/")
+					span.p-button2__txt ウェブからお問い合わせ
+					i.c-arrow2.-xsmall.c-icon
+// /l-contact

@@ -1,0 +1,71 @@
+/**
+ *
+ * plus.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-plus
+ サークルのプラスマーク
+------------------------------------------------------------ */
+.c-plus{
+	position: relative;
+	display: block;
+	border-radius: 50%;
+	border: var( --solid-current );
+
+	@include mq-up{
+		@include rem( width , 41px );
+		@include rem( height , 41px );
+		@include rem( --icon-size , 17px );
+		--icon-width: 2px;
+	}
+	@include mq-down{
+		@include rem( width , 30px );
+		@include rem( height , 30px );
+		@include rem( --icon-size , 13px );
+		--icon-width: 1.5px;
+	}
+
+	&::before,
+	&::after{
+		content: '';
+		display: block;
+		@include absolute-center;
+		background-color: currentColor;
+		transition: opacity var( --transition-accordion ), width var( --transition-accordion ), height var( --transition-accordion ), transform var( --transition-hover );
+	}
+
+	&::before{
+		width: var( --icon-size );
+		height: var( --icon-width );
+	}
+	&::after{
+		width: var( --icon-width );
+		height: var( --icon-size );
+	}
+
+	@include hover-query{
+		a:hover &,
+		button:hover &{
+			&::before,
+			&::after{
+				transform: translate(-50%,-50%) scale( var(--hover-scale2) );
+			}
+		}
+	}
+
+	.js-accordion-click.is-open &,
+	.js-accordion-click-mqDown-lg.is-open &{
+		@include mq-up{
+			@include rem( --icon-size , 12px );
+		}
+		@include mq-down{
+			@include rem( --icon-size , 9px );
+		}
+
+		&::after{
+			opacity: 0;
+		}
+	}
+}
+

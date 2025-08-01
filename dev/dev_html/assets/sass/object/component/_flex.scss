@@ -1,0 +1,40 @@
+/**
+ *
+ * flex.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-flex
+ --staticはデザインでの固定の変数。calcでの計算で使用。
+------------------------------------------------------------ */
+@include mq-up{
+	.c-flex{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		&.-size1{
+			--side-width: 350;
+			--main-width: 840;
+		}
+		&.-size2{
+			--side-width: 350;
+			--main-width: 950;
+		}
+	}
+
+	.c-flex__side{
+		width: calcPercent('var(--side-width) / var(--inner-width)');
+	}
+	.c-flex__main{
+		width: calcPercent('var(--main-width) / var(--inner-width)');
+
+		> *{
+			--inner-width: var( --main-width );
+		}
+	}
+
+}
+
+
+

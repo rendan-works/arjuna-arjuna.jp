@@ -1,0 +1,9 @@
+include ./_variable.pug
+doctype
+html( lang="ja" )
+	head()
+		|
+		| <?php require_once($web_root.$root.'include/meta.php'); ?>
+	body( data-root!="<?= $root; ?>" )
+		| <?php require_once($web_root.$root.'include/layout_loading.php'); ?>
+		| <?php require_once($web_root.$root.'include/layout_header.php'); ?>

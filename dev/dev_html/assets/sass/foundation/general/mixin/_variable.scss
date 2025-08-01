@@ -1,0 +1,112 @@
+//
+//
+// varibale.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// var-set
+///////////////////////////////////////////////////////////////
+//
+// overview : 配列からcss変数を設定する。utilityクラスを設定するときに配列を使い回せるようにsassで指定。
+// usage    : @include var-set( ('space',(
+//				'xxsmall': 5.0rem,
+//				'small'  : 7.0rem,
+//				'medium' : 8.0rem,
+//				'large'  : 9.0rem,
+//				'xlarge' : 10.0rem,
+//			)) );
+// caution  : ただの変数は直接指定して良い。
+//            あくまでここは、utilityでも同様の記述があるときに 楽をするために使用する。
+//
+@mixin var-set( $array ){
+	$prefix: nth($array, 1);
+	$map   : nth($array, 2);
+
+	@each $name, $value in $map {
+		--#{$prefix}-#{$name}: #{$value};
+	}
+}
+
+
+///////////////////////////////////////////////////////////////
+// var-font-size
+///////////////////////////////////////////////////////////////
+//
+// overview : 配列からCSS変数を設定する。font-sizeの一覧変数からmap-getから生成する。
+// usage    : @include var-font-size((
+//				10,11,
+//			));
+//
+@mixin var-font-size( $elements , $levels: $font-sizes ){
+	@each $target in $elements {
+		--font-size#{$target}: #{ map-get($levels, '#{$target}' ); };
+	}
+}
+
+
+///////////////////////////////////////////////////////////////
+// var-z-index
+///////////////////////////////////////////////////////////////
+//
+// overview : z-indexの値をcss変数に自動で設定する。
+// usage    : @include var-z-index((
+//				l-main,
+//				l-footer,
+//				l-sitemap-bg,
+//				l-sitemap,
+//				l-header,
+//				l-button,
+//				l-loading,
+//			));
+//
+@mixin var-z-index( $elements , $levels: $z-indexLevels-common ){
+	@each $target in $elements {
+		$index: index( $elements , $target );
+		$level: nth( $levels , $index );
+		--z-index-#{$target}: #{$level};
+	}
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// var-line-height
+///////////////////////////////////////////////////////////////
+//
+// overview : line-heightの値をcss変数に設定する。
+// usage    : @include var-line-height(10,17);
+//
+@mixin var-line-height( $value1 , $value2 ){
+	--line-height: calc( #{$value2} / #{$value1} );
+	// --line-height: calc( #{$value2} / #{$value1} * 1em );
+}
+
+
+
+///////////////////////////////////////////////////////////////
+// var-letter-spacing
+///////////////////////////////////////////////////////////////
+//
+// overview : letter-spacingの値をcss変数に設定する。
+// usage    : @include var-letter-spacing(100);
+//
+@mixin var-letter-spacing( $value ){
+	--letter-spacing: calc( #{$value} / 1000 * 1em );
+}
+
+
+
+
+///////////////////////////////////////////////////////////////
+// var-slope-height
+///////////////////////////////////////////////////////////////
+//
+// overview : --slope-heightの変数を生成
+//
+@mixin var-slope-height(){
+	--slope-height : calc( var( --width ) * var( --slope-tan ) );
+}
+
+
+

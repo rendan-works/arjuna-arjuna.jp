@@ -1,0 +1,13 @@
+//
+//
+// anchor-padding.scss
+//
+//
+
+/* ------------------------------------------------------------
+ anchor-padding
+------------------------------------------------------------ */
+:root{
+	@include rem( --anchor-padding , 3px );
+	@include rem( --anchor-padding-lg , 6px );
+}

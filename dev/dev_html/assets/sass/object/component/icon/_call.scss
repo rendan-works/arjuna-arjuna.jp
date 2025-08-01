@@ -1,0 +1,21 @@
+/**
+ *
+ * call.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-call
+------------------------------------------------------------ */
+.c-call{
+	svg{
+		@include mq-up{
+			@include rem( width , 36px * .8 );
+			@include rem( height , 36px * .8 );
+		}
+		@include mq-down{
+			@include rem( width , 24px * .8 );
+			@include rem( height , 24px * .8 );
+		}
+	}
+}
+

@@ -1,0 +1,200 @@
+/**
+ *
+ * list.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-list-disc-small
+------------------------------------------------------------ */
+.c-list-disc-small{
+	li{
+		// display: flex;
+		// align-items: baseline;
+
+		&::before{
+			content: '\30FB';
+		}
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ c-list-disc
+------------------------------------------------------------ */
+// .c-list-disc{
+// 	li{
+// 		display: flex;
+// 		align-items: baseline;
+
+// 		&::before{
+// 			content: '';
+// 			display: block;
+// 			@include rem( min-width , 6px );
+// 			@include rem( min-height , 6px );
+// 			background-color: var( --color-text-level1 );
+// 			border-radius: 50%;
+// 			font-size: inherit;
+// 			line-height: inherit;
+// 			position: relative;
+// 			top: -0.4em;
+// 			transform: translateY(50%);
+
+// 			@include mq-up{
+// 				@include rem( margin-right , 9px );
+// 			}
+// 			@include mq-down{
+// 				@include rem( margin-right , 7px );
+// 			}
+// 		}
+// 	}
+
+
+	/* ----------------------------------------
+	 color
+	---------------------------------------- */
+	/* ---------- -blue ---------- */
+	// &.-blue{
+	// 	li::before{ background-color: var( --color-blue ); }
+	// }
+
+//
+// }
+
+
+/* ------------------------------------------------------------
+ c-list-decimal
+------------------------------------------------------------ */
+// .c-list-decimal{
+// 	> li{
+// 		list-style-type: decimal;
+// 		list-style-position: inside;
+// 	}
+// }
+
+
+
+/* ------------------------------------------------------------
+ c-list-num
+------------------------------------------------------------ */
+// .c-list-num{
+// 	counter-reset: item;
+
+// 	> li{
+// 		display: flex;
+// 		align-items: baseline;
+
+// 		&::before{
+// 			counter-increment: item;
+// 			content: counter(item) '.';
+// 			color: var( --color-main );
+// 			@include font-weight(bold);
+// 			@include rem( padding-right , 12px );
+// 			white-space: nowrap;
+// 		}
+// 	}
+// }
+
+
+
+/* ------------------------------------------------------------
+ c-list-brackets
+------------------------------------------------------------ */
+// .c-list-brackets{
+// 	counter-reset: item;
+
+// 	> li{
+// 		&::before{
+// 			counter-increment: item;
+// 			content: "（" counter(item) "）";
+// 		}
+// 	}
+// }
+
+
+
+/* ------------------------------------------------------------
+ c-list-en
+------------------------------------------------------------ */
+// .c-list-en{
+// 	counter-reset: item;
+
+// 	> li{
+// 		&::before{
+// 			counter-increment: item;
+// 			content: counter(item,lower-latin) ".";
+// 		}
+// 	}
+// }
+
+
+
+/* ------------------------------------------------------------
+ c-list-iroha
+------------------------------------------------------------ */
+// .c-list-iroha{
+// 	li{
+// 		list-style-type: katakana-iroha;
+// 		list-style-position: inside;
+// 	}
+// }
+
+
+
+/* ------------------------------------------------------------
+ c-list-comma
+------------------------------------------------------------ */
+// .c-list-comma{
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	align-items: baseline;
+
+// 	li{
+// 		&:not(:last-of-type){
+// 			&::after{
+// 				content: ',';
+// 				margin: 0 4px;
+// 			}
+// 		}
+// 	}
+// }
+
+
+
+/* ------------------------------------------------------------
+ c-list-slash
+------------------------------------------------------------ */
+.c-list-slash{
+	li{
+		display: inline-flex;
+		align-items: baseline;
+
+		&:not(:last-of-type){
+			&::after{
+				content: '/';
+				@include rem( margin , 0 3px );
+			}
+		}
+	}
+
+	&.-large{
+		li{
+			&:not(:last-of-type){
+				&::after{
+					@include rem( margin , 0 10px );
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

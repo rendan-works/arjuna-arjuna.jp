@@ -1,0 +1,498 @@
+/**
+ *
+ * card.scss
+ *
+ */
+/* ------------------------------------------------------------
+ p-card
+ ブログのカード
+ スマホでのレイアウトが2種類あるので、type1、type2で管理する。
+------------------------------------------------------------ */
+.p-card{
+	position: relative;
+	display: flex;
+	background-color: var( --color-bg );
+
+	@include mq-up{
+		flex-direction: column;
+	}
+
+	> a{
+		@include mq-up{
+			display: none;
+		}
+		@include mq-down{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transition: none;
+		}
+	}
+
+
+	/* ---------- -type1 ---------- */
+	&.-type1{
+		@include mq-down{
+			flex-direction: column;
+		}
+
+		@include mq-down{
+			.p-card__figure{
+				&::after{
+					padding-top: calcPercent('330 / 640');
+				}
+			}
+
+			.p-card__contents{
+				@include rem( padding , 16px 20px 17px );
+			}
+			.p-card__title{
+				@include font-var(14);
+				@include var-line-height(28,40);
+				@include rem( margin-top , 15px );
+			}
+			.p-card__another{
+				@include rem( gap , 10px );
+				@include rem( margin-top, 15px );
+			}
+			.p-card__button{
+				@include rem( min-width , 85px );
+			}
+			.p-card__term{
+				@include font-var(11);
+			}
+			.p-card__name{
+				@include font-var(11);
+				@include rem( margin-top , 3px );
+			}
+			.p-card__term-image{
+				@include rem( min-width , 43px );
+			}
+
+		}
+
+	}
+
+	/* ---------- -type2 ---------- */
+	&.-type2{
+		@include mq-updown{
+			padding: 2.0rem;
+		}
+		@include mq-down(sm){
+			padding: 2.0rem var( --contents-lg-outside );
+		}
+
+		@include mq-down{
+			justify-content: space-between;
+
+			.p-card__figure{
+				width: calcPercent('143 / 320');
+				@include rem( max-width , 143px );
+
+				&::after{
+					padding-top: calcPercent('160 / 286');
+				}
+			}
+
+			.p-card__contents{
+				@include rem( margin-left , 20px );
+				@include rem( padding , 6px 0 0 );
+			}
+			.p-card__title{
+				@include font-var(11);
+				@include rem( margin-top , 15px );
+			}
+			.p-card__another{
+				display: block;
+				@include rem( margin-top , 15px );
+			}
+			.p-card__button{
+				display: none;
+			}
+			.p-card__term{
+				@include font-var(8);
+			}
+			.p-card__name{
+				display: none;
+			}
+			.p-card__term-image{
+				display: none;
+			}
+
+		}
+
+	}
+
+}
+
+
+/* ----------------------------------------
+ p-card__figure
+---------------------------------------- */
+.p-card__figure{
+	position: relative;
+
+	&::after{
+		@include aspect-base;
+
+		@include mq-up{
+			padding-top: calcPercent('333 / 590');
+		}
+	}
+}
+
+
+/* ----------------------------------------
+ p-card__contents
+---------------------------------------- */
+.p-card__contents{
+	flex: 1;
+
+	@include mq-up{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		@include rem( padding , 32px 36px 34px );
+	}
+}
+
+/* ---------- p-card__time ---------- */
+.p-card__time{
+	@include font-family(sans-serif);
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include font-var(18);
+	}
+	@include mq-down{
+		@include font-var(11);
+	}
+}
+
+/* ---------- p-card__title ---------- */
+.p-card__title{
+	@include font-weight(bold);
+	@include var-line-height(22,34);
+
+	@include mq-up{
+		@include font-var(18);
+		@include rem( margin-top , 16px );
+	}
+
+	span{
+		display: block;
+		@include text-leader(2);
+	}
+}
+
+
+/* ----------------------------------------
+ p-card__another
+---------------------------------------- */
+.p-card__another{
+	display: flex;
+	align-items: center;
+
+	@include mq-up{
+		@include rem( margin-top , 12px );
+		@include rem( gap , 20px );
+	}
+}
+
+/* ---------- p-card__button ---------- */
+.p-card__button{
+	@include mq-up{
+		@include rem( min-width , 176px );
+	}
+}
+
+/* ---------- p-card__info ---------- */
+.p-card__info{
+}
+
+.p-card__term{
+	@include font-weight(bold);
+	@include text-leader(1);
+
+	@include mq-up{
+		@include font-var(18);
+	}
+}
+
+.p-card__name{
+	@include font-weight(medium);
+
+	@include mq-up{
+		@include letter-spacing(100);
+		@include font-var(18);
+		@include rem( margin-top , 9px );
+	}
+}
+
+/* ---------- p-card__term-image ---------- */
+.p-card__term-image{
+	margin-right: 0;
+	margin-left: auto;
+
+	@include mq-up{
+		@include rem( min-width , 88px );
+	}
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-card2
+ 制作事例ののカード（詳細タイプ）
+------------------------------------------------------------ */
+.p-card2{
+	a{
+		position: relative;
+		z-index: 0;
+		overflow: hidden;
+		display: block;
+		transition: none;
+
+		@include hover{
+			.p-card2__contents{
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+
+
+/* ---------- p-card2__contents ---------- */
+.p-card2__contents{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	background-color: var( --color-overlay );
+	color: var( --color-txt2 );
+	opacity: 0;
+	visibility: hidden;
+	transition: var( --transition-hover );
+	transition-property: opacity,visibility;
+
+	@include mq-up{
+		@include rem( padding , 22px 22px );
+	}
+	@include mq-down{
+		display: none;
+	}
+}
+
+.p-card2__title{
+	@include text-leader(1);
+
+	@include mq-up{
+		@include font-var(16);
+	}
+}
+
+.p-card2__category{
+	@include text-leader(1);
+
+	@include mq-up{
+		@include font-var(16);
+		@include rem( margin-top , 15px );
+	}
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-card3
+ 制作事例ののカード（シンプルタイプ）
+------------------------------------------------------------ */
+.p-card3{
+}
+
+.p-card3__title{
+	--line-height: 1.8;
+
+	@include mq-up{
+		@include font-var(18);
+		@include rem( margin-top , 20px );
+	}
+	@include mq-down{
+		@include font-var(15);
+		@include rem( margin-top , 15px );
+	}
+}
+
+.p-card3__category{
+	--line-height: 1.5;
+
+	@include mq-up{
+		@include font-var(16);
+		@include rem( margin-top , 15px );
+	}
+	@include mq-down{
+		@include font-var(12);
+		@include rem( margin-top , 10px );
+	}
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ p-card4
+ PRESSののカード
+------------------------------------------------------------ */
+.p-card4{
+	.p-button{
+		@include mq-up{
+			@include rem( margin-top , 50px );
+		}
+		@include mq-down{
+			margin: 0 auto;
+		}
+	}
+
+	/* ---------- -small ---------- */
+	&.-small{
+		@include mq-down{
+			.p-card4__company{
+				@include font-var(13);
+				@include rem( margin-top , 15px );
+			}
+
+			.p-card4__title{
+				@include font-var(13);
+				@include var-line-height(26,48);
+				@include rem( margin-top , 15px );
+			}
+
+			.p-button{
+				@include rem( margin-top , 25px );
+			}
+		}
+	}
+
+	/* ---------- -large ---------- */
+	&.-large{
+		@include mq-down{
+			.p-card4__company{
+				@include font-var(15);
+				@include rem( margin-top , 25px );
+			}
+
+			.p-card4__title{
+				@include font-var(15);
+				@include rem( margin-top , 10px );
+			}
+
+			.p-button{
+				@include rem( margin-top , 50px );
+			}
+		}
+	}
+
+}
+
+.p-card4__company{
+	@include mq-up{
+		@include font-var(18);
+		@include rem( margin-top , 36px );
+	}
+}
+
+.p-card4__title{
+	@include font-weight(medium);
+	@include var-line-height(18,30);
+
+	@include mq-up{
+		@include font-var(18);
+		@include rem( margin-top , 20px );
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

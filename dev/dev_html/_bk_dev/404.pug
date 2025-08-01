@@ -1,0 +1,45 @@
+.
+	<?php $this_path = '404/'; ?>
+	<?php require_once( dirname( __FILE__ ) . '/include/variable.php' ); ?>
+	<?php require_once( dirname( __FILE__ ) . '/include/functions.php' ); ?>
+	<?php
+		$directory   = array(
+			array('ホーム',''),
+			array('お探しのページは見つかりませんでした','お探しのページは見つかりませんでした','404/'),
+		);
+		$robots = false;
+
+		$meta = array(
+			'title'       => 'お探しのページは見つかりませんでした | ' . $base_title,
+			'description' => 'お探しのページは見つかりませんでした。',
+			'keywords'    => '',
+		);
+
+		$preload = array();
+		$style   = array();
+		$script  = array();
+		$jquery  = false;
+	 ?>
+//- ------------------------------------------------------------
+//- _tpl_header
+//- ------------------------------------------------------------
+include ./include_pug/_tpl_header.pug
+	//- ------------------------------------------------------------
+	//- main
+	//- ------------------------------------------------------------
+	main.l-main.staff-main
+		// p-hero
+		header.p-hero
+			div.p-hero__inner.c-inner-max
+				h1.p-hero__en
+					span.js-splittext 404 NOT FOUND
+				p.p-hero__txt.c-txt-lg.c-crop お探しのページは見つかりませんでした。
+		// /p-hero
+
+	//- ------------------------------------------------------------
+	//- /main
+	//- ------------------------------------------------------------
+	//- ------------------------------------------------------------
+	//- _tpl_footer
+	//- ------------------------------------------------------------
+	include ./include_pug/_tpl_footer.pug

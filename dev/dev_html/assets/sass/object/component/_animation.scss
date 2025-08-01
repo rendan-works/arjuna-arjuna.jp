@@ -1,0 +1,74 @@
+/**
+ *
+ * animation.scss
+ *
+ */
+/* ------------------------------------------------------------
+ c-delay-
+------------------------------------------------------------ */
+@for $i from 1 through 20 {
+	.c-delay-#{$i} {
+		animation-delay: #{$i * -300ms} !important;
+	}
+}
+
+
+
+/* ------------------------------------------------------------
+ c-anime-floating
+ 浮遊
+------------------------------------------------------------ */
+.c-anime-floating{
+	animation: floating-y var( --animation-floating );
+
+	> *{
+		transform-origin: 40% 0;
+		animation: floating-rotate var( --animation-floating-rotate );
+	}
+}
+
+.c-anime-floating2{
+	animation: floating-y var( --animation-floating );
+}
+
+.c-anime-floating3{
+	animation: floating-y var( --animation-floating2 );
+}
+
+.c-anime-floating4{
+	animation: floating-y2 var( --animation-floating2 );
+}
+
+
+
+/* ------------------------------------------------------------
+ c-anime-rotate
+ 傾き
+------------------------------------------------------------ */
+.c-anime-rotate{
+	animation: rotate var( --animation-rotate );
+}
+
+
+
+/* ------------------------------------------------------------
+ c-anime-flashing
+ 点滅
+------------------------------------------------------------ */
+.c-anime-flashing{
+	animation: flashing var( --animation-flashing );
+}
+
+
+
+/* ------------------------------------------------------------
+ c-anime-change
+ 2枚の切替
+------------------------------------------------------------ */
+.c-anime-change{
+	position: relative;
+	z-index: 1;
+	background-color: var( --color-bg );
+	animation: change var( --animation-change );
+}
+

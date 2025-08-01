@@ -1,0 +1,36 @@
+/**
+ *
+ * page-press.scss
+ *
+ */
+///////////////////////////////////////////////////////////////
+// general
+///////////////////////////////////////////////////////////////
+@import './foundation/general/**/*.scss';
+
+:root{
+	@include var-z-index((
+		// null,
+	), $z-indexLevels-page );
+}
+
+
+/* ------------------------------------------------------------
+ press-list
+------------------------------------------------------------ */
+.press-list{
+	background-color: var( --color-bg3 );
+
+	@include mq-up{
+		@include rem( padding , 160px 0 200px );
+	}
+	@include mq-down{
+		@include rem( padding , 50px 0 70px );
+	}
+}
+
+
+
+
+
+

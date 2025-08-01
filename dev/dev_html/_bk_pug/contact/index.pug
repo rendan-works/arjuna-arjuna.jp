@@ -1,0 +1,65 @@
+.
+	<?php $this_path = 'contact/'; ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/variable.php' ); ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/functions.php' ); ?>
+	<?php
+		$directory = array(
+			array('HOME','Home',''),
+			array('CONTACT','Contact','contact/'),
+		);
+		$robots = true;
+
+		$meta = array(
+			'title'       => getTitle($directory),
+			'description' => '',
+			'keywords'    => '',
+		);
+
+		$preload = array();
+		$style = array(
+			$root . 'assets/css/page-contact.css',
+		);
+		$script = array();
+		$jquery = false;
+
+		$contact_class = '-bg3';
+	 ?>
+//- ------------------------------------------------------------
+//- _tpl_header
+//- ------------------------------------------------------------
+include ../include_pug/_tpl_header.pug
+	//- ------------------------------------------------------------
+	//- main
+	//- ------------------------------------------------------------
+	main.l-main.contact-main
+		// p-hero
+		header.p-hero.-bg3
+			div.p-hero__inner.c-inner-max
+				h1.p-hero__en
+					span CONTACT
+		// /p-hero
+		// contact-tel
+		div.contact-tel
+			div.c-inner-max.-contents-lg
+				p.contact-tel__txt.c-txt-xxxl.c-crop.
+					ブランディング、パッケージデザイン、webサイト、<br>
+					販促ツール制作などのご相談は、まずはお気軽にご連絡ください。
+				p.contact-tel__num
+					span.contact-tel__num__txt Tel.
+					span.contact-tel__num__num 095-801-0780
+				p.contact-tel__small: small 受付時間 9:00-18:00（土日・祝祭日休）
+		// /contact-tel
+		// contact-form
+		div.contact-form
+			div.c-inner-max
+				form.p-form
+		// /contact-form
+
+	//- ------------------------------------------------------------
+	//- /main
+	//- ------------------------------------------------------------
+
+	//- ------------------------------------------------------------
+	//- _tpl_footer
+	//- ------------------------------------------------------------
+	include ../include_pug/_tpl_footer.pug

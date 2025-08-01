@@ -1,0 +1,265 @@
+.
+	<?php $this_path = 'works/'; ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/variable.php' ); ?>
+	<?php require_once( dirname( __FILE__ ) . '/../include/functions.php' ); ?>
+	<?php
+		$directory = array(
+			array('HOME','Home',''),
+			array('WORKS','Works','works/'),
+			array('ブランド名 カテゴリー','ブランド名 カテゴリー','Works/id'),
+		);
+		$robots = true;
+
+		$meta = array(
+			'title'       => getTitle($directory),
+			'description' => '',
+			'keywords'    => '',
+		);
+
+		$preload = array();
+		$style = array(
+			$root . 'assets/css/page-works.css',
+		);
+		$script = array();
+		$jquery = false;
+
+		$contact_class = '';
+	 ?>
+//- ------------------------------------------------------------
+//- _tpl_header
+//- ------------------------------------------------------------
+include ../include_pug/_tpl_header.pug
+	//- ------------------------------------------------------------
+	//- main
+	//- ------------------------------------------------------------
+	main.l-main.single-main
+		// p-hero
+		header.p-hero
+			div.p-hero__inner.c-inner-max
+				p.p-hero__en
+					span WORKS
+		// /p-hero
+		// p-article2
+		article.p-article2
+			div.c-inner-max
+				// p-article2__header
+				header.p-article2__header
+					h1.p-article2__title ZENPI パッケージデザイン
+					div.p-article2__outline
+						dl
+							dt BRAND
+							dd
+								span.-large ZENPI
+						dl
+							dt CLIENT
+							dd.-en KAIKA.Co., Ltd.
+						dl
+							dt GENRE
+							dd エステサロン・美容
+					p.p-button4
+						a(href!=root+"works/")
+							i.c-icon.c-index
+							span.c-arrow3.-prev ＜
+							span.p-button4__txt &nbsp;back to list
+				// /p-article2__header
+				// p-article2__figure
+				figure.p-article2__figure
+					ul.swiper-wrapper
+						li.p-article2__figure__slide.swiper-slide
+							img(src!="https://placehold.jp/3000x2250.png" alt="" decoding="async").c-objectfit.-cover
+						li.p-article2__figure__slide.swiper-slide
+							img(src!="https://placehold.jp/3000x2250.png" alt="" decoding="async").c-objectfit.-cover
+						li.p-article2__figure__slide.swiper-slide
+							img(src!="https://placehold.jp/3000x2250.png" alt="" decoding="async").c-objectfit.-cover
+					ul.p-article2__figure__ui
+						li.p-article2__figure__ui__prev
+							button( type="button" ).u-reverse
+								i.c-icon.c-arrow4
+						li.p-article2__figure__ui__next
+							button( type="button" )
+								i.c-icon.c-arrow4
+				// /p-article2__figure
+				// p-article2__client
+				section.p-article2__client
+					div.p-article2__client__intro
+						header.p-article2__client__header
+							div.p-article2__client__title
+								p.p-article2__client__title__en KAIKA.Co., Ltd.
+								h2.p-article2__client__title__ja 株式会社カイカ
+						div.p-article2__client__title__contents
+							h3.p-article2__client__title2 クライアント概要
+							p.p-article2__client__txt.c-txt-md.c-crop.
+								時代が転換期の今、「目に見えない物」こそ未来に価値を生み出す、私はそう考えています。目に見えない物…それは、「健康」「愛」「心」など、数値では測ることのないかけがえのないものたちです。<br>
+								健康・愛・心が豊かになることに重きが置かれた、新しい時代を築くためにカイカができることは何か？私たちは常に新鮮なアイディアを出し、チャレンジを続けていきます。<br>
+								カイカは「人・物が開花するお手伝い」を企業理念に掲げています。健康美を専門としたサロン・企業さまと共に私自身も成長していきます。
+					div.p-article2__client__table.c-table2.-size1
+						dl
+							dt: span.c-table2__en CLIENT
+							dd
+								span.c-table2__txt 株式会社カイカ
+						dl
+							dt: span.c-table2__en INDUSTRY
+							dd
+								span.c-table2__txt 美容・化粧品メーカー
+						dl
+							dt: span.c-table2__en CATEGORY
+							dd
+								ul.p-article2__client__table__list
+									li: a(href!=root+"") ブランディング
+									li: a(href!=root+"") ロゴ（CI/VI）/ネーミング
+									li: a(href!=root+"") パンフレット・会社案内
+									li: a(href!=root+"") フライヤー・ポスター・DM
+									li: a(href!=root+"") コーポレートサイト
+									li: a(href!=root+"") 動画・ムービー
+									li: a(href!=root+"") パッケージデザイン
+						dl
+							dt: span.c-table2__en TAG
+							dd
+								ul.p-article2__client__table__list3
+									li: a(href!=root+"") プロデュース
+									li: a(href!=root+"") 企画・ディレクション
+									li: a(href!=root+"") 写真撮影
+									li: a(href!=root+"") 動画撮影
+									li: a(href!=root+"") ブランディング
+									li: a(href!=root+"") CI・VI開発
+									li: a(href!=root+"") ロゴ
+									li: a(href!=root+"") 名刺・ショップカード・封筒
+									li: a(href!=root+"") フライヤー・チラシ・DM
+									li: a(href!=root+"") 看板・サイン
+									li: a(href!=root+"") ウェブサイト制作
+									li: a(href!=root+"") HTMLコーディング
+									li: a(href!=root+"") レスポンシブ
+									li: a(href!=root+"") CMS設計・構築
+									li: a(href!=root+"") 九州
+									li: a(href!=root+"") 長崎
+						dl
+							dt: span.c-table2__en WEBSITE
+							dd
+								a(href!=root+"").c-table2__txt.c-anchor-lineIn http://kaika82.com
+				// /p-article2__client
+				// p-article2__contents
+				section.p-article2__contents
+					div.c-flex.-size1
+						div.c-flex__side
+							header
+								div.c-title3
+									h2.c-title3__en: span.c-crop.
+										Package<br>
+										Design
+									p.c-title3__ja パッケージデザイン
+							p.p-article2__contents__txt.c-txt-lg.c-crop ロゴデザインについての文章テキストダミーです。ロゴデザインについての文章テキストダミーです。ロゴデザインについての文章テキストダミーです。ロゴデザインについての文章テキストダミーです。ロゴデザインについての文章テキストダミーです。ロゴデザインについての文章テキストダミーです。ロゴデザインについての文章テキストダミーです。ロゴデザインについての文章テキストダミーです。
+						div.c-flex__main
+							figure.p-article2__contents__figure
+								img(src!="https://placehold.jp/1880x1220.png" alt="" decoding="async")
+							figure.p-article2__contents__figure
+								img(src!="https://placehold.jp/1880x1220.png" alt="" decoding="async")
+				// /p-article2__contents
+				// p-article2__team
+				section.p-article2__team
+					div.c-flex.-size2
+						div.c-flex__side
+							header
+								div.c-title3
+									h2.c-title3__en: span.c-crop.
+										Project<br>
+										Team
+									p.c-title3__ja 制作チーム
+						div.c-flex__main
+							div.c-table2.-size2
+								dl
+									dt: span.c-table2__ja クライアント
+									dd: span.c-table2__txt 株式会社カイカ
+								dl
+									dt: span.c-table2__ja アートディレクション
+									dd: span.c-table2__txt クレジットが入ります
+								dl
+									dt: span.c-table2__ja Graphicデザイン
+									dd: span.c-table2__txt クレジットが入ります
+								dl
+									dt: span.c-table2__ja サイト構築・CMS構築
+									dd: span.c-table2__txt クレジットが入ります
+								dl
+									dt: span.c-table2__ja スチール撮影
+									dd: span.c-table2__txt クレジットが入ります
+								dl
+									dt: span.c-table2__ja コピー
+									dd: span.c-table2__txt クレジットが入ります
+								dl
+									dt: span.c-table2__ja イラスト
+									dd: span.c-table2__txt クレジットが入ります
+				// /p-article2__team
+				// p-article2__other
+				aside.p-article2__other
+					div.c-flex.-size2
+						div.c-flex__side
+							header
+								div.c-title3
+									h2.c-title3__en: span.c-crop.
+										Other<br>
+										Project
+									p.c-title3__ja その他のプロジェクト
+						div.p-article2__other__main.c-flex__main
+							div.c-column.-col-3-md.-gap-c-70.-gap-r-70
+								// p-card3
+								article.p-card3
+									a(href!=root+"")
+										figure.c-aspect.-square.c-bg2
+											img(src!="https://placehold.jp/540x540.png" alt="" decoding="async").c-objectfit.-cover
+										h3.p-card3__title: span.c-crop  KAIKA CI
+								// /p-card3
+								// p-card3
+								article.p-card3
+									a(href!=root+"")
+										figure.c-aspect.-square.c-bg2
+											img(src!="https://placehold.jp/540x540.png" alt="" decoding="async").c-objectfit.-cover
+										h3.p-card3__title: span.c-crop  KAIKA CI
+								// /p-card3
+								// p-card3
+								article.p-card3
+									a(href!=root+"")
+										figure.c-aspect.-square.c-bg2
+											img(src!="https://placehold.jp/540x540.png" alt="" decoding="async").c-objectfit.-cover
+										h3.p-card3__title: span.c-crop  KAIKA CI
+								// /p-card3
+								// p-card3
+								article.p-card3
+									a(href!=root+"")
+										figure.c-aspect.-square.c-bg2
+											img(src!="https://placehold.jp/540x540.png" alt="" decoding="async").c-objectfit.-cover
+										h3.p-card3__title: span.c-crop  KAIKA CI
+								// /p-card3
+								// p-card3
+								article.p-card3
+									a(href!=root+"")
+										figure.c-aspect.-square.c-bg2
+											img(src!="https://placehold.jp/540x540.png" alt="" decoding="async").c-objectfit.-cover
+										h3.p-card3__title: span.c-crop  KAIKA CI
+								// /p-card3
+								// p-card3
+								article.p-card3
+									a(href!=root+"")
+										figure.c-aspect.-square.c-bg2
+											img(src!="https://placehold.jp/540x540.png" alt="" decoding="async").c-objectfit.-cover
+										h3.p-card3__title: span.c-crop  KAIKA CI
+								// /p-card3
+				// /p-article2__other
+		// /p-article2
+		// p-pagination2
+		footer.p-pagination2
+			div.c-inner-max
+				p.p-button4
+					a(href!=root+"works/")
+						i.c-icon.c-index
+						span.c-arrow3.-prev ＜
+						span.p-button4__txt &nbsp;back to list
+		// /p-pagination2
+
+
+	//- ------------------------------------------------------------
+	//- /main
+	//- ------------------------------------------------------------
+
+	//- ------------------------------------------------------------
+	//- _tpl_footer
+	//- ------------------------------------------------------------
+	include ../include_pug/_tpl_footer.pug

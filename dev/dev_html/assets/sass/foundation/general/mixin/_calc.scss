@@ -1,0 +1,22 @@
+//
+//
+// calc.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// calc
+///////////////////////////////////////////////////////////////
+//
+// overview: ieやedgeでclacではカラム落ちするので、0.1px引くmixin
+// usage   : @include calc( width , "50% - 4.0rem" );
+// caution : 第二引数はsassで計算されないようにダブルクォーテーションで括る
+//
+@mixin calc( $property , $value ) {
+	#{$property}: calc( #{$value} );
+
+	body.ua-ie &,
+	body.ua-edge &{
+		#{$property}: calc( ( #{$value} ) - 0.1px );
+	}
+}

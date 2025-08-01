@@ -1,0 +1,20 @@
+//
+//
+// transition.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// transition
+///////////////////////////////////////////////////////////////
+//
+// overview: transitionを合わせるためmixinで管理
+// use : propertyがからの場合: @include transition(#{''});
+//
+@mixin transition(
+	$property: all,
+	$easeTime: var( --transition-hover )
+){
+	transition: $property $easeTime;
+}
+

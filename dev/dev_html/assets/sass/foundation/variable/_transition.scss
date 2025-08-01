@@ -1,0 +1,52 @@
+//
+//
+// traansition.scss
+//
+//
+
+/* ------------------------------------------------------------
+ traansition
+------------------------------------------------------------ */
+:root{
+	--ease-level1: var( --easeOutCubic );
+	--ease-heavy1: var( --easeInOutCubic );
+	--ease-heavy2: var( --easeInOutQuart );
+	// --ease-heavy3: var( --easeInOutQuint );
+
+
+	/* ---------- hover ---------- */
+	--transition-hover          : 500ms var( --ease-level1 );
+	--transition-hover-animation: 1400ms var( --ease-level1 );
+
+	/* ---------- ui ----------  */
+	--transition-loading      : 1000ms var( --ease-level1 );
+	--transition-button       : 600ms var( --ease-level1 );
+	--transition-sitemap      : 800ms var( --ease-level1 );
+	--transition-slider       : 1600ms var( --ease-level1 );
+	--transition-carousel     : var( --ease-heavy2 );
+	--transition-carousel-move: 1000ms 200ms var( --ease-level1 );
+	--transition-accordion    : 500ms var( --ease-heavy2 );
+	--transition-input        : 200ms var( --ease-level1 );
+
+	/* ---------- effect ---------- */
+	--transition-fade     : 1000ms var( --ease-level1 );
+	--transition-fade2    : 700ms ease-in-out;
+	--transition-fadeup   : 1000ms var( --ease-level1 );
+	--transition-splittext: 1300ms var( --ease-level1 );
+
+	/* ---------- animation ----------  */
+	--animation-floating       : 6000ms ease-in-out infinite;
+	--animation-floating-rotate: 4500ms ease-in-out infinite;
+	--animation-floating2      : 5000ms ease-in-out infinite;
+	--animation-rotate         : 3500ms var( --ease-level1 ) infinite;
+	--animation-flashing       : 3500ms var( --ease-level1 ) infinite;
+	--animation-change         : 7000ms var( --ease-level1 ) infinite;
+
+}
+
+
+body.ua-safari{
+	// --transition-carousel: var( --easeInOutCubic );
+	// --transition-carousel: var( --easeInOutSine );
+	--transition-carousel-move: 1200ms var( --ease-level1 );
+}

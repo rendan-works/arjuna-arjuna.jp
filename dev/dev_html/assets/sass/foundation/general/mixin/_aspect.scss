@@ -1,0 +1,32 @@
+//
+//
+// aspect.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// aspect
+///////////////////////////////////////////////////////////////
+//
+// overview: アスペクト比を保つmixin。主に子要素がabsoluteなどかけているときに使用する。
+//
+@mixin aspect($padding-top){
+	@include aspect-base;
+	padding-top: $padding-top;
+}
+
+@mixin aspect-base(){
+	content: '';
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+

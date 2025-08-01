@@ -1,0 +1,57 @@
+//
+//
+// bg.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// background
+///////////////////////////////////////////////////////////////
+//
+// overview: background-size: 100%;
+//
+@mixin bg-100( $position: center ){
+	background-size: 100% 100%;
+	background-position: $position;
+	background-repeat: no-repeat;
+}
+
+//
+// overview: background-size: contain;
+//
+@mixin bg-contain( $position: center ){
+	background-size: contain;
+	background-position: $position;
+	background-repeat: no-repeat;
+}
+
+//
+// overview: background-size: cover;
+//
+@mixin bg-cover( $position: center ){
+	background-size: cover;
+	background-position: $position;
+	background-repeat: no-repeat;
+}
+
+
+
+
+///////////////////////////////////////////////////////////////
+// bg-gradient
+///////////////////////////////////////////////////////////////
+// @mixin bg-gradient( $angle: 45deg, $color-1: $color-blue, $color-2: $color-blue-2 ){
+// 	background: linear-gradient( $angle , $color-1 , $color-2 );
+// }
+
+
+
+///////////////////////////////////////////////////////////////
+// bg-stripe
+///////////////////////////////////////////////////////////////
+// @mixin bg-stripe(){
+// 	background-color: $color-yellow-2;
+// 	background-image: repeating-linear-gradient(-45deg, rgba(var( --color-white--rgb ),.3), rgba(var( --color-white--rgb ),.3) 10px, $color-yellow-2 0, $color-yellow-2 20px);
+// }
+
+

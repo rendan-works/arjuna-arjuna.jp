@@ -1,0 +1,162 @@
+/**
+ *
+ * font.scss
+ *
+ */
+/* ------------------------------------------------------------
+ font
+------------------------------------------------------------ */
+.u-font-sans-serif{
+	display: inline-block;
+	@include font-family(sans-serif);
+}
+
+
+/* ------------------------------------------------------------
+// font-color
+------------------------------------------------------------ */
+// @include utility-style( color , font , $pallets-neutral );
+// @include utility-style( color , font , $pallets-main );
+
+
+
+/* ------------------------------------------------------------
+// font weight
+------------------------------------------------------------ */
+// .u-font-normal  { font-weight: normal; }
+// .u-font-bold    { font-weight: bold; }
+// .u-font-lighter { font-weight: lighter; }
+// .u-font-bolder  { font-weight: bolder; }
+// .u-font-100     { font-weight: 100; }
+// .u-font-200     { font-weight: 200; }
+// .u-font-300     { font-weight: 300; }
+// .u-font-400     { font-weight: 400; }
+// .u-font-500     { font-weight: 500; }
+// .u-font-600     { font-weight: 600; }
+// .u-font-700     { font-weight: 700; }
+// .u-font-800     { font-weight: 800; }
+// .u-font-900     { font-weight: 900; }
+// .u-font-1000    { font-weight: 1000; }
+
+
+
+
+/* ------------------------------------------------------------
+// font style
+------------------------------------------------------------ */
+//.u-font-italic{ font-style: italic; }
+
+
+
+
+/* ------------------------------------------------------------
+// fontsize
+------------------------------------------------------------ */
+// .u-font-0   { @include font0;  }
+// .u-font-1   { @include font1;  }
+// .u-font-2   { @include font2;  }
+// .u-font-3   { @include font3;  }
+// .u-font-4   { @include font4;  }
+// .u-font-5   { @include font5;  }
+// .u-font-6   { @include font6;  }
+// .u-font-7   { @include font7;  }
+// .u-font-8   { @include font8;  }
+// .u-font-9   { @include font9;  }
+// .u-font-10  { @include font10; }
+// .u-font-11  { @include font11; }
+// .u-font-12  { @include font12; }
+// .u-font-13  { @include font13; }
+// .u-font-14  { @include font14; }
+// .u-font-15  { @include font15; }
+// .u-font-16  { @include font16; }
+// .u-font-17  { @include font17; }
+// .u-font-18  { @include font18; }
+// .u-font-19  { @include font19; }
+// .u-font-20  { @include font20; }
+// .u-font-21  { @include font21; }
+// .u-font-22  { @include font22; }
+// .u-font-23  { @include font23; }
+// .u-font-24  { @include font24; }
+// .u-font-25  { @include font25; }
+// .u-font-26  { @include font26; }
+// .u-font-27  { @include font27; }
+// .u-font-28  { @include font28; }
+// .u-font-29  { @include font29; }
+// .u-font-30  { @include font30; }
+// .u-font-31  { @include font31; }
+// .u-font-32  { @include font32; }
+// .u-font-33  { @include font33; }
+// .u-font-34  { @include font34; }
+// .u-font-35  { @include font35; }
+// .u-font-36  { @include font36; }
+// .u-font-37  { @include font37; }
+// .u-font-38  { @include font38; }
+// .u-font-39  { @include font39; }
+// .u-font-40  { @include font40; }
+// .u-font-41  { @include font41; }
+// .u-font-42  { @include font42; }
+// .u-font-43  { @include font43; }
+// .u-font-44  { @include font44; }
+// .u-font-45  { @include font45; }
+// .u-font-46  { @include font46; }
+// .u-font-47  { @include font47; }
+// .u-font-48  { @include font48; }
+// .u-font-49  { @include font49; }
+// .u-font-50  { @include font50; }
+// .u-font-51  { @include font51; }
+// .u-font-52  { @include font52; }
+// .u-font-53  { @include font53; }
+// .u-font-54  { @include font54; }
+// .u-font-55  { @include font55; }
+// .u-font-56  { @include font56; }
+// .u-font-57  { @include font57; }
+// .u-font-58  { @include font58; }
+// .u-font-59  { @include font59; }
+// .u-font-60  { @include font60; }
+// .u-font-61  { @include font61; }
+// .u-font-62  { @include font62; }
+// .u-font-63  { @include font63; }
+// .u-font-64  { @include font64; }
+// .u-font-65  { @include font65; }
+// .u-font-66  { @include font66; }
+// .u-font-67  { @include font67; }
+// .u-font-68  { @include font68; }
+// .u-font-69  { @include font69; }
+// .u-font-70  { @include font70; }
+// .u-font-71  { @include font71; }
+// .u-font-72  { @include font72; }
+// .u-font-73  { @include font73; }
+// .u-font-74  { @include font74; }
+// .u-font-75  { @include font75; }
+// .u-font-76  { @include font76; }
+// .u-font-77  { @include font77; }
+// .u-font-78  { @include font78; }
+// .u-font-79  { @include font79; }
+// .u-font-80  { @include font80; }
+// .u-font-81  { @include font81; }
+// .u-font-82  { @include font82; }
+// .u-font-83  { @include font83; }
+// .u-font-84  { @include font84; }
+// .u-font-85  { @include font85; }
+// .u-font-86  { @include font86; }
+// .u-font-87  { @include font87; }
+// .u-font-88  { @include font88; }
+// .u-font-89  { @include font89; }
+// .u-font-90  { @include font90; }
+// .u-font-91  { @include font91; }
+// .u-font-92  { @include font92; }
+// .u-font-93  { @include font93; }
+// .u-font-94  { @include font94; }
+// .u-font-95  { @include font95; }
+// .u-font-96  { @include font96; }
+// .u-font-97  { @include font97; }
+// .u-font-98  { @include font98; }
+// .u-font-99  { @include font99; }
+// .u-font-100 { @include font100; }
+
+
+
+
+
+
+

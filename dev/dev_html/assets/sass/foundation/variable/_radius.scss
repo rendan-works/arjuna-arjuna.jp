@@ -1,0 +1,17 @@
+//
+//
+// radius.scss
+//
+//
+
+/* ------------------------------------------------------------
+ radius
+------------------------------------------------------------ */
+:root{
+	@include rem( --radius-xs , 5px );
+	@include rem( --radius-sm , 10px );
+	@include rem( --radius-rg , 20px );
+	--radius-max: 100px;
+}
+
+

@@ -1,0 +1,793 @@
+/**
+ *
+ * page-branding.scss
+ *
+ */
+///////////////////////////////////////////////////////////////
+// general
+///////////////////////////////////////////////////////////////
+@import './foundation/general/**/*.scss';
+
+:root{
+	@include var-z-index((
+		// null,
+	), $z-indexLevels-page );
+}
+
+
+/* ------------------------------------------------------------
+ branding-intro
+------------------------------------------------------------ */
+.branding-intro{
+	background-color: var( --color-bg3 );
+
+	@include mq-up{
+		@include rem( padding , 200px 0 350px );
+	}
+	@include mq-down{
+		@include rem( padding , 100px 0 86px );
+	}
+}
+
+.branding-intro__inner{
+	position: relative;
+}
+
+
+/* ---------- branding-intro__catch ---------- */
+.branding-intro__catch{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(40);
+		@include var-line-height(40,72);
+		@include letter-spacing(50);
+	}
+	@include mq-down{
+		@include font-var(26);
+		@include var-line-height(52,92);
+		@include letter-spacing(50);
+	}
+}
+
+
+/* ---------- branding-intro__txt ---------- */
+.branding-intro__txt{
+	@include mq-up{
+		width: calcPercent('640 / var(--inner-width)');
+		@include rem( margin-top , 75px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 50px );
+	}
+}
+
+
+/* ---------- branding-intro__illust ---------- */
+.branding-intro__illust{
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+
+	@include mq-up{
+		width: calcPercent('540 / var(--inner-width)');
+		position: absolute;
+		top: calcPercent('(-72 + 540 / 2) / 318');
+		right: 0;
+		transform: translateY(-50%);
+		z-index: 1;
+	}
+	@include mq-down{
+		@include rem( width , 293px );
+		margin: 5.0rem auto 0;
+	}
+
+	img{
+		@include mq-up{
+			@include rem( max-width , 540px );
+			width: 100%;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ branding-groups
+------------------------------------------------------------ */
+.branding-groups{
+	background-color: var( --color-bg3 );
+
+	@include mq-up{
+		@include rem( padding , 0 0 160px );
+	}
+	@include mq-down{
+		@include rem( padding , 0 0 45px );
+	}
+}
+
+
+
+/* -------------------------------------------------------
+ branding-group
+------------------------------------------------------- */
+.branding-group{
+	@include mq-up{
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	+ .branding-group{
+		@include mq-up{
+			@include rem( margin-top , 300px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 160px );
+		}
+	}
+}
+
+
+/* ----------------------------------------
+ branding-group__header
+---------------------------------------- */
+.branding-group__header{
+	@include mq-up{
+		@include rem( min-width , 380px );
+		width: calcPercent('380 / var(--inner-width)');
+		@include rem( margin-top , 22px );
+	}
+}
+
+.branding-group__stroke{
+	--stroke-width: 1px;
+	--stroke-color: var( --color-line );
+	color: var( --color-txt2 );
+	@include font-family(sans-serif);
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(140);
+	}
+	@include mq-down{
+		@include font-var(70);
+	}
+}
+
+.branding-group__title{
+	@include font-weight(bold);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(40);
+		@include rem( margin-top , 60px );
+	}
+	@include mq-down{
+		@include font-var(26);
+		@include rem( margin-top , 30px );
+	}
+}
+
+.branding-group__title2{
+	@include font-weight(bold);
+	@include letter-spacing(100);
+	margin-left: -0.5em;
+
+	@include mq-up{
+		@include font-var(18);
+		@include rem( margin-top , 27px );
+	}
+	@include mq-down{
+		@include font-var(15);
+		@include rem( margin-top , 13px );
+	}
+}
+
+
+/* ----------------------------------------
+ branding-group__main
+---------------------------------------- */
+.branding-group__main{
+	@include mq-up{
+		flex: 1;
+	}
+	@include mq-down{
+		@include rem( margin-top , 50px );
+	}
+}
+
+
+
+
+
+
+/* -------------------------------------------------------
+ branding-ph
+------------------------------------------------------- */
+.branding-ph{
+	position: relative;
+
+	+ .branding-ph{
+		@include mq-up{
+			@include rem( margin-top , 150px );
+		}
+		@include mq-down{
+			@include rem( margin-top , 75px );
+		}
+	}
+}
+
+/* ----------------------------------------
+ branding-ph__title
+---------------------------------------- */
+.branding-ph__title{
+	width: fit-content;
+	border-radius: var( --radius-max );
+	border: var( --solid );
+	background-color: var( --color-bg );
+	@include font-family(sans-serif);
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(36);
+		@include rem( padding , 13px 37px 11px );
+	}
+	@include mq-down{
+		@include font-var(18);
+		@include rem( padding , 6px 18px 6px );
+	}
+}
+
+
+
+/* ----------------------------------------
+ branding-ph__main
+---------------------------------------- */
+.branding-ph__main{
+	border-left: var( --solid );
+
+	@include mq-up{
+		@include rem( margin-top , 20px );
+		@include rem( margin-left , 40px );
+		@include rem( padding-top , 40px );
+		@include rem( padding-left , 60px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 18px );
+		@include rem( margin-left , 20px );
+		@include rem( padding-top , 8px );
+		@include rem( padding-left , 30px );
+	}
+}
+
+.branding-ph__title2{
+	@include font-weight(bold);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(38);
+	}
+	@include mq-down{
+		@include font-var(25);
+	}
+}
+
+.branding-ph__title3{
+	--line-height: 1.5;
+	@include font-weight(bold);
+	@include letter-spacing(60);
+
+	@include mq-up{
+		width: 50%;
+		@include font-var(24);
+		@include rem( margin-top , 27px );
+	}
+	@include mq-down{
+		@include font-var(15);
+		@include rem( margin-top , 14px );
+	}
+
+
+	span{
+		@include mq-up{
+			@include font-var(18);
+		}
+		@include mq-down{
+			@include font-weight(regular);
+			@include font-var(11);
+		}
+	}
+
+}
+
+.branding-ph__list{
+	@include font-weight(bold);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(20);
+		@include var-line-height(20,36);
+		@include rem( margin-top , 38px );
+	}
+	@include mq-down{
+		@include font-var(14);
+		@include var-line-height(28,50);
+		@include rem( margin-top , 24px );
+	}
+}
+
+
+/* ---------- branding-ph__illust ---------- */
+.branding-ph__illust{
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+
+	@include mq-up{
+		position: absolute;
+		width: calcPercent('var(--width) / 920');
+		position: absolute;
+		top: calc( var(--top) * 0.1rem );
+		right: calc( var(--right) * 0.1rem );
+		z-index: 1;
+	}
+	@include mq-down{
+		width: calc( var(--width) * 0.1rem );
+		margin: 4.0rem auto 0;
+	}
+
+	img{
+		max-width: calc( var(--width) * 0.1rem );
+		width: 100%;
+	}
+
+	&.-unique1{
+		@include mq-up{
+			--width: 332;
+			--top  : 52;
+			--right: -32;
+		}
+		@include mq-down{
+			--width: 165;
+
+			img{
+				transform: translateX(-0.9rem);
+			}
+		}
+	}
+	&.-unique2{
+		@include mq-up{
+			--width: 451;
+			--top  : 68;
+			--right: -58;
+		}
+		@include mq-down{
+			--width: 223;
+
+			img{
+				transform: translateX(-1.7rem);
+			}
+		}
+	}
+	&.-unique3{
+		@include mq-up{
+			--width: 274;
+			--top  : 70;
+			--right: 0;
+		}
+		@include mq-down{
+			--width: 152;
+		}
+	}
+	&.-unique4{
+		@include mq-up{
+			--width: 401;
+			--top  : 4;
+			--right: -36;
+		}
+		@include mq-down{
+			--width: 200;
+
+			img{
+				transform: translateX(-0.5rem);
+			}
+		}
+	}
+	&.-unique5{
+		@include mq-up{
+			--width: 419;
+			--top  : 93;
+			--right: -67;
+		}
+		@include mq-down{
+			--width: 208;
+
+			img{
+				transform: translateX(-1.0rem);
+			}
+		}
+	}
+	&.-unique6{
+		@include mq-up{
+			--width: 327;
+			--top  : 1;
+			--right: -2;
+		}
+		@include mq-down{
+			--width: 167;
+
+			img{
+				transform: translateX(-0.8rem);
+			}
+		}
+	}
+	&.-unique7{
+		@include mq-up{
+			--width: 343;
+			--top  : 17;
+			--right: -40;
+		}
+		@include mq-down{
+			--width: 171;
+
+			img{
+				transform: translateX(-0.8rem);
+			}
+		}
+	}
+
+}
+
+
+/* ---------- branding-ph__contents ---------- */
+.branding-ph__contents{
+	@include mq-up{
+		@include rem( margin-top , 60px );
+	}
+	@include mq-up(xxl){
+		display: flex;
+	}
+	@include mq-down{
+		@include rem( margin-top , 46px );
+	}
+}
+
+/* ----- branding-ph__txt ----- */
+.branding-ph__txt{
+	@include mq-up(xxl){
+		flex: 1;
+	}
+}
+
+/* ----- branding-ph__member ----- */
+.branding-ph__member{
+	@include mq-up(xxl){
+		width: calcPercent('360 / 820');
+		border-left: var( --solid );
+		@include rem( margin-left , 60px );
+		@include rem( padding-left , 60px );
+	}
+	@include mq-down(xxl){
+		@include rem( margin-top , 50px );
+		@include rem( padding-bottom , 3px );
+	}
+}
+
+.branding-ph__member__title{
+	@include font-weight(bold);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(20);
+	}
+	@include mq-down{
+		@include font-var(14);
+	}
+}
+
+.branding-ph__member__list{
+	@include font-weight(medium);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(18);
+		@include var-line-height(18,36);
+		@include rem( margin-top , 30px );
+	}
+	@include mq-down{
+		@include font-var(13);
+		@include var-line-height(26,52);
+		@include rem( margin-top , 20px );
+	}
+}
+
+.branding-ph__member__etc{
+	@include font-weight(medium);
+	@include letter-spacing(100);
+
+	@include mq-up{
+		@include font-var(18);
+		@include rem( margin-top , 18px );
+	}
+	@include mq-down{
+		@include font-var(13);
+		@include rem( margin-top , 14px );
+	}
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------
+ branding-members
+------------------------------------------------------------ */
+.branding-members{
+	overflow: hidden;
+
+	@include mq-up{
+		@include rem( padding-top , 170px );
+	}
+	@include mq-down{
+		@include rem( padding-top , 84px );
+		// @include rem( padding-bottom , 35px );
+	}
+}
+
+.branding-members__inner{
+	position: relative;
+}
+
+
+/* ----------------------------------------
+ branding-members__header
+---------------------------------------- */
+.branding-members__header{
+	@include mq-down(sm){
+		text-align: center;
+	}
+}
+
+
+/* ----------------------------------------
+ branding-members__contents
+---------------------------------------- */
+.branding-members__contents{
+	position: relative;
+
+	@include mq-up{
+		@include rem( margin-top , 120px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 50px );
+	}
+}
+
+.branding-members__catch{
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(38);
+		@include var-line-height(38,58);
+		@include letter-spacing(100);
+	}
+	@include mq-down{
+		@include font-var(25);
+		@include var-line-height(50,84);
+		@include letter-spacing(50);
+	}
+}
+
+.branding-members__txt{
+	@include mq-up{
+		width: calcPercent('584 / var(--inner-width)');
+		@include rem( margin-top , 56px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 50px );
+	}
+}
+
+.branding-members__illust{
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+
+	@include mq-up{
+		width: calcPercent('660 / var(--inner-width)');
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 1;
+
+		img{
+			@include rem( max-width , 660px );
+			width: 100%;
+		}
+	}
+	@include mq-down{
+		margin: 5.0rem auto 0;
+
+		img{
+			@include rem( width , 340px );
+			@include rem( min-width , 340px );
+		}
+	}
+}
+
+
+
+/* ----------------------------------------
+ branding-members__carousel
+---------------------------------------- */
+.branding-members__carousel{
+	position: relative;
+
+	@include mq-up{
+		@include rem( margin-top , 162px );
+		@include rem( margin-left , 50px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 62px );
+	}
+}
+
+
+/* ---------- branding-members__slide ---------- */
+.branding-members__slide{
+	position: relative;
+	margin-top: var( --space-top );
+	transform: translate3d(0,0,0);
+	transition: transform var( --transition-carousel-move );
+
+	@include mq-up{
+		@include rem( width , 600px );
+		@include rem( height , 585px );
+		@include rem( padding , 52px 150px 0 );
+		@include rem( --space-top , 290px );
+	}
+	@include mq-down{
+		@include rem( width , 275px );
+		@include rem( height , 320px );
+		@include rem( padding , 0 25px 0 );
+		@include rem( --space-top , 125px );
+	}
+
+	&.-space{
+		transform: translate3d(0, calc( var(--space-top) * -1 ) ,0);
+	}
+
+	&::before{
+		content: '';
+		display: block;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		z-index: -1;
+		// background-color: var( --color-bg3 );
+		// clip-path: var( --heptagon );
+		background-image: url('../img/branding/members_pentagon.svg');
+		@include bg-100;
+		transition: transform var( --transition-carousel-move );
+		transform: rotate( var(--rotate) );
+
+		@include mq-up{
+			height: 100%;
+			top: 0;
+		}
+		@include mq-down{
+			@include rem( height , 268px );
+			@include rem( top , 37px );
+		}
+	}
+}
+
+.branding-members__slide__illust{
+	margin: 0 auto;
+
+	@include mq-up{
+		@include rem( width , 240px );
+	}
+	@include mq-down{
+		@include rem( width , 150px );
+	}
+}
+
+.branding-members__slide__title{
+	@include font-family(sans-serif);
+	@include font-weight(bold);
+
+	@include mq-up{
+		@include font-var(28);
+		@include rem( margin-top , 38px );
+	}
+	@include mq-down{
+		@include font-var(20);
+		@include rem( margin-top , 28px );
+	}
+}
+
+.branding-members__slide__txt{
+	@include mq-up{
+		@include rem( margin-top , 32px );
+	}
+	@include mq-down{
+		@include rem( margin-top , 15px );
+	}
+}
+
+
+/* ---------- branding-members__ui ---------- */
+.branding-members__ui{
+	display: flex;
+	position: absolute;
+	z-index: 10;
+
+	@include mq-up{
+		@include rem( gap , 80px );
+		@include rem( left , 200px );
+		@include rem( bottom , 58px );
+	}
+	@include mq-down{
+		@include rem( gap , 50px );
+		left: 50%;
+		@include rem( bottom , 31px );
+		transform: translateX(-50%);
+	}
+
+	button{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var( --color-bg3 );
+		clip-path: var( --heptagon );
+
+		@include mq-up{
+			@include rem( width , 60px );
+			@include rem( height , 58px );
+			@include rem( padding-top , 2px );
+			@include rem( padding-left , 4px );
+		}
+		@include mq-down{
+			@include rem( width , 45px );
+			@include rem( height , 44px );
+			@include rem( padding-top , 2px );
+			@include rem( padding-left , 4px );
+		}
+
+		@include hover{
+			background-color: var( --color-bg2 );
+			color: var( --color-txt2 );
+		}
+	}
+}
+
+.branding-members__ui__prev{
+	transform: scale(-1,1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

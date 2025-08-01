@@ -1,0 +1,25 @@
+//
+//
+// border-radius.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// border-radius
+///////////////////////////////////////////////////////////////
+//
+// overview: border-radiusの指定を楽にするmixin
+//           safariでborder-radiusが入ったaタグにhoverすると角丸が一瞬崩れるバグがあり、対処するには以下のmixin内のスタイルを入れる必要がある。
+// usage   : @include border-radius( 1.0rem );
+// caution : 第二引数でz-indexの指定が可能です。第三引数をfalseにするとborder-radiusしか入らないので、mixinのremを使った方が早いと思います。
+//
+@mixin border-radius( $value , $zIndex: 0, $style: true , ) {
+	@if $style == true {
+		position: relative;
+		z-index: $zIndex;
+		border-radius: $value;
+		overflow: hidden;
+	} @else {
+		border-radius: $value;
+	}
+}

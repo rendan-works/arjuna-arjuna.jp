@@ -1,0 +1,56 @@
+//
+//
+// position.scss
+//
+//
+
+///////////////////////////////////////////////////////////////
+// position
+///////////////////////////////////////////////////////////////
+//
+// overview : absoluteで上下左右中央揃え
+//
+@mixin absolute-center{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate( -50%,-50% ) rotate(0.00001deg);
+}
+
+//
+// overview : relativeで左右中央揃え
+//
+@mixin relative-center{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%) rotate(0.00001deg);
+}
+
+//
+// overview : position: fixed
+//
+@mixin position-fixed{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+//
+// overview : position: absolute
+//
+@mixin position-absolute{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
