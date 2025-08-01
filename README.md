@@ -1,7 +1,7 @@
 # プロジェクト概要
 | name  | description |
 | ---- | ---- |
-| サイトマップ | [Googleスプレッドシート]([url](https://docs.google.com/spreadsheets/d/1Pmc2eneJbAd0kAcTUgl7VZp-G3VqfH2H4vWI1nje7Cc/edit?usp=sharing)) |
+| サイトマップ | [url](https://docs.google.com/spreadsheets/d/1Pmc2eneJbAd0kAcTUgl7VZp-G3VqfH2H4vWI1nje7Cc/edit?usp=sharing) |
 | サイト | [url](https://arjuna.jp/) |
 | テストサイト | [url](https://rendan1.xsrv.jp/arjuna/) |
 | デザイン一覧 | [url](https://design-arjuna.com/test/arjuna/navi.html) <br>ID:design<br>PW:arjuna|
